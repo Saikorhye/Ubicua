@@ -17,6 +17,8 @@ public class ProyectoUbicua {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.print("Ola Mundo\n");
+        System.out.print("Proba\n");
+
     }
     
 }
