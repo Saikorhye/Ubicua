@@ -9,7 +9,7 @@ package proyectoubicua;
  *
  * @author evinha
  */
-public class ProyectoUbicua {
+public class Main {
 
     /**
      * @param args the command line arguments
