@@ -22,8 +22,10 @@ public class Main {
         // TODO code application logic here
         
         Usuario usu1 = new Usuario("Eva Suarez Vazquez", "eva@gmail.com", "1234", "Tarjeta", "666666666");
+        Usuario usu2 = new Usuario("admin", "admin", "admin", "Tarjeta", "666666666");
         ArrayList<Usuario> usuarios = new ArrayList<>();
         usuarios.add(usu1);
+        usuarios.add(usu2);
         IniciarSesion pp=new IniciarSesion(usuarios);
         VInicial v = new VInicial();
         pp.setV(v);

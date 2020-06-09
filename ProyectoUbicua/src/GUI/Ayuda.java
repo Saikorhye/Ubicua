@@ -11,7 +11,7 @@ import Clases.Usuario;
  *
  * @author evinha
  */
-public class VPrincipal extends javax.swing.JPanel {
+public class Ayuda extends javax.swing.JPanel {
 
     /**
      * Creates new form VPrincipal
@@ -28,7 +28,7 @@ public class VPrincipal extends javax.swing.JPanel {
         this.v = v;
     }
     
-    public VPrincipal(Usuario us) {
+    public Ayuda(Usuario us) {
         initComponents();
         this.usu=us;
     }
@@ -51,10 +51,10 @@ public class VPrincipal extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         SalirSesion = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jBusqueda = new javax.swing.JTextField();
-        jBotonSearch = new javax.swing.JButton();
         jBotonMenu = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         Notificaciones.setText("Notificaciones");
         Notificaciones.addActionListener(new java.awt.event.ActionListener() {
@@ -84,6 +84,11 @@ public class VPrincipal extends javax.swing.JPanel {
         jPopMenuPrincipal.add(jSeparator1);
 
         SalirSesion.setText("Salir de sesión");
+        SalirSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirSesionActionPerformed(evt);
+            }
+        });
         jPopMenuPrincipal.add(SalirSesion);
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -102,18 +107,6 @@ public class VPrincipal extends javax.swing.JPanel {
             .addGap(0, 32, Short.MAX_VALUE)
         );
 
-        jBusqueda.setBackground(new java.awt.Color(216, 216, 216));
-        jBusqueda.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jBusqueda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBusquedaActionPerformed(evt);
-            }
-        });
-
-        jBotonSearch.setBackground(new java.awt.Color(216, 215, 214));
-        jBotonSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchicon.png"))); // NOI18N
-        jBotonSearch.setBorder(null);
-
         jBotonMenu.setBackground(new java.awt.Color(68, 217, 230));
         jBotonMenu.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jBotonMenu.setText("Menu");
@@ -129,8 +122,20 @@ public class VPrincipal extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mapa2.jpeg"))); // NOI18N
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(68, 217, 230));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Ayuda");
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+        jTextArea1.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -140,15 +145,14 @@ public class VPrincipal extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 119, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -156,19 +160,14 @@ public class VPrincipal extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jBotonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                    .addComponent(jBusqueda)
-                    .addComponent(jBotonMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBusquedaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBusquedaActionPerformed
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
         // TODO add your handling code here:
@@ -186,12 +185,12 @@ public class VPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_NotificacionesActionPerformed
 
     private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
-        this.v.getContentPane().setVisible(false);
-        Ayuda vp = new Ayuda(this.usu);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
+        // TODO add your handling code here:
     }//GEN-LAST:event_AyudaActionPerformed
+
+    private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SalirSesionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -202,11 +201,11 @@ public class VPrincipal extends javax.swing.JPanel {
     private javax.swing.JMenuItem SalirSesion;
     private javax.swing.JMenuItem Usuario;
     private javax.swing.JButton jBotonMenu;
-    private javax.swing.JButton jBotonSearch;
-    private javax.swing.JTextField jBusqueda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
