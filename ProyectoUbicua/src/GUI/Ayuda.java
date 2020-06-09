@@ -31,6 +31,7 @@ public class Ayuda extends javax.swing.JPanel {
     public Ayuda(Usuario us) {
         initComponents();
         this.usu=us;
+        this.VolverPrincipal.setText("Volver a Principal");
     }
 
     /**
@@ -43,18 +44,26 @@ public class Ayuda extends javax.swing.JPanel {
     private void initComponents() {
 
         jPopMenuPrincipal = new javax.swing.JPopupMenu();
+        VolverPrincipal = new javax.swing.JMenuItem();
         Notificaciones = new javax.swing.JMenuItem();
         Usuario = new javax.swing.JMenuItem();
         Multas = new javax.swing.JMenuItem();
         Configuración = new javax.swing.JMenuItem();
-        Ayuda = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         SalirSesion = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jBotonMenu = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        LabelAyuda = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+
+        VolverPrincipal.setText("Ayuda");
+        VolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverPrincipalActionPerformed(evt);
+            }
+        });
+        jPopMenuPrincipal.add(VolverPrincipal);
 
         Notificaciones.setText("Notificaciones");
         Notificaciones.addActionListener(new java.awt.event.ActionListener() {
@@ -73,14 +82,6 @@ public class Ayuda extends javax.swing.JPanel {
 
         Configuración.setText("Configuración");
         jPopMenuPrincipal.add(Configuración);
-
-        Ayuda.setText("Ayuda");
-        Ayuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AyudaActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(Ayuda);
         jPopMenuPrincipal.add(jSeparator1);
 
         SalirSesion.setText("Salir de sesión");
@@ -122,11 +123,11 @@ public class Ayuda extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(68, 217, 230));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Ayuda");
+        LabelAyuda.setBackground(new java.awt.Color(255, 255, 255));
+        LabelAyuda.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
+        LabelAyuda.setForeground(new java.awt.Color(68, 217, 230));
+        LabelAyuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelAyuda.setText("Ayuda");
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -151,7 +152,7 @@ public class Ayuda extends javax.swing.JPanel {
                         .addGap(9, 9, 9)
                         .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 119, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -162,7 +163,7 @@ public class Ayuda extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
@@ -184,9 +185,13 @@ public class Ayuda extends javax.swing.JPanel {
         
     }//GEN-LAST:event_NotificacionesActionPerformed
 
-    private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AyudaActionPerformed
+    private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
+        this.v.getContentPane().setVisible(false);
+        VPrincipal vp = new VPrincipal(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_VolverPrincipalActionPerformed
 
     private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
         // TODO add your handling code here:
@@ -194,14 +199,14 @@ public class Ayuda extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Ayuda;
     private javax.swing.JMenuItem Configuración;
+    private javax.swing.JLabel LabelAyuda;
     private javax.swing.JMenuItem Multas;
     private javax.swing.JMenuItem Notificaciones;
     private javax.swing.JMenuItem SalirSesion;
     private javax.swing.JMenuItem Usuario;
+    private javax.swing.JMenuItem VolverPrincipal;
     private javax.swing.JButton jBotonMenu;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JScrollPane jScrollPane1;

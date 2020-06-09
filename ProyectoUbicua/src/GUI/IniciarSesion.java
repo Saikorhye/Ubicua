@@ -6,6 +6,7 @@
 package GUI;
 
 import Clases.Usuario;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 /**
@@ -85,6 +86,11 @@ public class IniciarSesion extends javax.swing.JPanel {
         jContrasena.setBackground(new java.awt.Color(216, 216, 216));
         jContrasena.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jContrasena.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jContrasena.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jContrasenaKeyPressed(evt);
+            }
+        });
 
         jButtonAcceder.setBackground(new java.awt.Color(68, 217, 230));
         jButtonAcceder.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -93,6 +99,11 @@ public class IniciarSesion extends javax.swing.JPanel {
         jButtonAcceder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAccederActionPerformed(evt);
+            }
+        });
+        jButtonAcceder.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButtonAccederKeyPressed(evt);
             }
         });
 
@@ -179,7 +190,35 @@ public class IniciarSesion extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonRegistrarteActionPerformed
 
     private void jButtonAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccederActionPerformed
-        // TODO add your handling code here:
+        acceso();
+    }//GEN-LAST:event_jButtonAccederActionPerformed
+
+    private void jButtonAccederKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonAccederKeyPressed
+       if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+         acceso();
+       }
+    }//GEN-LAST:event_jButtonAccederKeyPressed
+
+    private void jContrasenaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jContrasenaKeyPressed
+       if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+         acceso();
+       }
+    }//GEN-LAST:event_jContrasenaKeyPressed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField JCorreo;
+    private javax.swing.JButton jButtonAcceder;
+    private javax.swing.JButton jButtonImagen;
+    private javax.swing.JButton jButtonRegistrarte;
+    private javax.swing.JPasswordField jContrasena;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    // End of variables declaration//GEN-END:variables
+
+private void acceso(){
+    // TODO add your handling code here:
         int cont=0;
         String correo=JCorreo.getText();
         String contrasena = new String(jContrasena.getPassword());
@@ -203,17 +242,7 @@ public class IniciarSesion extends javax.swing.JPanel {
             ErrorCredenciales vu=new ErrorCredenciales(v, false);
             vu.setVisible(true);
         }
-    }//GEN-LAST:event_jButtonAccederActionPerformed
-
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField JCorreo;
-    private javax.swing.JButton jButtonAcceder;
-    private javax.swing.JButton jButtonImagen;
-    private javax.swing.JButton jButtonRegistrarte;
-    private javax.swing.JPasswordField jContrasena;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    // End of variables declaration//GEN-END:variables
 }
+
+}
+
