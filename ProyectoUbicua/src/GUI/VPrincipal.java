@@ -48,63 +48,71 @@ public class VPrincipal extends javax.swing.JPanel {
         Multas = new javax.swing.JMenuItem();
         Configuración = new javax.swing.JMenuItem();
         Ayuda = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        SalirSesion = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jButtonAtras = new javax.swing.JButton();
         jBusqueda = new javax.swing.JTextField();
         jBotonSearch = new javax.swing.JButton();
         jBotonMenu = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        Notificaciones.setText("jMenuItem1");
+        Notificaciones.setText("Notificaciones");
+        Notificaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NotificacionesActionPerformed(evt);
+            }
+        });
         jPopMenuPrincipal.add(Notificaciones);
+        Notificaciones.getAccessibleContext().setAccessibleName("JMenuItem1");
 
-        Usuario.setText("jMenuItem1");
+        Usuario.setText("Usuario");
         jPopMenuPrincipal.add(Usuario);
 
-        Multas.setText("jMenuItem2");
+        Multas.setText("Multas");
         jPopMenuPrincipal.add(Multas);
 
-        Configuración.setText("jMenuItem3");
+        Configuración.setText("Configuración");
         jPopMenuPrincipal.add(Configuración);
 
-        Ayuda.setText("jMenuItem4");
+        Ayuda.setText("Ayuda");
         jPopMenuPrincipal.add(Ayuda);
+        jPopMenuPrincipal.add(jSeparator1);
+
+        SalirSesion.setText("Salir de sesión");
+        jPopMenuPrincipal.add(SalirSesion);
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(68, 217, 230));
         jPanel1.setForeground(new java.awt.Color(68, 217, 230));
 
-        jButtonAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flechaAzulPe.png"))); // NOI18N
-        jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAtrasActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jButtonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButtonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 32, Short.MAX_VALUE)
         );
 
+        jBusqueda.setBackground(new java.awt.Color(216, 216, 216));
+        jBusqueda.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBusquedaActionPerformed(evt);
             }
         });
 
-        jBotonSearch.setText("Buscar");
+        jBotonSearch.setBackground(new java.awt.Color(216, 215, 214));
+        jBotonSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchicon.png"))); // NOI18N
+        jBotonSearch.setBorder(null);
 
+        jBotonMenu.setBackground(new java.awt.Color(68, 217, 230));
+        jBotonMenu.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jBotonMenu.setText("Menu");
+        jBotonMenu.setBorder(null);
         jBotonMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jBotonMenuMouseClicked(evt);
@@ -116,44 +124,42 @@ public class VPrincipal extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mapa2.jpeg"))); // NOI18N
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBotonSearch)
-                .addGap(6, 6, 6))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jBotonMenu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBotonSearch))
-                .addGap(34, 34, 34)
-                .addComponent(jBotonMenu)
-                .addGap(0, 340, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBotonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(jBusqueda)
+                    .addComponent(jBotonMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-        // TODO add your handling code here:
-        this.v.getContentPane().setVisible(false);
-       // IniciarSesion vp = new IniciarSesion(this.usus);
-        //vp.setVisible(true);
-       // vp.setV(this.v);
-        //this.v.setContentPane(vp);
-    }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     private void jBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBusquedaActionPerformed
         // TODO add your handling code here:
@@ -166,8 +172,12 @@ public class VPrincipal extends javax.swing.JPanel {
 
     private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
         // TODO add your handling code here:
-        jPopMenuPrincipal.show(this,evt.getX(),evt.getY());
+        jPopMenuPrincipal.show(this,jBotonMenu.getX(),jBotonMenu.getY()+ jBotonMenu.getHeight());
     }//GEN-LAST:event_jBotonMenuMouseClicked
+
+    private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NotificacionesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -175,12 +185,14 @@ public class VPrincipal extends javax.swing.JPanel {
     private javax.swing.JMenuItem Configuración;
     private javax.swing.JMenuItem Multas;
     private javax.swing.JMenuItem Notificaciones;
+    private javax.swing.JMenuItem SalirSesion;
     private javax.swing.JMenuItem Usuario;
     private javax.swing.JButton jBotonMenu;
     private javax.swing.JButton jBotonSearch;
     private javax.swing.JTextField jBusqueda;
-    private javax.swing.JButton jButtonAtras;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

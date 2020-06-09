@@ -101,6 +101,7 @@ public class IniciarSesion extends javax.swing.JPanel {
         jButtonRegistrarte.setForeground(new java.awt.Color(68, 217, 230));
         jButtonRegistrarte.setText("Registrate");
         jButtonRegistrarte.setBorder(null);
+        jButtonRegistrarte.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonRegistrarte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegistrarteActionPerformed(evt);
