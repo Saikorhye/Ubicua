@@ -30,9 +30,11 @@ public class VUsuario extends javax.swing.JPanel {
     }
     
     public VUsuario(Usuario us) {
-        initComponents();
         this.usu=us;
+        initComponents();
         this.VolverPrincipal.setText("Volver a Principal");
+        this.BContra.setVisible(false);
+        this.BCambios.setVisible(false);
     }
 
     /**
@@ -55,9 +57,20 @@ public class VUsuario extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jBotonMenu = new javax.swing.JButton();
         LabelAyuda = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        BEditar = new javax.swing.JButton();
+        BVehiculos = new javax.swing.JButton();
+        LNombre = new javax.swing.JLabel();
+        LApellidos = new javax.swing.JLabel();
+        LNombreUsu = new javax.swing.JLabel();
+        LApellidosUsu = new javax.swing.JLabel();
+        LTelefono = new javax.swing.JLabel();
+        LTelefonoUsu = new javax.swing.JLabel();
+        LEmail = new javax.swing.JLabel();
+        LEmailUsu = new javax.swing.JLabel();
+        LTarjeta = new javax.swing.JLabel();
+        LTarjetaUsu = new javax.swing.JLabel();
+        BContra = new javax.swing.JButton();
+        BCambios = new javax.swing.JButton();
 
         VolverPrincipal.setText("Usuario");
         VolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
@@ -148,21 +161,55 @@ public class VUsuario extends javax.swing.JPanel {
         LabelAyuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelAyuda.setText("Usuario");
 
-        jButton1.setText("LogOut");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BEditar.setText("Editar");
+        BEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BEditarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Editar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BVehiculos.setText("Vehiculos");
+
+        LNombre.setText("Nombre");
+
+        LApellidos.setText("Apellidos");
+
+        LNombreUsu.setText(usu.getNombre().split(" ")[0]);
+
+        String[] nombreComp = usu.getNombre().split(" ");
+        String apellidos = null;
+        if (nombreComp.length == 2) {
+            apellidos = nombreComp[1];
+        } else {
+            apellidos = nombreComp[1] + " " + nombreComp[2];
+        }
+        LApellidosUsu.setText(apellidos);
+
+        LTelefono.setText("Telefono");
+
+        LTelefonoUsu.setText(usu.getTelefono());
+
+        LEmail.setText("Email");
+
+        LEmailUsu.setText(usu.getCorreo());
+
+        LTarjeta.setText("Tarjeta");
+
+        LTarjetaUsu.setText(usu.getMetodoPago());
+
+        BContra.setText("Cambiar contraseña");
+        BContra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BContraActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Registrar");
+        BCambios.setText("Guardar cambios");
+        BCambios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BCambiosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -170,21 +217,48 @@ public class VUsuario extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LApellidos)
+                            .addComponent(LNombre)
+                            .addComponent(LTelefono)
+                            .addComponent(LEmail)
+                            .addComponent(LTarjeta)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(BEditar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(jButton1)
-                        .addGap(59, 59, 59)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                        .addComponent(jButton3)))
-                .addContainerGap())
+                        .addComponent(BContra)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LNombreUsu)
+                                    .addComponent(LApellidosUsu)
+                                    .addComponent(LTelefonoUsu)
+                                    .addComponent(LEmailUsu)
+                                    .addComponent(LTarjetaUsu))
+                                .addGap(47, 89, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BVehiculos)
+                                .addGap(65, 65, 65))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(BCambios)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,10 +270,33 @@ public class VUsuario extends javax.swing.JPanel {
                     .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(366, Short.MAX_VALUE))
+                    .addComponent(BEditar)
+                    .addComponent(BVehiculos))
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LNombre)
+                    .addComponent(LNombreUsu))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LApellidos)
+                    .addComponent(LApellidosUsu))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LTelefono)
+                    .addComponent(LTelefonoUsu))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LEmail)
+                    .addComponent(LEmailUsu))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LTarjeta)
+                    .addComponent(LTarjetaUsu))
+                .addGap(66, 66, 66)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BContra)
+                    .addComponent(BCambios))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -231,7 +328,16 @@ public class VUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_AyudaActionPerformed
 
     private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
-      
+      this.v.getContentPane().setVisible(false);
+        Usuario usu1 = new Usuario("Eva Suarez Vazquez", "eva@gmail.com", "1234", "Tarjeta", "666666666");
+        Usuario usu2 = new Usuario("admin", "admin", "admin", "Tarjeta", "666666666");
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        usuarios.add(usu1);
+        usuarios.add(usu2);
+        IniciarSesion vi = new IniciarSesion(usuarios);
+        vi.setVisible(true);
+        vi.setV(this.v);
+        this.v.setContentPane(vi);
     }//GEN-LAST:event_SalirSesionActionPerformed
 
     private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
@@ -258,36 +364,48 @@ public class VUsuario extends javax.swing.JPanel {
         this.v.setContentPane(vp);
     }//GEN-LAST:event_ConfiguraciónActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.v.getContentPane().setVisible(false);
-        Usuario usu1 = new Usuario("Eva Suarez Vazquez", "eva@gmail.com", "1234", "Tarjeta", "666666666");
-        Usuario usu2 = new Usuario("admin", "admin", "admin", "Tarjeta", "666666666");
-        ArrayList<Usuario> usuarios = new ArrayList<>();
-        usuarios.add(usu1);
-        usuarios.add(usu2);
-        IniciarSesion vi = new IniciarSesion(usuarios);
-        vi.setVisible(true);
-        vi.setV(this.v);
-        this.v.setContentPane(vi);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void BEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BEditarActionPerformed
+        BContra.setVisible(true);
+        BCambios.setVisible(true);
+        BVehiculos.setVisible(false);
+        BEditar.setVisible(false);
+    }//GEN-LAST:event_BEditarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BContraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BContraActionPerformed
+
+    private void BCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCambiosActionPerformed
+        BContra.setVisible(false);
+        BCambios.setVisible(false);
+        BVehiculos.setVisible(true);
+        BEditar.setVisible(true);
+    }//GEN-LAST:event_BCambiosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Ayuda;
+    private javax.swing.JButton BCambios;
+    private javax.swing.JButton BContra;
+    private javax.swing.JButton BEditar;
+    private javax.swing.JButton BVehiculos;
     private javax.swing.JMenuItem Configuración;
+    private javax.swing.JLabel LApellidos;
+    private javax.swing.JLabel LApellidosUsu;
+    private javax.swing.JLabel LEmail;
+    private javax.swing.JLabel LEmailUsu;
+    private javax.swing.JLabel LNombre;
+    private javax.swing.JLabel LNombreUsu;
+    private javax.swing.JLabel LTarjeta;
+    private javax.swing.JLabel LTarjetaUsu;
+    private javax.swing.JLabel LTelefono;
+    private javax.swing.JLabel LTelefonoUsu;
     private javax.swing.JLabel LabelAyuda;
     private javax.swing.JMenuItem Multas;
     private javax.swing.JMenuItem Notificaciones;
     private javax.swing.JMenuItem SalirSesion;
     private javax.swing.JMenuItem VolverPrincipal;
     private javax.swing.JButton jBotonMenu;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JPopupMenu.Separator jSeparator1;
