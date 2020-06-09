@@ -42,21 +42,145 @@ public class VPrincipal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopMenuPrincipal = new javax.swing.JPopupMenu();
+        Notificaciones = new javax.swing.JMenuItem();
+        Usuario = new javax.swing.JMenuItem();
+        Multas = new javax.swing.JMenuItem();
+        Configuración = new javax.swing.JMenuItem();
+        Ayuda = new javax.swing.JMenuItem();
+        jPanel1 = new javax.swing.JPanel();
+        jButtonAtras = new javax.swing.JButton();
+        jBusqueda = new javax.swing.JTextField();
+        jBotonSearch = new javax.swing.JButton();
+        jBotonMenu = new javax.swing.JButton();
+
+        Notificaciones.setText("jMenuItem1");
+        jPopMenuPrincipal.add(Notificaciones);
+
+        Usuario.setText("jMenuItem1");
+        jPopMenuPrincipal.add(Usuario);
+
+        Multas.setText("jMenuItem2");
+        jPopMenuPrincipal.add(Multas);
+
+        Configuración.setText("jMenuItem3");
+        jPopMenuPrincipal.add(Configuración);
+
+        Ayuda.setText("jMenuItem4");
+        jPopMenuPrincipal.add(Ayuda);
+
         setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(68, 217, 230));
+        jPanel1.setForeground(new java.awt.Color(68, 217, 230));
+
+        jButtonAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flechaAzulPe.png"))); // NOI18N
+        jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAtrasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jButtonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBusquedaActionPerformed(evt);
+            }
+        });
+
+        jBotonSearch.setText("Buscar");
+
+        jBotonMenu.setText("Menu");
+        jBotonMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBotonMenuMouseClicked(evt);
+            }
+        });
+        jBotonMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jBotonSearch)
+                .addGap(6, 6, 6))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jBotonMenu)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBotonSearch))
+                .addGap(34, 34, 34)
+                .addComponent(jBotonMenu)
+                .addGap(0, 340, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+       // IniciarSesion vp = new IniciarSesion(this.usus);
+        //vp.setVisible(true);
+       // vp.setV(this.v);
+        //this.v.setContentPane(vp);
+    }//GEN-LAST:event_jButtonAtrasActionPerformed
+
+    private void jBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBusquedaActionPerformed
+
+    private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
+        // TODO add your handling code here:
+       // menuEmergente.show(this,evt.get .getX(),evt.getY());
+    }//GEN-LAST:event_jBotonMenuActionPerformed
+
+    private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
+        // TODO add your handling code here:
+        jPopMenuPrincipal.show(this,evt.getX(),evt.getY());
+    }//GEN-LAST:event_jBotonMenuMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Ayuda;
+    private javax.swing.JMenuItem Configuración;
+    private javax.swing.JMenuItem Multas;
+    private javax.swing.JMenuItem Notificaciones;
+    private javax.swing.JMenuItem Usuario;
+    private javax.swing.JButton jBotonMenu;
+    private javax.swing.JButton jBotonSearch;
+    private javax.swing.JTextField jBusqueda;
+    private javax.swing.JButton jButtonAtras;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu jPopMenuPrincipal;
     // End of variables declaration//GEN-END:variables
 }
