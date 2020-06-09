@@ -106,6 +106,8 @@ public class VUsuario extends javax.swing.JPanel {
         jPopMenuPrincipal.add(SalirSesion);
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(350, 500));
+        setMinimumSize(new java.awt.Dimension(350, 500));
 
         jPanel1.setBackground(new java.awt.Color(68, 217, 230));
         jPanel1.setForeground(new java.awt.Color(68, 217, 230));
@@ -151,8 +153,8 @@ public class VUsuario extends javax.swing.JPanel {
                 .addGap(9, 9, 9)
                 .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,7 +164,7 @@ public class VUsuario extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(401, Short.MAX_VALUE))
+                .addContainerGap(412, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
