@@ -75,12 +75,27 @@ public class Ayuda extends javax.swing.JPanel {
         Notificaciones.getAccessibleContext().setAccessibleName("JMenuItem1");
 
         Usuario.setText("Usuario");
+        Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsuarioActionPerformed(evt);
+            }
+        });
         jPopMenuPrincipal.add(Usuario);
 
         Multas.setText("Multas");
+        Multas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MultasActionPerformed(evt);
+            }
+        });
         jPopMenuPrincipal.add(Multas);
 
         Configuración.setText("Configuración");
+        Configuración.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfiguraciónActionPerformed(evt);
+            }
+        });
         jPopMenuPrincipal.add(Configuración);
         jPopMenuPrincipal.add(jSeparator1);
 
@@ -181,8 +196,11 @@ public class Ayuda extends javax.swing.JPanel {
     }//GEN-LAST:event_jBotonMenuMouseClicked
 
     private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
-        // TODO add your handling code here:
-        
+        this.v.getContentPane().setVisible(false);
+        Notificaciones vp = new Notificaciones(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
     }//GEN-LAST:event_NotificacionesActionPerformed
 
     private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
@@ -196,6 +214,30 @@ public class Ayuda extends javax.swing.JPanel {
     private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SalirSesionActionPerformed
+
+    private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
+         this.v.getContentPane().setVisible(false);
+        VUsuario vp = new VUsuario(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_UsuarioActionPerformed
+
+    private void MultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultasActionPerformed
+       this.v.getContentPane().setVisible(false);
+        Multas vp = new Multas(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_MultasActionPerformed
+
+    private void ConfiguraciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguraciónActionPerformed
+          this.v.getContentPane().setVisible(false);
+        Configuracion vp = new Configuracion(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_ConfiguraciónActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

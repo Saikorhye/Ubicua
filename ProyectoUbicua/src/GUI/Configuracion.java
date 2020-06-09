@@ -31,6 +31,7 @@ public class Configuracion extends javax.swing.JPanel {
     public Configuracion(Usuario us) {
         initComponents();
         this.usu=us;
+        this.VolverPrincipal.setText("Volver a Principal");
     }
 
     /**
@@ -43,18 +44,24 @@ public class Configuracion extends javax.swing.JPanel {
     private void initComponents() {
 
         jPopMenuPrincipal = new javax.swing.JPopupMenu();
+        VolverPrincipal = new javax.swing.JMenuItem();
         Notificaciones = new javax.swing.JMenuItem();
         Usuario = new javax.swing.JMenuItem();
         Multas = new javax.swing.JMenuItem();
-        Configuración = new javax.swing.JMenuItem();
         Ayuda = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         SalirSesion = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jBotonMenu = new javax.swing.JButton();
         LabelAyuda = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+
+        VolverPrincipal.setText("Configuración");
+        VolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverPrincipalActionPerformed(evt);
+            }
+        });
+        jPopMenuPrincipal.add(VolverPrincipal);
 
         Notificaciones.setText("Notificaciones");
         Notificaciones.addActionListener(new java.awt.event.ActionListener() {
@@ -80,14 +87,6 @@ public class Configuracion extends javax.swing.JPanel {
             }
         });
         jPopMenuPrincipal.add(Multas);
-
-        Configuración.setText("Configuración");
-        Configuración.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConfiguraciónActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(Configuración);
 
         Ayuda.setText("Ayuda");
         Ayuda.addActionListener(new java.awt.event.ActionListener() {
@@ -141,16 +140,7 @@ public class Configuracion extends javax.swing.JPanel {
         LabelAyuda.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
         LabelAyuda.setForeground(new java.awt.Color(68, 217, 230));
         LabelAyuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelAyuda.setText("Ayuda");
-
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(jTextArea1);
+        LabelAyuda.setText("Configuración");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -158,17 +148,11 @@ public class Configuracion extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 119, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(9, 9, 9)
+                .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,9 +162,7 @@ public class Configuracion extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(401, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -231,28 +213,26 @@ public class Configuracion extends javax.swing.JPanel {
         this.v.setContentPane(vp);
     }//GEN-LAST:event_MultasActionPerformed
 
-    private void ConfiguraciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguraciónActionPerformed
+    private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
         this.v.getContentPane().setVisible(false);
-        Configuracion vp = new Configuracion(this.usu);
+        VPrincipal vp = new VPrincipal(this.usu);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
-    }//GEN-LAST:event_ConfiguraciónActionPerformed
+    }//GEN-LAST:event_VolverPrincipalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Ayuda;
-    private javax.swing.JMenuItem Configuración;
     private javax.swing.JLabel LabelAyuda;
     private javax.swing.JMenuItem Multas;
     private javax.swing.JMenuItem Notificaciones;
     private javax.swing.JMenuItem SalirSesion;
     private javax.swing.JMenuItem Usuario;
+    private javax.swing.JMenuItem VolverPrincipal;
     private javax.swing.JButton jBotonMenu;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
