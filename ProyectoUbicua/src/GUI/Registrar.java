@@ -106,7 +106,7 @@ public class Registrar extends javax.swing.JPanel {
 
         jComboBoxPago.setBackground(new java.awt.Color(216, 216, 216));
         jComboBoxPago.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jComboBoxPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tarjeta de crédito", "Paypal", "Bizum" }));
 
         jCheckBoxTerminos.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBoxTerminos.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 8)); // NOI18N
@@ -224,13 +224,14 @@ public class Registrar extends javax.swing.JPanel {
 
     private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
         // TODO add your handling code here:
-        if(jNombre.getText() == null || jCorreo.getText() == null || jContrasena.getPassword() == null || jTelefono.getText() == null){
+        if(jNombre.getText().equals("") || jCorreo.getText().equals("") || jContrasena.getPassword().equals("") || jTelefono.getText().equals("")){
             FaltanDatos vu=new FaltanDatos(v, false);
             vu.setVisible(true);
         }
         else{
             if(jCheckBoxTerminos.isSelected()){
-            Usuario us = new Usuario(jNombre.getText(), jCorreo.getText(), new String(jContrasena.getPassword()), null, jTelefono.getText());
+            Usuario us = new Usuario(jNombre.getText(), jCorreo.getText(), new String(jContrasena.getPassword()), jComboBoxPago.getSelectedItem().toString(), jTelefono.getText());
+            System.out.println("Metodo pago: "+jComboBoxPago.getSelectedItem().toString()+"\n");
             this.usus.add(us);
             this.v.getContentPane().setVisible(false);
             VPrincipal vp = new VPrincipal(us);
