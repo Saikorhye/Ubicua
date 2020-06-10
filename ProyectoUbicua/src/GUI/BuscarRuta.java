@@ -38,7 +38,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     public BuscarRuta(Usuario usus) {
         initComponents();
         this.usu=usus;
-        //this.VolverPrincipal.setText("Volver a Principal");
+        this.RadioButtonSelec();
     }
 
     /**
@@ -78,7 +78,15 @@ public class BuscarRuta extends javax.swing.JPanel {
         jBotonSearch = new javax.swing.JButton();
         jBotonMenu = new javax.swing.JButton();
 
+        jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jPopMenuPrincipal.setForeground(new java.awt.Color(255, 255, 255));
+        jPopMenuPrincipal.setBorder(null);
+        jPopMenuPrincipal.setBorderPainted(false);
+
+        jNotificaciones.setBackground(new java.awt.Color(68, 217, 230));
+        jNotificaciones.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jNotificaciones.setText("Notificaciones");
+        jNotificaciones.setBorder(null);
         jNotificaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jNotificacionesActionPerformed(evt);
@@ -86,7 +94,10 @@ public class BuscarRuta extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(jNotificaciones);
 
+        jUsuario.setBackground(new java.awt.Color(68, 217, 230));
+        jUsuario.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jUsuario.setText("Usuario");
+        jUsuario.setBorder(null);
         jUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jUsuarioActionPerformed(evt);
@@ -94,7 +105,10 @@ public class BuscarRuta extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(jUsuario);
 
+        jMultas.setBackground(new java.awt.Color(68, 217, 230));
+        jMultas.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jMultas.setText("Multas");
+        jMultas.setBorder(null);
         jMultas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMultasActionPerformed(evt);
@@ -102,7 +116,10 @@ public class BuscarRuta extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(jMultas);
 
+        jConfiguracion.setBackground(new java.awt.Color(68, 217, 230));
+        jConfiguracion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jConfiguracion.setText("Configuracion");
+        jConfiguracion.setBorder(null);
         jConfiguracion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jConfiguracionActionPerformed(evt);
@@ -110,16 +127,24 @@ public class BuscarRuta extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(jConfiguracion);
 
+        jAyuda.setBackground(new java.awt.Color(68, 217, 230));
+        jAyuda.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jAyuda.setText("Ayuda");
+        jAyuda.setBorder(null);
         jAyuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAyudaActionPerformed(evt);
             }
         });
         jPopMenuPrincipal.add(jAyuda);
+
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jPopMenuPrincipal.add(jSeparator1);
 
+        jSalirSesion.setBackground(new java.awt.Color(68, 217, 230));
+        jSalirSesion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jSalirSesion.setText("Cerrar sesión");
+        jSalirSesion.setBorder(null);
         jSalirSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSalirSesionActionPerformed(evt);
@@ -307,8 +332,10 @@ public class BuscarRuta extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jBusqueda.setEditable(false);
         jBusqueda.setBackground(new java.awt.Color(255, 255, 255));
         jBusqueda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(216, 216, 216)));
+        jBusqueda.setEnabled(false);
         jBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBusquedaActionPerformed(evt);
@@ -318,6 +345,7 @@ public class BuscarRuta extends javax.swing.JPanel {
         jBotonSearch.setBackground(new java.awt.Color(216, 215, 214));
         jBotonSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchicon.png"))); // NOI18N
         jBotonSearch.setBorder(null);
+        jBotonSearch.setEnabled(false);
         jBotonSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBotonSearchActionPerformed(evt);
@@ -392,6 +420,7 @@ public class BuscarRuta extends javax.swing.JPanel {
 
     private void jBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBusquedaActionPerformed
         // TODO add your handling code here:
+       
     }//GEN-LAST:event_jBusquedaActionPerformed
 
     private void jBotonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSearchActionPerformed
@@ -495,6 +524,7 @@ public class BuscarRuta extends javax.swing.JPanel {
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
+        vp.setFondoMapaRuta();
     }//GEN-LAST:event_jButtonBuscarRutaActionPerformed
 
     private void jButtonBuscarLibreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarLibreActionPerformed
@@ -504,6 +534,7 @@ public class BuscarRuta extends javax.swing.JPanel {
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
+        vp.setFondoMapaLibre();
     }//GEN-LAST:event_jButtonBuscarLibreActionPerformed
 
 
@@ -551,6 +582,22 @@ public class BuscarRuta extends javax.swing.JPanel {
 	this.setOpaque(false);
 	this.image = new ImageIcon(url).getImage();
 	repaint();
+    }
+    
+    public void RadioButtonSelec(){
+        jRadioButton1.setSelected(true);
+        if(jRadioButton1.isSelected()){
+            jPanel2.setBackground(Color.gray);
+            jTextLugar.setEditable(false);
+            jButtonBuscarLibre.setBackground(Color.LIGHT_GRAY);
+            jButtonBuscarLibre.setEnabled(false);
+            
+            jPanel3.setBackground(Color.decode("#E6E6E6"));
+            jTextOrigen.setEditable(true);
+            jTextDestino.setEditable(true);
+            jButtonBuscarRuta.setBackground(Color.decode("#44d9e6"));
+            jButtonBuscarRuta.setEnabled(true);
+        }
     }
 }
 

@@ -13,6 +13,7 @@ public class Usuario {
     private String telefono;
     private ArrayList<Notificacion> notificaciones;
     private ArrayList<Multa> multas;
+    private ArrayList<Vehiculo> vehiculos;
     
     public Usuario(String nombr, String corre, String contrasen, String metodoPag, String telefon){
         this.nombre=nombr;
@@ -22,6 +23,7 @@ public class Usuario {
         this.telefono=telefon;
         this.notificaciones = new ArrayList<>();
         this.multas = new ArrayList<>();
+        this.vehiculos = new ArrayList<>();
     
     }
     
@@ -53,6 +55,10 @@ public class Usuario {
         return this.multas;
     }
      
+    public ArrayList<Vehiculo> getVehiculos(){
+        return this.vehiculos;
+    }
+     
     public void setContrasena(String nova){
         this.contrasena=nova;
     }
@@ -73,11 +79,19 @@ public class Usuario {
         this.multas = multas;
     }
      
+    public void setVehiculos(ArrayList<Vehiculo> veh){
+        this.vehiculos=veh;
+    }
+     
      public void addNotificacion(Notificacion n){
          notificaciones.add(n);
      }
      
      public void addMulta(Multa m){
          multas.add(m);
+     }
+     
+     public void addVehiculo(Vehiculo ve){
+         this.vehiculos.add(ve);
      }
 }
