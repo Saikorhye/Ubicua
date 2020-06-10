@@ -95,4 +95,13 @@ public class Usuario implements Serializable {
      public void addVehiculo(Vehiculo ve){
          this.vehiculos.add(ve);
      }
+     
+     public void removeVehiculo(String matricula) {
+         for (int i = 0; i < this.vehiculos.size(); i++) {
+             if (this.vehiculos.get(i).getMatricula().equals(matricula)) {
+                 this.vehiculos.remove(i);
+                 break;
+             }
+         }
+     }
 }

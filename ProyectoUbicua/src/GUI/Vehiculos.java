@@ -68,6 +68,8 @@ public class Vehiculos extends javax.swing.JPanel {
         LabelAyuda = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListaVehiculos = new javax.swing.JTable();
+        BRegistrar = new javax.swing.JButton();
+        BEliminar = new javax.swing.JButton();
 
         VolverPrincipal.setText("Usuario");
         VolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
@@ -160,10 +162,7 @@ public class Vehiculos extends javax.swing.JPanel {
 
         ListaVehiculos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Matricula", "Descripcion"
@@ -184,7 +183,31 @@ public class Vehiculos extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        ListaVehiculos.getTableHeader().setReorderingAllowed(false);
+        ListaVehiculos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaVehiculosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(ListaVehiculos);
+        if (ListaVehiculos.getColumnModel().getColumnCount() > 0) {
+            ListaVehiculos.getColumnModel().getColumn(0).setMaxWidth(500);
+        }
+
+        BRegistrar.setText("Registrar un vehiculo nuevo");
+        BRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BRegistrarActionPerformed(evt);
+            }
+        });
+
+        BEliminar.setText("Eliminar vehiculo");
+        BEliminar.setEnabled(false);
+        BEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -200,7 +223,12 @@ public class Vehiculos extends javax.swing.JPanel {
                         .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BEliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BRegistrar)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -212,7 +240,12 @@ public class Vehiculos extends javax.swing.JPanel {
                     .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BRegistrar)
+                    .addComponent(BEliminar))
+                .addGap(27, 27, 27))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -244,16 +277,7 @@ public class Vehiculos extends javax.swing.JPanel {
     }//GEN-LAST:event_AyudaActionPerformed
 
     private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
-      this.v.getContentPane().setVisible(false);
-        Usuario usu1 = new Usuario("Eva Suarez Vazquez", "eva@gmail.com", "1234", "Tarjeta", "666666666");
-        Usuario usu2 = new Usuario("admin", "admin", "admin", "Tarjeta", "666666666");
-        ArrayList<Usuario> usuarios = new ArrayList<>();
-        usuarios.add(usu1);
-        usuarios.add(usu2);
-        IniciarSesion vi = new IniciarSesion(usuarios);
-        vi.setVisible(true);
-        vi.setV(this.v);
-        this.v.setContentPane(vi);
+    
     }//GEN-LAST:event_SalirSesionActionPerformed
 
     private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
@@ -281,9 +305,27 @@ public class Vehiculos extends javax.swing.JPanel {
         this.v.setContentPane(vp);
     }//GEN-LAST:event_ConfiguraciónActionPerformed
 
+    private void BEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BEliminarActionPerformed
+        DefaultTableModel tm = (DefaultTableModel) ListaVehiculos.getModel();
+        int pos = ListaVehiculos.getSelectedRow();
+        ConfirmacionE ce = new ConfirmacionE(v, true, tm.getValueAt(pos, 0).toString(), tm.getValueAt(pos, 1).toString(), this);
+        ce.setVisible(true);
+    }//GEN-LAST:event_BEliminarActionPerformed
+
+    private void ListaVehiculosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaVehiculosMouseClicked
+        BEliminar.setEnabled(true);
+    }//GEN-LAST:event_ListaVehiculosMouseClicked
+
+    private void BRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BRegistrarActionPerformed
+        VRegistrarVehiculo rv = new VRegistrarVehiculo(v, true, usu.getVehiculos(), this);
+        rv.setVisible(true);
+    }//GEN-LAST:event_BRegistrarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Ayuda;
+    private javax.swing.JButton BEliminar;
+    private javax.swing.JButton BRegistrar;
     private javax.swing.JMenuItem Configuración;
     private javax.swing.JLabel LabelAyuda;
     private javax.swing.JTable ListaVehiculos;
@@ -297,4 +339,17 @@ public class Vehiculos extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    public void eliminar() {
+        DefaultTableModel tm = (DefaultTableModel) ListaVehiculos.getModel();
+        usu.removeVehiculo(tm.getValueAt(ListaVehiculos.getSelectedRow(), 0).toString());
+        tm.removeRow(ListaVehiculos.getSelectedRow());
+        BEliminar.setEnabled(false);
+    }
+
+    public void registrar(String matricula, String descripcion) {
+        DefaultTableModel tm = (DefaultTableModel) ListaVehiculos.getModel();
+        tm.addRow(new Object[]{matricula, descripcion});
+        usu.addVehiculo(new Vehiculo(matricula, descripcion));
+    }
 }
