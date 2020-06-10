@@ -6,6 +6,7 @@
 package GUI;
 
 import Clases.Usuario;
+import Clases.Vehiculo;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -359,6 +360,9 @@ public class Aparcar extends javax.swing.JPanel {
 
     private void jComboBoxVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVehiculoActionPerformed
         // TODO add your handling code here:
+        for(Vehiculo vehiculo : usu.getVehiculos()){
+            jComboBoxVehiculo.addItem(vehiculo.getMatricula());
+        }
     }//GEN-LAST:event_jComboBoxVehiculoActionPerformed
 
 

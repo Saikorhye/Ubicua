@@ -515,6 +515,7 @@ public class BuscarRuta extends javax.swing.JPanel {
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
+        vp.setFondoMapaPrincipal();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButtonBuscarRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarRutaActionPerformed
