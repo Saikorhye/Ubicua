@@ -6,6 +6,7 @@
 package GUI;
 
 import Clases.Usuario;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -37,6 +38,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     public BuscarRuta(Usuario usus) {
         initComponents();
         this.usu=usus;
+        //this.VolverPrincipal.setText("Volver a Principal");
     }
 
     /**
@@ -49,20 +51,81 @@ public class BuscarRuta extends javax.swing.JPanel {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jPopMenuPrincipal = new javax.swing.JPopupMenu();
+        jNotificaciones = new javax.swing.JMenuItem();
+        jUsuario = new javax.swing.JMenuItem();
+        jMultas = new javax.swing.JMenuItem();
+        jConfiguracion = new javax.swing.JMenuItem();
+        jAyuda = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jSalirSesion = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextOrigen = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jTextDestino = new javax.swing.JTextField();
+        jButtonBuscarRuta = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTextLugar = new javax.swing.JTextField();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonBuscarLibre = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jBusqueda = new javax.swing.JTextField();
+        jBotonSearch = new javax.swing.JButton();
+        jBotonMenu = new javax.swing.JButton();
+
+        jNotificaciones.setText("Notificaciones");
+        jNotificaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jNotificacionesActionPerformed(evt);
+            }
+        });
+        jPopMenuPrincipal.add(jNotificaciones);
+
+        jUsuario.setText("Usuario");
+        jUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUsuarioActionPerformed(evt);
+            }
+        });
+        jPopMenuPrincipal.add(jUsuario);
+
+        jMultas.setText("Multas");
+        jMultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMultasActionPerformed(evt);
+            }
+        });
+        jPopMenuPrincipal.add(jMultas);
+
+        jConfiguracion.setText("Configuracion");
+        jConfiguracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jConfiguracionActionPerformed(evt);
+            }
+        });
+        jPopMenuPrincipal.add(jConfiguracion);
+
+        jAyuda.setText("Ayuda");
+        jAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAyudaActionPerformed(evt);
+            }
+        });
+        jPopMenuPrincipal.add(jAyuda);
+        jPopMenuPrincipal.add(jSeparator1);
+
+        jSalirSesion.setText("Cerrar sesión");
+        jSalirSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSalirSesionActionPerformed(evt);
+            }
+        });
+        jPopMenuPrincipal.add(jSalirSesion);
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -78,18 +141,28 @@ public class BuscarRuta extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabel2.setText("Origen");
 
-        jTextField1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jTextOrigen.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jTextOrigen.setBorder(null);
 
         jLabel3.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabel3.setText("Destino");
 
-        jTextField2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jTextDestino.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jTextDestino.setBorder(null);
 
-        jButton1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jButton1.setText("Buscar");
+        jButtonBuscarRuta.setBackground(new java.awt.Color(68, 217, 230));
+        jButtonBuscarRuta.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jButtonBuscarRuta.setText("Buscar");
+        jButtonBuscarRuta.setBorder(null);
+        jButtonBuscarRuta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarRutaActionPerformed(evt);
+            }
+        });
 
-        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jRadioButton1.setBackground(new java.awt.Color(230, 230, 230));
         buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
@@ -101,61 +174,74 @@ public class BuscarRuta extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton1))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(12, 12, 12))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(jLabel2))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jTextDestino, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jTextOrigen)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButton1)
+                        .addGap(27, 27, 27))))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(115, 115, 115)
+                .addComponent(jButtonBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButton1)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jTextOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addGap(31, 31, 31))
+                .addComponent(jButtonBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6))
         );
 
-        jPanel2.setBackground(new java.awt.Color(164, 164, 164));
+        jPanel2.setBackground(new java.awt.Color(230, 230, 230));
 
         jLabel4.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabel4.setText("Buscar aparcamiento libre");
 
-        jTextField3.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jTextField3.setText("Lugar...");
+        jTextLugar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jTextLugar.setText("Lugar...");
+        jTextLugar.setBorder(null);
 
-        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jRadioButton2.setBackground(new java.awt.Color(230, 230, 230));
         buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
-        jButton2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jButton2.setText("Buscar");
+        jButtonBuscarLibre.setBackground(new java.awt.Color(68, 217, 230));
+        jButtonBuscarLibre.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jButtonBuscarLibre.setText("Buscar");
+        jButtonBuscarLibre.setBorder(null);
+        jButtonBuscarLibre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarLibreActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -163,15 +249,16 @@ public class BuscarRuta extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField3)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(68, 68, 68)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextLugar, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addComponent(jRadioButton2)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonBuscarLibre, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,11 +268,20 @@ public class BuscarRuta extends javax.swing.JPanel {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRadioButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addComponent(jTextLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonBuscarLibre, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addContainerGap())
         );
+
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoX(1).png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -193,42 +289,254 @@ public class BuscarRuta extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGap(6, 6, 6)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addContainerGap())
         );
+
+        jBusqueda.setBackground(new java.awt.Color(255, 255, 255));
+        jBusqueda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(216, 216, 216)));
+        jBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBusquedaActionPerformed(evt);
+            }
+        });
+
+        jBotonSearch.setBackground(new java.awt.Color(216, 215, 214));
+        jBotonSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchicon.png"))); // NOI18N
+        jBotonSearch.setBorder(null);
+        jBotonSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonSearchActionPerformed(evt);
+            }
+        });
+
+        jBotonMenu.setBackground(new java.awt.Color(68, 217, 230));
+        jBotonMenu.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jBotonMenu.setForeground(new java.awt.Color(255, 255, 255));
+        jBotonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoMenuAzul.png"))); // NOI18N
+        jBotonMenu.setBorder(null);
+        jBotonMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBotonMenuMouseClicked(evt);
+            }
+        });
+        jBotonMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(17, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBusqueda)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jBotonMenu)
+                        .addComponent(jBusqueda, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
+        if(jRadioButton1.isSelected()){
+            jPanel2.setBackground(Color.gray);
+            jTextLugar.setEditable(false);
+            jButtonBuscarLibre.setBackground(Color.LIGHT_GRAY);
+            jButtonBuscarLibre.setEnabled(false);
+            
+            jPanel3.setBackground(Color.decode("#E6E6E6"));
+            jTextOrigen.setEditable(true);
+            jTextDestino.setEditable(true);
+            jButtonBuscarRuta.setBackground(Color.decode("#44d9e6"));
+            jButtonBuscarRuta.setEnabled(true);
+        }
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBusquedaActionPerformed
+
+    private void jBotonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSearchActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        BuscarRuta vp = new BuscarRuta(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+        vp.setFondoBuscarRuta();
+    }//GEN-LAST:event_jBotonSearchActionPerformed
+
+    private void jNotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNotificacionesActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        Notificaciones vp = new Notificaciones(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_jNotificacionesActionPerformed
+
+    private void jSalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jSalirSesionActionPerformed
+
+    private void jUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsuarioActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        VUsuario vp = new VUsuario(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_jUsuarioActionPerformed
+
+    private void jMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMultasActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        Multas vp = new Multas(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_jMultasActionPerformed
+
+    private void jConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfiguracionActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        Configuracion vp = new Configuracion(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_jConfiguracionActionPerformed
+
+    private void jAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAyudaActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        Ayuda vp = new Ayuda(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_jAyudaActionPerformed
+
+    private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
+        // TODO add your handling code here:
+        jPopMenuPrincipal.show(this,jBotonMenu.getX(),jBotonMenu.getY()+ jBotonMenu.getHeight());
+    }//GEN-LAST:event_jBotonMenuMouseClicked
+
+    private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
+        // TODO add your handling code here:
+        // menuEmergente.show(this,evt.get .getX(),evt.getY());
+    }//GEN-LAST:event_jBotonMenuActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+        if(jRadioButton2.isSelected()){
+            jPanel3.setBackground(Color.gray);
+            jTextOrigen.setEditable(false);
+            jTextDestino.setEditable(false);
+            jButtonBuscarRuta.setBackground(Color.LIGHT_GRAY);
+            jButtonBuscarRuta.setEnabled(false);
+            
+            jPanel2.setBackground(Color.decode("#E6E6E6"));
+            jTextLugar.setEditable(true);
+            jButtonBuscarLibre.setBackground(Color.decode("#44d9e6"));
+            jButtonBuscarLibre.setEnabled(true);
+        }
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        VPrincipal vp = new VPrincipal(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButtonBuscarRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarRutaActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        Ruta vp = new Ruta(this.usu, jTextOrigen.getText(), jTextDestino.getText());
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_jButtonBuscarRutaActionPerformed
+
+    private void jButtonBuscarLibreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarLibreActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        AparcamientoLibre vp = new AparcamientoLibre(this.usu, jTextLugar.getText());
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_jButtonBuscarLibreActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JMenuItem jAyuda;
+    private javax.swing.JButton jBotonMenu;
+    private javax.swing.JButton jBotonSearch;
+    private javax.swing.JTextField jBusqueda;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonBuscarLibre;
+    private javax.swing.JButton jButtonBuscarRuta;
+    private javax.swing.JMenuItem jConfiguracion;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenuItem jMultas;
+    private javax.swing.JMenuItem jNotificaciones;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPopupMenu jPopMenuPrincipal;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JMenuItem jSalirSesion;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JTextField jTextDestino;
+    private javax.swing.JTextField jTextLugar;
+    private javax.swing.JTextField jTextOrigen;
+    private javax.swing.JMenuItem jUsuario;
+    // End of variables declaration//GEN-END:variables
+
 
     public void paintComponent(Graphics g){
         Dimension tam = this.getSize();
@@ -239,28 +547,10 @@ public class BuscarRuta extends javax.swing.JPanel {
     
     public void setFondoBuscarRuta() {
 	// Construimos la imagen y se la asignamos al atributo background.
-        URL url = getClass().getResource("/Imagenes/FondoRuta.png");
+        URL url = getClass().getResource("/Imagenes/mapimage.png");
 	this.setOpaque(false);
 	this.image = new ImageIcon(url).getImage();
 	repaint();
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    // End of variables declaration//GEN-END:variables
 }
 
