@@ -24,7 +24,10 @@ public class Main {
         ArrayList<Usuario> usuarios = new ArrayList<>();
         Usuario usu1 = new Usuario("Eva Suarez Vazquez", "eva@gmail.com", "1234", "Tarjeta", "666666666");
         Usuario usu2 = new Usuario("admin", "admin", "admin", "Tarjeta", "666666666");
-
+        Vehiculo v1 = new Vehiculo("2800HVM", "Opel 306 gris");
+        Vehiculo v2 = new Vehiculo("3000CCC", "Seat Ibiza Rojo");
+        usu2.addVehiculo(v2);
+        usu2.addVehiculo(v1);
         //Multas
         Multa mul = new Multa("Estacionamiento indebido en Rua do Franco del dia 13-05-2020", 45.84);
         //Notificaciones
