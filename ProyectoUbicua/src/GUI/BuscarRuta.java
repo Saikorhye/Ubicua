@@ -48,6 +48,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -88,6 +89,7 @@ public class BuscarRuta extends javax.swing.JPanel {
         jButton1.setText("Buscar");
 
         jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jRadioButton1);
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
@@ -150,6 +152,7 @@ public class BuscarRuta extends javax.swing.JPanel {
         jTextField3.setText("Lugar...");
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jRadioButton2);
 
         jButton2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jButton2.setText("Buscar");
@@ -234,7 +237,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     }
     
     
-    public void setFondo() {
+    public void setFondoBuscarRuta() {
 	// Construimos la imagen y se la asignamos al atributo background.
         URL url = getClass().getResource("/Imagenes/FondoRuta.png");
 	this.setOpaque(false);
@@ -243,6 +246,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

@@ -346,6 +346,7 @@ public class VUsuario extends javax.swing.JPanel {
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
+        vp.setFondoMapaPrincipal();
     }//GEN-LAST:event_VolverPrincipalActionPerformed
 
     private void MultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultasActionPerformed

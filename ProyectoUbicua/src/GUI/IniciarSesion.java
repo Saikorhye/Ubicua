@@ -234,6 +234,7 @@ private void acceso(){
                     vp.setVisible(true);
                     vp.setV(this.v);
                     this.v.setContentPane(vp);
+                    vp.setFondoMapaPrincipal();
                 }
             }
         }

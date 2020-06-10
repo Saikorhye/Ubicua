@@ -240,6 +240,7 @@ public class Registrar extends javax.swing.JPanel {
             vp.setVisible(true);
             vp.setV(this.v);
             this.v.setContentPane(vp);
+            vp.setFondoMapaPrincipal();
             }
             else{
                 ErrorCheck vu=new ErrorCheck(v, false);

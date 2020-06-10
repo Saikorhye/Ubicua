@@ -214,6 +214,7 @@ public class Multas extends javax.swing.JPanel {
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
+        vp.setFondoMapaPrincipal();
     }//GEN-LAST:event_VolverPrincipalActionPerformed
 
     private void ConfiguraciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguraciónActionPerformed
