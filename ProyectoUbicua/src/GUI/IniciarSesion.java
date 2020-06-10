@@ -5,8 +5,13 @@
  */
 package GUI;
 
+import Clases.GuardaDatos;
 import Clases.Usuario;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -18,7 +23,6 @@ public class IniciarSesion extends javax.swing.JPanel {
     /**
      * Creates new form NewJPanel
      */
-    
     private VInicial v;
     private ArrayList<Usuario> usus;
 
@@ -29,10 +33,10 @@ public class IniciarSesion extends javax.swing.JPanel {
     public void setV(VInicial v) {
         this.v = v;
     }
-    
+
     public IniciarSesion(ArrayList<Usuario> Usuarios) {
         initComponents();
-        this.usus=Usuarios;
+        this.usus = Usuarios;
     }
 
     /**
@@ -196,15 +200,15 @@ public class IniciarSesion extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonAccederActionPerformed
 
     private void jButtonAccederKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonAccederKeyPressed
-       if (evt.getKeyCode()==KeyEvent.VK_ENTER){
-         acceso();
-       }
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            acceso();
+        }
     }//GEN-LAST:event_jButtonAccederKeyPressed
 
     private void jContrasenaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jContrasenaKeyPressed
-       if (evt.getKeyCode()==KeyEvent.VK_ENTER){
-         acceso();
-       }
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            acceso();
+        }
     }//GEN-LAST:event_jContrasenaKeyPressed
 
 
@@ -219,15 +223,39 @@ public class IniciarSesion extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
-private void acceso(){
-    // TODO add your handling code here:
-        int cont=0;
-        String correo=JCorreo.getText();
+    private void acceso() {
+        // TODO add your handling code here:
+        int cont = 0;
+        String correo = JCorreo.getText();
         String contrasena = new String(jContrasena.getPassword());
-        for (Usuario usuario: usus) {
-            if(usuario.getCorreo().equals(correo)){
-                if(usuario.getContrasena().equals(contrasena)){
-                    cont=1;
+        for (Usuario usuario : usus) {
+            if (usuario.getCorreo().equals(correo)) {
+                if (usuario.getContrasena().equals(contrasena)) {
+                    cont = 1;
+                    
+                    //Serializamos los datos en un fichero
+                    GuardaDatos object = new GuardaDatos(this.usus);
+                    String filename = "listausuarios.txt";
+
+                    // Serialization  
+                    try {
+                        //Saving of object in a file 
+                        FileOutputStream file = new FileOutputStream(filename);
+                        ObjectOutputStream out = new ObjectOutputStream(file);
+
+                        // Method for serialization of object 
+                        out.writeObject(object);
+
+                        out.close();
+                        file.close();
+
+                        System.out.println("Object has been serialized");
+
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        System.out.println(" /nIOException is caught");
+                    }
+
                     //Credenciales correctas, pasase a seguinte ventana
                     this.v.getContentPane().setVisible(false);
                     VPrincipal vp = new VPrincipal(usuario);
@@ -239,13 +267,32 @@ private void acceso(){
             }
         }
         //Non esta correcta a contrasena ou o correo, salta alerta
-        if(cont==0){
+        if (cont == 0) {
             JCorreo.setText(null);
             jContrasena.setText(null);
-            ErrorCredenciales vu=new ErrorCredenciales(v, false);
+            ErrorCredenciales vu = new ErrorCredenciales(v, false);
             vu.setVisible(true);
         }
-}
+    }
+    
+    private File crearArchivo(){
+         //Fichero de datos
+        String ruta = "/home/celia/Documentos/Universidade/Cuarto_2019-2020/Ubicua/Ubicua/ProyectoUbicua/datosusuarios.txt";
+        File archivo = new File(ruta);
+        if (!archivo.exists()) {
+             // El fichero no existe y hay que crearlo
+            try {
+                // A partir del objeto File creamos el fichero físicamente
+                if (archivo.createNewFile()) {
+                    System.out.println("El fichero se ha creado correctamente");
+                } else {
+                    System.out.println("No ha podido ser creado el fichero");
+                }
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+        }
+        return archivo;
+    }
 
 }
-

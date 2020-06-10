@@ -5,11 +5,13 @@
  */
 package Clases;
 
+import java.io.Serializable;
+
 /**
  *
  * @author pablo
  */
-public class Notificacion {
+public class Notificacion implements Serializable {
     private String titulo;
     private String texto;
 

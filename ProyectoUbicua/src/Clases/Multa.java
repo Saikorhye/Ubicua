@@ -5,11 +5,13 @@
  */
 package Clases;
 
+import java.io.Serializable;
+
 /**
  *
  * @author pablo
  */
-public class Multa {
+public class Multa implements Serializable{
     private String texto;
     private double importe;
 
