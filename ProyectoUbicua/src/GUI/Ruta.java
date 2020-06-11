@@ -334,7 +334,7 @@ public class Ruta extends javax.swing.JPanel {
     
     public void setFondoMapaRuta() {
 	// Construimos la imagen y se la asignamos al atributo background.
-        URL url = getClass().getResource("/Imagenes/mapimage.png");
+        URL url = getClass().getResource("/Imagenes/MaparutaverPlazas.png");
 	this.setOpaque(false);
 	this.image = new ImageIcon(url).getImage();
 	repaint();
