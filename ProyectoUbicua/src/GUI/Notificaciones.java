@@ -5,7 +5,10 @@
  */
 package GUI;
 
+import Clases.Notificacion;
 import Clases.Usuario;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -29,11 +32,19 @@ public class Notificaciones extends javax.swing.JPanel {
     }
     
     public Notificaciones(Usuario us) {
-        initComponents();
         this.usu=us;
+        initComponents();
         this.VolverPrincipal.setText("Volver a Principal");
-        jTextField1.setText(usu.getNotificaciones().get(0).getTitulo());
-        jTextArea1.setText(usu.getNotificaciones().get(0).getTexto());
+        this.Usuario.setText("Usuario");
+        
+        ArrayList<Notificacion> lista = usu.getNotificaciones();
+        DefaultTableModel mt = (DefaultTableModel) ListaNotificaciones.getModel();
+        if (lista.size() > 0) {
+            for (int i = 0; i < lista.size(); i++) {
+                Notificacion n = lista.get(i);
+                mt.addRow(new Object[]{n.getTitulo()});
+            }
+        }
     }
 
     /**
@@ -53,12 +64,13 @@ public class Notificaciones extends javax.swing.JPanel {
         Ayuda = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         SalirSesion = new javax.swing.JMenuItem();
-        jTextField1 = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
-        LabelAyuda1 = new javax.swing.JLabel();
+        LabelAyuda = new javax.swing.JLabel();
         jBotonMenu = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ListaNotificaciones = new javax.swing.JTable();
+        BEliminar = new javax.swing.JButton();
+        BVisualizar = new javax.swing.JButton();
 
         jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
         jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -66,7 +78,7 @@ public class Notificaciones extends javax.swing.JPanel {
 
         VolverPrincipal.setBackground(new java.awt.Color(68, 217, 230));
         VolverPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        VolverPrincipal.setText("Notificaciones");
+        VolverPrincipal.setText("Usuario");
         VolverPrincipal.setBorder(null);
         VolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,11 +86,10 @@ public class Notificaciones extends javax.swing.JPanel {
             }
         });
         jPopMenuPrincipal.add(VolverPrincipal);
-        VolverPrincipal.getAccessibleContext().setAccessibleName("JMenuItem1");
 
         Usuario.setBackground(new java.awt.Color(68, 217, 230));
         Usuario.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        Usuario.setText("Usuario");
+        Usuario.setText("Notificaciones");
         Usuario.setBorder(null);
         Usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +97,7 @@ public class Notificaciones extends javax.swing.JPanel {
             }
         });
         jPopMenuPrincipal.add(Usuario);
+        Usuario.getAccessibleContext().setAccessibleName("JMenuItem1");
 
         Multas.setBackground(new java.awt.Color(68, 217, 230));
         Multas.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -138,28 +150,14 @@ public class Notificaciones extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(350, 500));
         setMinimumSize(new java.awt.Dimension(350, 500));
 
-        jTextField1.setEditable(false);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(jTextArea1);
-
         jPanel1.setBackground(new java.awt.Color(68, 217, 230));
         jPanel1.setForeground(new java.awt.Color(68, 217, 230));
 
-        LabelAyuda1.setBackground(new java.awt.Color(68, 217, 230));
-        LabelAyuda1.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
-        LabelAyuda1.setForeground(new java.awt.Color(255, 255, 255));
-        LabelAyuda1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelAyuda1.setText("Notificaciones");
+        LabelAyuda.setBackground(new java.awt.Color(68, 217, 230));
+        LabelAyuda.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
+        LabelAyuda.setForeground(new java.awt.Color(255, 255, 255));
+        LabelAyuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelAyuda.setText("Notificaciones");
 
         jBotonMenu.setBackground(new java.awt.Color(68, 217, 230));
         jBotonMenu.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -183,41 +181,87 @@ public class Notificaciones extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jBotonMenu)
-                .addGap(43, 43, 43)
-                .addComponent(LabelAyuda1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelAyuda1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(LabelAyuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        ListaNotificaciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Título"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        ListaNotificaciones.getTableHeader().setReorderingAllowed(false);
+        ListaNotificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaNotificacionesMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(ListaNotificaciones);
+
+        BEliminar.setText("Eliminar notificacion");
+        BEliminar.setEnabled(false);
+        BEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BEliminarActionPerformed(evt);
+            }
+        });
+
+        BVisualizar.setText("Ver notificacion");
+        BVisualizar.setEnabled(false);
+        BVisualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BVisualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
+                    .addComponent(BEliminar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addComponent(BVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -231,14 +275,14 @@ public class Notificaciones extends javax.swing.JPanel {
         jPopMenuPrincipal.show(this,jBotonMenu.getX(),jBotonMenu.getY()+ jBotonMenu.getHeight());
     }//GEN-LAST:event_jBotonMenuMouseClicked
 
-    private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
+    private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
         this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(this.usu);
+        VUsuario vp = new VUsuario(this.usu);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
-        vp.setFondoMapaPrincipal();
-    }//GEN-LAST:event_VolverPrincipalActionPerformed
+        
+    }//GEN-LAST:event_UsuarioActionPerformed
 
     private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
         this.v.getContentPane().setVisible(false);
@@ -249,16 +293,17 @@ public class Notificaciones extends javax.swing.JPanel {
     }//GEN-LAST:event_AyudaActionPerformed
 
     private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
-      
+    
     }//GEN-LAST:event_SalirSesionActionPerformed
 
-    private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
-         this.v.getContentPane().setVisible(false);
-        VUsuario vp = new VUsuario(this.usu);
+    private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
+        this.v.getContentPane().setVisible(false);
+        VPrincipal vp = new VPrincipal(this.usu);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
-    }//GEN-LAST:event_UsuarioActionPerformed
+        vp.setFondoMapaPrincipal();
+    }//GEN-LAST:event_VolverPrincipalActionPerformed
 
     private void MultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultasActionPerformed
         this.v.getContentPane().setVisible(false);
@@ -276,15 +321,37 @@ public class Notificaciones extends javax.swing.JPanel {
         this.v.setContentPane(vp);
     }//GEN-LAST:event_ConfiguraciónActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void BEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BEliminarActionPerformed
+        DefaultTableModel tm = (DefaultTableModel) ListaNotificaciones.getModel();
+        int pos = ListaNotificaciones.getSelectedRow();
+        String texto = buscaTexto(tm.getValueAt(pos, 0).toString());
+        EliminarNoti ce = new EliminarNoti(v, true, tm.getValueAt(pos, 0).toString(), texto, this);
+        ce.setVisible(true);
+        
+        
+    }//GEN-LAST:event_BEliminarActionPerformed
+
+    private void ListaNotificacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaNotificacionesMouseClicked
+        BEliminar.setEnabled(true);
+        BVisualizar.setEnabled(true);
+    }//GEN-LAST:event_ListaNotificacionesMouseClicked
+
+    private void BVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BVisualizarActionPerformed
+       DefaultTableModel tm = (DefaultTableModel) ListaNotificaciones.getModel();
+       int pos = ListaNotificaciones.getSelectedRow();
+       String texto = buscaTexto(tm.getValueAt(pos, 0).toString());
+       ViewNoti ce = new ViewNoti(v, true, tm.getValueAt(pos, 0).toString(), texto, this);
+       ce.setVisible(true);
+    }//GEN-LAST:event_BVisualizarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Ayuda;
+    private javax.swing.JButton BEliminar;
+    private javax.swing.JButton BVisualizar;
     private javax.swing.JMenuItem Configuración;
-    private javax.swing.JLabel LabelAyuda1;
+    private javax.swing.JLabel LabelAyuda;
+    private javax.swing.JTable ListaNotificaciones;
     private javax.swing.JMenuItem Multas;
     private javax.swing.JMenuItem SalirSesion;
     private javax.swing.JMenuItem Usuario;
@@ -294,7 +361,25 @@ public class Notificaciones extends javax.swing.JPanel {
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    public void eliminar() {
+        DefaultTableModel tm = (DefaultTableModel) ListaNotificaciones.getModel();
+        usu.removeNotificacion(tm.getValueAt(ListaNotificaciones.getSelectedRow(), 0).toString());
+        tm.removeRow(ListaNotificaciones.getSelectedRow());
+        BEliminar.setEnabled(false);
+    }
+
+ public String buscaTexto(String titulo){
+     String toret = "";
+      ArrayList<Notificacion> notis = usu.getNotificaciones();
+      for (int i = 0; i < notis.size(); i++) {
+             if (notis.get(i).getTitulo().equals(titulo)) {
+                 toret = notis.get(i).getTexto();
+                 break;
+             }
+       }
+     return toret;
+     
+ }
 }

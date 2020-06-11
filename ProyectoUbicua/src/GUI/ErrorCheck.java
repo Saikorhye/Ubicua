@@ -33,7 +33,6 @@ public class ErrorCheck extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTextPane1.setBackground(new java.awt.Color(255, 255, 255));
         jTextPane1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jTextPane1.setText("Para registrase debe aceptar los términos y condiciones de uso. Porfavor, marque la casilla.");
         jScrollPane1.setViewportView(jTextPane1);
@@ -56,6 +55,7 @@ public class ErrorCheck extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

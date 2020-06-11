@@ -138,6 +138,7 @@ public class Configuracion extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(350, 500));
         setMinimumSize(new java.awt.Dimension(350, 500));
         setPreferredSize(new java.awt.Dimension(350, 500));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
@@ -147,24 +148,27 @@ public class Configuracion extends javax.swing.JPanel {
                 jCheckBox1ActionPerformed(evt);
             }
         });
+        add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 104, -1, -1));
 
         jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
         jCheckBox2.setText("Guardar contraseña durante 6 meses");
+        add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 129, -1, -1));
 
         jCheckBox3.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox3.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
         jCheckBox3.setText("Utilizar identificación en dos pasos");
+        add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 157, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Bitstream Vera Sans", 1, 15)); // NOI18N
         jLabel1.setText("Opciones y Seguridad");
-        jLabel1.setBorder(null);
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 75, -1, 27));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Bitstream Vera Sans", 1, 15)); // NOI18N
         jLabel2.setText("Notificaciones");
-        jLabel2.setBorder(null);
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 227, -1, 23));
 
         jCheckBox4.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox4.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
@@ -174,6 +178,7 @@ public class Configuracion extends javax.swing.JPanel {
                 jCheckBox4ActionPerformed(evt);
             }
         });
+        add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
 
         jCheckBox5.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox5.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
@@ -183,6 +188,7 @@ public class Configuracion extends javax.swing.JPanel {
                 jCheckBox5ActionPerformed(evt);
             }
         });
+        add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 26));
 
         jPanel1.setBackground(new java.awt.Color(68, 217, 230));
         jPanel1.setForeground(new java.awt.Color(68, 217, 230));
@@ -215,7 +221,7 @@ public class Configuracion extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jBotonMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(82, 82, 82))
         );
@@ -225,52 +231,7 @@ public class Configuracion extends javax.swing.JPanel {
             .addComponent(jBotonMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5))
-                .addContainerGap())
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox2)
-                .addGap(3, 3, 3)
-                .addComponent(jCheckBox3)
-                .addGap(45, 45, 45)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(186, Short.MAX_VALUE))
-        );
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
