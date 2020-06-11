@@ -6,6 +6,7 @@
 package Clases;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  *
@@ -14,10 +15,30 @@ import java.io.Serializable;
 public class Multa implements Serializable{
     private String texto;
     private double importe;
+    private Timestamp fecha;
+    private String matricula;
 
-    public Multa(String texto, double importe) {
+    public Multa(String texto, double importe, Timestamp fecha, String matricula) {
         this.texto = texto;
         this.importe = importe;
+        this.fecha = fecha;
+        this.matricula = matricula;
+    }
+
+    public void setFecha(Timestamp fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public Timestamp getFecha() {
+        return fecha;
+    }
+
+    public String getMatricula() {
+        return matricula;
     }
 
     public String getTexto() {

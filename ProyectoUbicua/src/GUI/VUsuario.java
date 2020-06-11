@@ -18,7 +18,6 @@ public class VUsuario extends javax.swing.JPanel {
     /**
      * Creates new form VPrincipal
      */
-    
     private VInicial v;
     private Usuario usu;
     private javax.swing.JTextField TNombreUsu;
@@ -41,7 +40,7 @@ public class VUsuario extends javax.swing.JPanel {
     private javax.swing.JPanel PTelefonoL;
     private javax.swing.JPanel PEmailL;
     private javax.swing.JPanel PTarjetaL;
-    
+
     public VInicial getV() {
         return v;
     }
@@ -49,9 +48,9 @@ public class VUsuario extends javax.swing.JPanel {
     public void setV(VInicial v) {
         this.v = v;
     }
-    
+
     public VUsuario(Usuario us) {
-        this.usu=us;
+        this.usu = us;
         initComponents();
         this.VolverPrincipal.setText("Volver a Principal");
         this.BContra.setVisible(false);
@@ -61,7 +60,7 @@ public class VUsuario extends javax.swing.JPanel {
         TTelefonoUsu = new javax.swing.JTextField(15);
         TEmailUsu = new javax.swing.JTextField(15);
         TTarjetaUsu = new javax.swing.JTextField(15);
-        
+
         String[] nombre = usu.getNombre().split(" ");
         LNombreUsu = new javax.swing.JLabel(nombre[0]);
         if (nombre.length > 2) {
@@ -72,7 +71,7 @@ public class VUsuario extends javax.swing.JPanel {
         LTelefonoUsu = new javax.swing.JLabel(usu.getTelefono());
         LEmailUsu = new javax.swing.JLabel(usu.getCorreo());
         LTarjetaUsu = new javax.swing.JLabel(usu.getMetodoPago());
-        
+
         PNombreT = new javax.swing.JPanel();
         PNombreT.add(TNombreUsu);
         PApellidosT = new javax.swing.JPanel();
@@ -83,7 +82,7 @@ public class VUsuario extends javax.swing.JPanel {
         PEmailT.add(TEmailUsu);
         PTarjetaT = new javax.swing.JPanel();
         PTarjetaT.add(TTarjetaUsu);
-        
+
         PNombreL = new javax.swing.JPanel();
         PNombreL.add(LNombreUsu);
         PApellidosL = new javax.swing.JPanel();
@@ -94,7 +93,7 @@ public class VUsuario extends javax.swing.JPanel {
         PEmailL.add(LEmailUsu);
         PTarjetaL = new javax.swing.JPanel();
         PTarjetaL.add(LTarjetaUsu);
-        
+
         PNombre.setLayout(new CardLayout());
         PNombre.add(PNombreL, "label");
         PNombre.add(PNombreT, "TField");
@@ -290,19 +289,19 @@ public class VUsuario extends javax.swing.JPanel {
         add(BVehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 58, -1, -1));
 
         LNombre.setText("Nombre");
-        add(LNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 132, -1, -1));
+        add(LNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         LApellidos.setText("Apellidos");
-        add(LApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 180, -1, -1));
+        add(LApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         LTelefono.setText("Telefono");
-        add(LTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 228, -1, -1));
+        add(LTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
         LEmail.setText("Email");
-        add(LEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 276, -1, -1));
+        add(LEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
 
         LTarjeta.setText("Tarjeta");
-        add(LTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 324, -1, -1));
+        add(LTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         BContra.setText("Cambiar contraseña");
         BContra.addActionListener(new java.awt.event.ActionListener() {
@@ -310,7 +309,7 @@ public class VUsuario extends javax.swing.JPanel {
                 BContraActionPerformed(evt);
             }
         });
-        add(BContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 356, -1, -1));
+        add(BContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
         BCambios.setText("Guardar cambios");
         BCambios.addActionListener(new java.awt.event.ActionListener() {
@@ -318,7 +317,7 @@ public class VUsuario extends javax.swing.JPanel {
                 BCambiosActionPerformed(evt);
             }
         });
-        add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 356, -1, -1));
+        add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, -1, -1));
 
         PNombre.setLayout(new java.awt.CardLayout());
         add(PNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 116, 199, 30));
@@ -338,12 +337,12 @@ public class VUsuario extends javax.swing.JPanel {
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
         // TODO add your handling code here:
-       // menuEmergente.show(this,evt.get .getX(),evt.getY());
+        // menuEmergente.show(this,evt.get .getX(),evt.getY());
     }//GEN-LAST:event_jBotonMenuActionPerformed
 
     private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
         // TODO add your handling code here:
-        jPopMenuPrincipal.show(this,jBotonMenu.getX(),jBotonMenu.getY()+ jBotonMenu.getHeight());
+        jPopMenuPrincipal.show(this, jBotonMenu.getX(), jBotonMenu.getY() + jBotonMenu.getHeight());
     }//GEN-LAST:event_jBotonMenuMouseClicked
 
     private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
@@ -352,7 +351,7 @@ public class VUsuario extends javax.swing.JPanel {
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
-        
+
     }//GEN-LAST:event_NotificacionesActionPerformed
 
     private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
@@ -364,7 +363,7 @@ public class VUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_AyudaActionPerformed
 
     private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
-      this.v.getContentPane().setVisible(false);
+        this.v.getContentPane().setVisible(false);
         Usuario usu1 = new Usuario("Eva Suarez Vazquez", "eva@gmail.com", "1234", "Tarjeta", "666666666");
         Usuario usu2 = new Usuario("admin", "admin", "admin", "Tarjeta", "666666666");
         ArrayList<Usuario> usuarios = new ArrayList<>();
@@ -424,30 +423,63 @@ public class VUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_BEditarActionPerformed
 
     private void BContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BContraActionPerformed
-        CambiarContra vc = new CambiarContra(this.usu);
+        VCambiarContra vc = new VCambiarContra(v, true, this.usu, this);
         vc.setVisible(true);
     }//GEN-LAST:event_BContraActionPerformed
 
     private void BCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCambiosActionPerformed
-        BContra.setVisible(false);
-        BCambios.setVisible(false);
-        BVehiculos.setVisible(true);
-        BEditar.setVisible(true);
-        CardLayout c = (CardLayout) PNombre.getLayout();
-        LNombreUsu.setText(TNombreUsu.getText());
-        c.show(PNombre, "label");
-        c = (CardLayout) PApellidos.getLayout();
-        LApellidosUsu.setText(TApellidosUsu.getText());
-        c.show(PApellidos, "label");
-        c = (CardLayout) PTelefono.getLayout();
-        LTelefonoUsu.setText(TTelefonoUsu.getText());
-        c.show(PTelefono, "label");
-        c = (CardLayout) PEmail.getLayout();
-        LEmailUsu.setText(TEmailUsu.getText());
-        c.show(PEmail, "label");
-        c = (CardLayout) PTarjeta.getLayout();
-        LTarjetaUsu.setText(TTarjetaUsu.getText());
-        c.show(PTarjeta, "label");
+        ArrayList<Integer> vacios = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            vacios.add(0);
+        }
+        boolean fallo = false;
+
+        if (TNombreUsu.getText().equals("")) {
+            vacios.set(0, 1);
+            fallo = true;
+        }
+        if (TApellidosUsu.getText().equals("")) {
+            vacios.set(1, 1);
+            fallo = true;
+        }
+        if (TTelefonoUsu.getText().equals("")) {
+            vacios.set(2, 1);
+            fallo = true;
+        }
+        if (TEmailUsu.getText().equals("")) {
+            vacios.set(3, 1);
+            fallo = true;
+        }
+        if (TTarjetaUsu.getText().equals("")) {
+            vacios.set(4, 1);
+            fallo = true;
+        }
+
+        if (fallo) {
+            VErrorEditar vee = new VErrorEditar(v, true, vacios);
+            vee.setVisible(true);
+        } else {
+            BContra.setVisible(false);
+            BCambios.setVisible(false);
+            BVehiculos.setVisible(true);
+            BEditar.setVisible(true);
+
+            CardLayout c = (CardLayout) PNombre.getLayout();
+            LNombreUsu.setText(TNombreUsu.getText());
+            c.show(PNombre, "label");
+            c = (CardLayout) PApellidos.getLayout();
+            LApellidosUsu.setText(TApellidosUsu.getText());
+            c.show(PApellidos, "label");
+            c = (CardLayout) PTelefono.getLayout();
+            LTelefonoUsu.setText(TTelefonoUsu.getText());
+            c.show(PTelefono, "label");
+            c = (CardLayout) PEmail.getLayout();
+            LEmailUsu.setText(TEmailUsu.getText());
+            c.show(PEmail, "label");
+            c = (CardLayout) PTarjeta.getLayout();
+            LTarjetaUsu.setText(TTarjetaUsu.getText());
+            c.show(PTarjeta, "label");
+        }
     }//GEN-LAST:event_BCambiosActionPerformed
 
     private void BVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BVehiculosActionPerformed
