@@ -28,6 +28,7 @@ public class Aparcar extends javax.swing.JPanel {
     private Image image;
     private VInicial v;
     private Usuario usu;
+    private String lugar;
     
     public VInicial getV() {
         return v;
@@ -38,10 +39,12 @@ public class Aparcar extends javax.swing.JPanel {
     }
     
     
-    public Aparcar(Usuario us) {
+    public Aparcar(Usuario us, String lug) {
         initComponents();
         this.usu=us;
         actualizarCombo();
+        this.lugar=lug;
+        jLabelLugar.setText(this.lugar+", Plaza 7");
     }
 
     /**
@@ -66,7 +69,7 @@ public class Aparcar extends javax.swing.JPanel {
         jBotonSearch = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jButtonPagar = new javax.swing.JButton();
         jComboBoxVehiculo = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jSlider1 = new javax.swing.JSlider();
@@ -75,7 +78,7 @@ public class Aparcar extends javax.swing.JPanel {
         jLabelPrezo = new javax.swing.JLabel();
         jLabelInicio = new javax.swing.JLabel();
         jLabelFin = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabelLugar = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
@@ -198,9 +201,15 @@ public class Aparcar extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabel1.setText("Tempo a aparcar");
 
-        jButton2.setBackground(new java.awt.Color(68, 217, 230));
-        jButton2.setText("Confirmar pago");
-        jButton2.setBorder(null);
+        jButtonPagar.setBackground(new java.awt.Color(68, 217, 230));
+        jButtonPagar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jButtonPagar.setText("Confirmar pago");
+        jButtonPagar.setBorder(null);
+        jButtonPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPagarActionPerformed(evt);
+            }
+        });
 
         jComboBoxVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,11 +257,11 @@ public class Aparcar extends javax.swing.JPanel {
         jLabelFin.setText("Data fin: 16/06/2020 17:40");
         jLabelFin.setBorder(null);
 
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Rúa Goméz López, Plaza 12");
-        jLabel8.setBorder(null);
+        jLabelLugar.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelLugar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
+        jLabelLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelLugar.setText("Rúa Goméz López, Plaza 12");
+        jLabelLugar.setBorder(null);
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
@@ -279,18 +288,17 @@ public class Aparcar extends javax.swing.JPanel {
                         .addComponent(jLabel3)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jComboBoxVehiculo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabelFin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabelInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelPrezo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSlider1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabelLugar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jComboBoxVehiculo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelFin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabelPrezo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSlider1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonPagar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -303,7 +311,7 @@ public class Aparcar extends javax.swing.JPanel {
                 .addGap(6, 6, 6)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -325,7 +333,7 @@ public class Aparcar extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBoxVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
@@ -452,24 +460,33 @@ public class Aparcar extends javax.swing.JPanel {
         actualizarSlider();
     }//GEN-LAST:event_jSlider1StateChanged
 
+    private void jButtonPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPagarActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        ResumenAparcar vp = new ResumenAparcar(this.usu, this.lugar, jSlider1.getValue()/60, jLabelPrezo.getText(), jLabelFin.getText());
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+    }//GEN-LAST:event_jButtonPagarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem jAyuda;
     private javax.swing.JButton jBotonMenu;
     private javax.swing.JButton jBotonSearch;
     private javax.swing.JTextField jBusqueda;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonPagar;
     private javax.swing.JComboBox<String> jComboBoxVehiculo;
     private javax.swing.JMenuItem jConfiguracion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelFin;
     private javax.swing.JLabel jLabelInicio;
+    private javax.swing.JLabel jLabelLugar;
     private javax.swing.JLabel jLabelPrezo;
     private javax.swing.JMenuItem jMultas;
     private javax.swing.JMenuItem jNotificaciones;
@@ -511,37 +528,26 @@ public class Aparcar extends javax.swing.JPanel {
         jLabelPrezo.setText(prezo);
         
         //Calcular fecha
-        int h=0;
         java.util.Date fecha = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(fecha); //fecha actual es un Date;
         //Cmabiar fecha actual
-        jLabelInicio.setText("Data inicio: "+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)+" "+calendar.get(Calendar.HOUR)+":"+calendar.get(Calendar.MINUTE));
-        h=calendar.get(Calendar.HOUR);
+        jLabelInicio.setText("Data inicio: "+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)+" "+calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(Calendar.MINUTE));
+        int h=calendar.get(Calendar.HOUR_OF_DAY);
         //Calcular nova fecha
-        if(jSlider1.getValue() < 60){
-            calendar.add(Calendar.MINUTE, jSlider1.getValue());
-            if(calendar.get(Calendar.HOUR)<3){
-                calendar.add(Calendar.HOUR, h);
-            }
-            jLabelFin.setText("Data fin: "+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)+" "+calendar.get(Calendar.HOUR)+":"+calendar.get(Calendar.MINUTE));
+        int min=0;
+        int horasS=0;
+        if(jSlider1.getValue()>59){
+            horasS=jSlider1.getValue()/60;
         }
-        else{
-            int horasS=jSlider1.getValue()/60;
-            int min=jSlider1.getValue()-(60*horasS);
-            if(min==0){
-                //calendar.add(Calendar.MINUTE, min);
-                int ho=horasS+h;
-                //calendar.add(Calendar.HOUR, ho);
-                jLabelFin.setText("Data fin: "+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)+" "+ho+":"+calendar.get(Calendar.MINUTE));
-            }
-            else{
-                int ho=horasS+h;
-                calendar.add(Calendar.MINUTE, min);
-                //calendar.add(Calendar.HOUR, ho);
-                //System.out.println("Horas: "+ho+"\n");
-                jLabelFin.setText("Data fin: "+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)+" "+ho+":"+calendar.get(Calendar.MINUTE));
-            }
-        }
+        calendar.add(Calendar.MINUTE, jSlider1.getValue());//
+        min=calendar.get(Calendar.MINUTE);//+jSlider1.getValue();
+        calendar.add(Calendar.HOUR_OF_DAY, jSlider1.getValue()/60);
+        int ho=calendar.get(Calendar.HOUR_OF_DAY);
+        //int ho=horasS+h;
+        jLabelFin.setText("Data fin: "+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)+" "+ho+":"+min);
+        ho=0;
+        h=0;
+        horasS=0;
     }
 }
