@@ -22,9 +22,6 @@ public class VErrorEditar extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.errores = errores;
-        for (int i = 0; i < 5; i++) {
-            System.out.println(errores.get(i));
-        }
         if (errores.get(0) == 0) {
             LNombre.setVisible(false);
         }

@@ -24,6 +24,7 @@ public class VCambiarContra extends javax.swing.JDialog {
         initComponents();
         this.usu = usu;
         this.padre = padre;
+        LError.setVisible(false);
     }
 
     /**
@@ -137,13 +138,13 @@ public class VCambiarContra extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (TContraAnt.getText() != usu.getContrasena()) {
+        if (TContraAnt.getText().equals(usu.getContrasena())) {
             LError.setText("Las credenciales son incorrectas");
             LError.setVisible(true);
-        } else if (TContraAnt.getText() == TContraNueva.getText()) {
+        } else if (TContraAnt.getText().equals(TContraNueva.getText())) {
             LError.setText("La contraseña nueva no puede ser igual a la anterior");
             LError.setVisible(true);
-        } else if (TContraNueva.getText() != TContraRepe.getText()) {
+        } else if (TContraNueva.getText().equals(TContraRepe.getText())) {
             LError.setText("Las contraseñas no son iguales");
             LError.setVisible(true);
         } else {
