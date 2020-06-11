@@ -593,4 +593,9 @@ public class VUsuario extends javax.swing.JPanel {
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     // End of variables declaration//GEN-END:variables
+
+    public void cambiarContra(String contra) {
+        usu.setContrasena(contra);
+    }
+
 }
