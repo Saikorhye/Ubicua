@@ -65,7 +65,6 @@ public class Aparcar extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jSalirSesion = new javax.swing.JMenuItem();
         jBotonMenu = new javax.swing.JButton();
-        jBusqueda = new javax.swing.JTextField();
         jBotonSearch = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -172,15 +171,6 @@ public class Aparcar extends javax.swing.JPanel {
         jBotonMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBotonMenuActionPerformed(evt);
-            }
-        });
-
-        jBusqueda.setBackground(new java.awt.Color(255, 255, 255));
-        jBusqueda.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jBusqueda.setEnabled(false);
-        jBusqueda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBusquedaActionPerformed(evt);
             }
         });
 
@@ -344,13 +334,11 @@ public class Aparcar extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
@@ -359,7 +347,6 @@ public class Aparcar extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jBusqueda, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jBotonMenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBotonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
@@ -377,10 +364,6 @@ public class Aparcar extends javax.swing.JPanel {
         // TODO add your handling code here:
         // menuEmergente.show(this,evt.get .getX(),evt.getY());
     }//GEN-LAST:event_jBotonMenuActionPerformed
-
-    private void jBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBusquedaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBusquedaActionPerformed
 
     private void jBotonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSearchActionPerformed
         // TODO add your handling code here:
@@ -474,7 +457,6 @@ public class Aparcar extends javax.swing.JPanel {
     private javax.swing.JMenuItem jAyuda;
     private javax.swing.JButton jBotonMenu;
     private javax.swing.JButton jBotonSearch;
-    private javax.swing.JTextField jBusqueda;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonPagar;
     private javax.swing.JComboBox<String> jComboBoxVehiculo;

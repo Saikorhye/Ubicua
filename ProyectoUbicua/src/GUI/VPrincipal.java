@@ -61,7 +61,6 @@ public class VPrincipal extends javax.swing.JPanel {
         Ayuda = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         SalirSesion = new javax.swing.JMenuItem();
-        jBusqueda = new javax.swing.JTextField();
         jBotonSearch = new javax.swing.JButton();
         jBotonMenu = new javax.swing.JButton();
 
@@ -144,14 +143,6 @@ public class VPrincipal extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(350, 500));
         setPreferredSize(new java.awt.Dimension(350, 500));
 
-        jBusqueda.setBackground(new java.awt.Color(216, 216, 216));
-        jBusqueda.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jBusqueda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBusquedaActionPerformed(evt);
-            }
-        });
-
         jBotonSearch.setBackground(new java.awt.Color(216, 215, 214));
         jBotonSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchicon.png"))); // NOI18N
         jBotonSearch.setBorder(null);
@@ -184,9 +175,7 @@ public class VPrincipal extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
                 .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -195,16 +184,11 @@ public class VPrincipal extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jBusqueda, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jBotonMenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBotonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(452, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBusquedaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBusquedaActionPerformed
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
         // TODO add your handling code here:
@@ -318,7 +302,6 @@ public class VPrincipal extends javax.swing.JPanel {
     private javax.swing.JMenuItem Usuario;
     private javax.swing.JButton jBotonMenu;
     private javax.swing.JButton jBotonSearch;
-    private javax.swing.JTextField jBusqueda;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables

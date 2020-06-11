@@ -74,7 +74,6 @@ public class BuscarRuta extends javax.swing.JPanel {
         jRadioButton2 = new javax.swing.JRadioButton();
         jButtonBuscarLibre = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jBusqueda = new javax.swing.JTextField();
         jBotonSearch = new javax.swing.JButton();
         jBotonMenu = new javax.swing.JButton();
 
@@ -209,9 +208,8 @@ public class BuscarRuta extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jTextDestino, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextOrigen)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)))
+                            .addComponent(jTextOrigen)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(jRadioButton1)
                         .addGap(27, 27, 27))))
@@ -332,16 +330,6 @@ public class BuscarRuta extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jBusqueda.setEditable(false);
-        jBusqueda.setBackground(new java.awt.Color(255, 255, 255));
-        jBusqueda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(216, 216, 216)));
-        jBusqueda.setEnabled(false);
-        jBusqueda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBusquedaActionPerformed(evt);
-            }
-        });
-
         jBotonSearch.setBackground(new java.awt.Color(216, 215, 214));
         jBotonSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchicon.png"))); // NOI18N
         jBotonSearch.setBorder(null);
@@ -381,9 +369,7 @@ public class BuscarRuta extends javax.swing.JPanel {
                         .addContainerGap(17, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBusqueda)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -392,9 +378,7 @@ public class BuscarRuta extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jBotonMenu)
-                        .addComponent(jBusqueda, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBotonMenu)
                     .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -417,11 +401,6 @@ public class BuscarRuta extends javax.swing.JPanel {
             jButtonBuscarRuta.setEnabled(true);
         }
     }//GEN-LAST:event_jRadioButton1ActionPerformed
-
-    private void jBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBusquedaActionPerformed
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_jBusquedaActionPerformed
 
     private void jBotonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSearchActionPerformed
         // TODO add your handling code here:
@@ -544,7 +523,6 @@ public class BuscarRuta extends javax.swing.JPanel {
     private javax.swing.JMenuItem jAyuda;
     private javax.swing.JButton jBotonMenu;
     private javax.swing.JButton jBotonSearch;
-    private javax.swing.JTextField jBusqueda;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonBuscarLibre;
     private javax.swing.JButton jButtonBuscarRuta;
