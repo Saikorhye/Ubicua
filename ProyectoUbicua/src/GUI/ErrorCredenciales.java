@@ -34,7 +34,6 @@ public class ErrorCredenciales extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTextPane1.setEditable(false);
-        jTextPane1.setBackground(new java.awt.Color(255, 255, 255));
         jTextPane1.setBorder(null);
         jTextPane1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jTextPane1.setText("Usuario o contraseña incorrectos! Porfavor vuelva a introducir sus credenciales.");
@@ -58,6 +57,7 @@ public class ErrorCredenciales extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

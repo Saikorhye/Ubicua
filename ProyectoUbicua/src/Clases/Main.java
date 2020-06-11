@@ -27,7 +27,8 @@ public class Main {
         //Multas
         Multa mul = new Multa("Estacionamiento indebido en Rua do Franco del dia 13-05-2020", 45.84);
         //Notificaciones
-        Notificacion noti = new Notificacion("Nueva multa!!", "Debe abonar el pago en la seccion de multas. \nPara ello haga click en 'Menu' > 'Multas', y una vez alli siga las instrucciones");
+        Notificacion noti = new Notificacion("Nueva multa!!", "Debe abonar el pago en la seccion de multas.\nPara ello haga click en 'Menu' > 'Multas', y una vez alli siga las instrucciones");
+        Notificacion noti2 = new Notificacion("Nueva actualización!", "Versión 0.9.3 ya disponible!");
         //Vehiculos
         Vehiculo vehi1 = new Vehiculo("2332DDD", "Coche rojo");
         Vehiculo vehi2 = new Vehiculo("1655TXC", "Coche azul");
@@ -35,8 +36,10 @@ public class Main {
         //Anhadimos las notificaciones y multas a los usuarios
         usu1.addMulta(mul);
         usu1.addNotificacion(noti);
+        usu1.addNotificacion(noti2);
         usu2.addMulta(mul);
         usu2.addNotificacion(noti);
+        usu2.addNotificacion(noti2);
         usu2.addVehiculo(vehi1);
         usu2.addVehiculo(vehi2);
         //Nuevos usuarios

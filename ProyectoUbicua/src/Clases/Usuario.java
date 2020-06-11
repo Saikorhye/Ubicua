@@ -104,4 +104,13 @@ public class Usuario implements Serializable {
              }
          }
      }
+     
+        public void removeNotificacion(String titulo) {
+         for (int i = 0; i < this.notificaciones.size(); i++) {
+             if (this.notificaciones.get(i).getTitulo().equals(titulo)) {
+                 this.notificaciones.remove(i);
+                 break;
+             }
+         }
+     }
 }
