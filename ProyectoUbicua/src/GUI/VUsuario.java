@@ -310,7 +310,7 @@ public class VUsuario extends javax.swing.JPanel {
                 BContraActionPerformed(evt);
             }
         });
-        add(BContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 356, -1, -1));
+        add(BContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
         BCambios.setText("Guardar cambios");
         BCambios.addActionListener(new java.awt.event.ActionListener() {
@@ -318,7 +318,7 @@ public class VUsuario extends javax.swing.JPanel {
                 BCambiosActionPerformed(evt);
             }
         });
-        add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 356, -1, -1));
+        add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, -1, -1));
 
         PNombre.setLayout(new java.awt.CardLayout());
         add(PNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 116, 199, 30));
@@ -424,7 +424,7 @@ public class VUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_BEditarActionPerformed
 
     private void BContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BContraActionPerformed
-        CambiarContra vc = new CambiarContra(this.usu);
+        VCambiarContra vc = new VCambiarContra(v, true, this.usu, this);
         vc.setVisible(true);
     }//GEN-LAST:event_BContraActionPerformed
 
