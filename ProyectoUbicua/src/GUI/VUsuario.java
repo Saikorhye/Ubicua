@@ -6,6 +6,7 @@
 package GUI;
 
 import Clases.Usuario;
+import java.awt.CardLayout;
 import java.util.ArrayList;
 
 /**
@@ -25,6 +26,21 @@ public class VUsuario extends javax.swing.JPanel {
     private javax.swing.JTextField TTelefonoUsu;
     private javax.swing.JTextField TEmailUsu;
     private javax.swing.JTextField TTarjetaUsu;
+    private javax.swing.JLabel LNombreUsu;
+    private javax.swing.JLabel LApellidosUsu;
+    private javax.swing.JLabel LTelefonoUsu;
+    private javax.swing.JLabel LEmailUsu;
+    private javax.swing.JLabel LTarjetaUsu;
+    private javax.swing.JPanel PNombreT;
+    private javax.swing.JPanel PApellidosT;
+    private javax.swing.JPanel PTelefonoT;
+    private javax.swing.JPanel PEmailT;
+    private javax.swing.JPanel PTarjetaT;
+    private javax.swing.JPanel PNombreL;
+    private javax.swing.JPanel PApellidosL;
+    private javax.swing.JPanel PTelefonoL;
+    private javax.swing.JPanel PEmailL;
+    private javax.swing.JPanel PTarjetaL;
     
     public VInicial getV() {
         return v;
@@ -40,11 +56,60 @@ public class VUsuario extends javax.swing.JPanel {
         this.VolverPrincipal.setText("Volver a Principal");
         this.BContra.setVisible(false);
         this.BCambios.setVisible(false);
-        TNombreUsu = new javax.swing.JTextField();
-        TApellidosUsu = new javax.swing.JTextField();
-        TTelefonoUsu = new javax.swing.JTextField();
-        TEmailUsu = new javax.swing.JTextField();
-        TTarjetaUsu = new javax.swing.JTextField();
+        TNombreUsu = new javax.swing.JTextField(15);
+        TApellidosUsu = new javax.swing.JTextField(15);
+        TTelefonoUsu = new javax.swing.JTextField(15);
+        TEmailUsu = new javax.swing.JTextField(15);
+        TTarjetaUsu = new javax.swing.JTextField(15);
+        
+        String[] nombre = usu.getNombre().split(" ");
+        LNombreUsu = new javax.swing.JLabel(nombre[0]);
+        if (nombre.length > 2) {
+            LApellidosUsu = new javax.swing.JLabel(nombre[1] + " " + nombre[2]);
+        } else {
+            LApellidosUsu = new javax.swing.JLabel(nombre[1]);
+        }
+        LTelefonoUsu = new javax.swing.JLabel(usu.getTelefono());
+        LEmailUsu = new javax.swing.JLabel(usu.getCorreo());
+        LTarjetaUsu = new javax.swing.JLabel(usu.getMetodoPago());
+        
+        PNombreT = new javax.swing.JPanel();
+        PNombreT.add(TNombreUsu);
+        PApellidosT = new javax.swing.JPanel();
+        PApellidosT.add(TApellidosUsu);
+        PTelefonoT = new javax.swing.JPanel();
+        PTelefonoT.add(TTelefonoUsu);
+        PEmailT = new javax.swing.JPanel();
+        PEmailT.add(TEmailUsu);
+        PTarjetaT = new javax.swing.JPanel();
+        PTarjetaT.add(TTarjetaUsu);
+        
+        PNombreL = new javax.swing.JPanel();
+        PNombreL.add(LNombreUsu);
+        PApellidosL = new javax.swing.JPanel();
+        PApellidosL.add(LApellidosUsu);
+        PTelefonoL = new javax.swing.JPanel();
+        PTelefonoL.add(LTelefonoUsu);
+        PEmailL = new javax.swing.JPanel();
+        PEmailL.add(LEmailUsu);
+        PTarjetaL = new javax.swing.JPanel();
+        PTarjetaL.add(LTarjetaUsu);
+        
+        PNombre.setLayout(new CardLayout());
+        PNombre.add(PNombreL, "label");
+        PNombre.add(PNombreT, "TField");
+        PApellidos.setLayout(new CardLayout());
+        PApellidos.add(PApellidosL, "label");
+        PApellidos.add(PApellidosT, "TField");
+        PTelefono.setLayout(new CardLayout());
+        PTelefono.add(PTelefonoL, "label");
+        PTelefono.add(PTelefonoT, "TField");
+        PEmail.setLayout(new CardLayout());
+        PEmail.add(PEmailL, "label");
+        PEmail.add(PEmailT, "TField");
+        PTarjeta.setLayout(new CardLayout());
+        PTarjeta.add(PTarjetaL, "label");
+        PTarjeta.add(PTarjetaT, "TField");
     }
 
     /**
@@ -77,15 +142,10 @@ public class VUsuario extends javax.swing.JPanel {
         BContra = new javax.swing.JButton();
         BCambios = new javax.swing.JButton();
         PNombre = new javax.swing.JPanel();
-        LNombreUsu = new javax.swing.JLabel();
         PApellidos = new javax.swing.JPanel();
-        LApellidosUsu = new javax.swing.JLabel();
         PTelefono = new javax.swing.JPanel();
-        LTelefonoUsu = new javax.swing.JLabel();
         PEmail = new javax.swing.JPanel();
-        LEmailUsu = new javax.swing.JLabel();
         PTarjeta = new javax.swing.JPanel();
-        LTarjetaUsu = new javax.swing.JLabel();
 
         jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
         jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -248,107 +308,15 @@ public class VUsuario extends javax.swing.JPanel {
             }
         });
 
-        LNombreUsu.setText(usu.getNombre().split(" ")[0]);
+        PNombre.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout PNombreLayout = new javax.swing.GroupLayout(PNombre);
-        PNombre.setLayout(PNombreLayout);
-        PNombreLayout.setHorizontalGroup(
-            PNombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PNombreLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LNombreUsu)
-                .addContainerGap(111, Short.MAX_VALUE))
-        );
-        PNombreLayout.setVerticalGroup(
-            PNombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PNombreLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LNombreUsu)
-                .addContainerGap())
-        );
+        PApellidos.setLayout(new java.awt.CardLayout());
 
-        String[] nombreComp = usu.getNombre().split(" ");
-        String apellidos = null;
-        if (nombreComp.length == 2) {
-            apellidos = nombreComp[1];
-        } else {
-            apellidos = nombreComp[1] + " " + nombreComp[2];
-        }
-        LApellidosUsu.setText(apellidos);
+        PTelefono.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout PApellidosLayout = new javax.swing.GroupLayout(PApellidos);
-        PApellidos.setLayout(PApellidosLayout);
-        PApellidosLayout.setHorizontalGroup(
-            PApellidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PApellidosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LApellidosUsu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        PApellidosLayout.setVerticalGroup(
-            PApellidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PApellidosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LApellidosUsu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        PEmail.setLayout(new java.awt.CardLayout());
 
-        LTelefonoUsu.setText(usu.getTelefono());
-
-        javax.swing.GroupLayout PTelefonoLayout = new javax.swing.GroupLayout(PTelefono);
-        PTelefono.setLayout(PTelefonoLayout);
-        PTelefonoLayout.setHorizontalGroup(
-            PTelefonoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PTelefonoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LTelefonoUsu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        PTelefonoLayout.setVerticalGroup(
-            PTelefonoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PTelefonoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LTelefonoUsu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        LEmailUsu.setText(usu.getCorreo());
-
-        javax.swing.GroupLayout PEmailLayout = new javax.swing.GroupLayout(PEmail);
-        PEmail.setLayout(PEmailLayout);
-        PEmailLayout.setHorizontalGroup(
-            PEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PEmailLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LEmailUsu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        PEmailLayout.setVerticalGroup(
-            PEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PEmailLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LEmailUsu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        LTarjetaUsu.setText(usu.getMetodoPago());
-
-        javax.swing.GroupLayout PTarjetaLayout = new javax.swing.GroupLayout(PTarjeta);
-        PTarjeta.setLayout(PTarjetaLayout);
-        PTarjetaLayout.setHorizontalGroup(
-            PTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PTarjetaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LTarjetaUsu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        PTarjetaLayout.setVerticalGroup(
-            PTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PTarjetaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LTarjetaUsu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        PTarjeta.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -356,79 +324,75 @@ public class VUsuario extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(BContra)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(BCambios)
-                .addGap(45, 45, 45))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
+                        .addGap(43, 43, 43)
                         .addComponent(BEditar)
                         .addGap(88, 88, 88)
                         .addComponent(BVehiculos))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(21, 21, 21)
+                                    .addComponent(LTelefono))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(LApellidos, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(LTarjeta, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(LEmail, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(PApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(PTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(PEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(PTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addContainerGap()
                             .addComponent(LNombre)
-                            .addComponent(LTarjeta)
-                            .addComponent(LEmail)
-                            .addComponent(LTelefono)
-                            .addComponent(LApellidos))
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PTarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(18, 18, 18)
+                            .addComponent(PNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BContra)
+                        .addGap(47, 47, 47)
+                        .addComponent(BCambios)))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BEditar)
-                            .addComponent(BVehiculos))
-                        .addGap(43, 43, 43)
-                        .addComponent(LNombre)
-                        .addGap(18, 30, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(PNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(PApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(LApellidos)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LTelefono)
-                        .addGap(28, 28, 28)
-                        .addComponent(LEmail)
-                        .addGap(12, 12, 12)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(PTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(LTarjeta)
-                        .addGap(38, 38, 38)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BEditar)
+                    .addComponent(BVehiculos))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LNombre))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LApellidos))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LTelefono))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LEmail))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LTarjeta))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BContra)
                     .addComponent(BCambios))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -502,24 +466,21 @@ public class VUsuario extends javax.swing.JPanel {
         BCambios.setVisible(true);
         BVehiculos.setVisible(false);
         BEditar.setVisible(false);
+        CardLayout c = (CardLayout) PNombre.getLayout();
         TNombreUsu.setText(LNombreUsu.getText());
-        PNombre.remove(LNombreUsu);
-        PNombre.add(TNombreUsu);
+        c.show(PNombre, "TField");
+        c = (CardLayout) PApellidos.getLayout();
         TApellidosUsu.setText(LApellidosUsu.getText());
-        PApellidos.remove(LApellidosUsu);
-        PApellidos.add(TApellidosUsu);
+        c.show(PApellidos, "TField");
+        c = (CardLayout) PTelefono.getLayout();
         TTelefonoUsu.setText(LTelefonoUsu.getText());
-        PTelefono.remove(LTelefonoUsu);
-        PTelefono.add(TTelefonoUsu);
+        c.show(PTelefono, "TField");
+        c = (CardLayout) PEmail.getLayout();
         TEmailUsu.setText(LEmailUsu.getText());
-        PEmail.remove(LEmailUsu);
-        PEmail.add(TEmailUsu);
+        c.show(PEmail, "TField");
+        c = (CardLayout) PTarjeta.getLayout();
         TTarjetaUsu.setText(LTarjetaUsu.getText());
-        PTarjeta.remove(LTarjetaUsu);
-        PTarjeta.add(TTarjetaUsu);
-        
-        revalidate();
-        repaint();
+        c.show(PTarjeta, "TField");
     }//GEN-LAST:event_BEditarActionPerformed
 
     private void BContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BContraActionPerformed
@@ -532,24 +493,21 @@ public class VUsuario extends javax.swing.JPanel {
         BCambios.setVisible(false);
         BVehiculos.setVisible(true);
         BEditar.setVisible(true);
+        CardLayout c = (CardLayout) PNombre.getLayout();
         LNombreUsu.setText(TNombreUsu.getText());
-        PNombre.remove(TNombreUsu);
-        PNombre.add(LNombreUsu);
+        c.show(PNombre, "label");
+        c = (CardLayout) PApellidos.getLayout();
         LApellidosUsu.setText(TApellidosUsu.getText());
-        PApellidos.remove(TApellidosUsu);
-        PApellidos.add(LApellidosUsu);
+        c.show(PApellidos, "label");
+        c = (CardLayout) PTelefono.getLayout();
         LTelefonoUsu.setText(TTelefonoUsu.getText());
-        PTelefono.remove(TTelefonoUsu);
-        PTelefono.add(LTelefonoUsu);
+        c.show(PTelefono, "label");
+        c = (CardLayout) PEmail.getLayout();
         LEmailUsu.setText(TEmailUsu.getText());
-        PEmail.remove(TEmailUsu);
-        PEmail.add(LEmailUsu);
+        c.show(PEmail, "label");
+        c = (CardLayout) PTarjeta.getLayout();
         LTarjetaUsu.setText(TTarjetaUsu.getText());
-        PTarjeta.remove(TTarjetaUsu);
-        PTarjeta.add(LTarjetaUsu);
-        
-        revalidate();
-        repaint();
+        c.show(PTarjeta, "label");
     }//GEN-LAST:event_BCambiosActionPerformed
 
     private void BVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BVehiculosActionPerformed
@@ -569,15 +527,10 @@ public class VUsuario extends javax.swing.JPanel {
     private javax.swing.JButton BVehiculos;
     private javax.swing.JMenuItem Configuración;
     private javax.swing.JLabel LApellidos;
-    private javax.swing.JLabel LApellidosUsu;
     private javax.swing.JLabel LEmail;
-    private javax.swing.JLabel LEmailUsu;
     private javax.swing.JLabel LNombre;
-    private javax.swing.JLabel LNombreUsu;
     private javax.swing.JLabel LTarjeta;
-    private javax.swing.JLabel LTarjetaUsu;
     private javax.swing.JLabel LTelefono;
-    private javax.swing.JLabel LTelefonoUsu;
     private javax.swing.JLabel LabelAyuda;
     private javax.swing.JMenuItem Multas;
     private javax.swing.JMenuItem Notificaciones;
