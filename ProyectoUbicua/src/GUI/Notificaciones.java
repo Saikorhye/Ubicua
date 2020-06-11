@@ -191,6 +191,7 @@ public class Notificaciones extends javax.swing.JPanel {
             .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        ListaNotificaciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ListaNotificaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
