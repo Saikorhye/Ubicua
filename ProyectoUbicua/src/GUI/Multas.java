@@ -52,10 +52,17 @@ public class Multas extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         SalirSesion = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jBotonMenu = new javax.swing.JButton();
         LabelAyuda = new javax.swing.JLabel();
+        jBotonMenu = new javax.swing.JButton();
 
+        jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
+        jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jPopMenuPrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(68, 217, 230)));
+
+        VolverPrincipal.setBackground(new java.awt.Color(68, 217, 230));
+        VolverPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         VolverPrincipal.setText("Multas");
+        VolverPrincipal.setBorder(null);
         VolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VolverPrincipalActionPerformed(evt);
@@ -63,7 +70,10 @@ public class Multas extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(VolverPrincipal);
 
+        Notificaciones.setBackground(new java.awt.Color(68, 217, 230));
+        Notificaciones.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Notificaciones.setText("Notificaciones");
+        Notificaciones.setBorder(null);
         Notificaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NotificacionesActionPerformed(evt);
@@ -72,7 +82,10 @@ public class Multas extends javax.swing.JPanel {
         jPopMenuPrincipal.add(Notificaciones);
         Notificaciones.getAccessibleContext().setAccessibleName("JMenuItem1");
 
+        Usuario.setBackground(new java.awt.Color(68, 217, 230));
+        Usuario.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Usuario.setText("Usuario");
+        Usuario.setBorder(null);
         Usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsuarioActionPerformed(evt);
@@ -80,7 +93,10 @@ public class Multas extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(Usuario);
 
+        Configuración.setBackground(new java.awt.Color(68, 217, 230));
+        Configuración.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Configuración.setText("Configuración");
+        Configuración.setBorder(null);
         Configuración.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfiguraciónActionPerformed(evt);
@@ -88,16 +104,24 @@ public class Multas extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(Configuración);
 
+        Ayuda.setBackground(new java.awt.Color(68, 217, 230));
+        Ayuda.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Ayuda.setText("Ayuda");
+        Ayuda.setBorder(null);
         Ayuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AyudaActionPerformed(evt);
             }
         });
         jPopMenuPrincipal.add(Ayuda);
+
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jPopMenuPrincipal.add(jSeparator1);
 
+        SalirSesion.setBackground(new java.awt.Color(68, 217, 230));
+        SalirSesion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         SalirSesion.setText("Salir de sesión");
+        SalirSesion.setBorder(null);
         SalirSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalirSesionActionPerformed(evt);
@@ -113,20 +137,15 @@ public class Multas extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(68, 217, 230));
         jPanel1.setForeground(new java.awt.Color(68, 217, 230));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 32, Short.MAX_VALUE)
-        );
+        LabelAyuda.setBackground(new java.awt.Color(68, 217, 230));
+        LabelAyuda.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
+        LabelAyuda.setForeground(new java.awt.Color(255, 255, 255));
+        LabelAyuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelAyuda.setText("Multas");
 
         jBotonMenu.setBackground(new java.awt.Color(68, 217, 230));
         jBotonMenu.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jBotonMenu.setText("Menu");
+        jBotonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoMenuAzul.png"))); // NOI18N
         jBotonMenu.setBorder(null);
         jBotonMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -139,33 +158,37 @@ public class Multas extends javax.swing.JPanel {
             }
         });
 
-        LabelAyuda.setBackground(new java.awt.Color(255, 255, 255));
-        LabelAyuda.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
-        LabelAyuda.setForeground(new java.awt.Color(68, 217, 230));
-        LabelAyuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelAyuda.setText("Multas");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jBotonMenu)
+                .addGap(59, 59, 59)
+                .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(112, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(412, Short.MAX_VALUE))
+                .addContainerGap(462, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

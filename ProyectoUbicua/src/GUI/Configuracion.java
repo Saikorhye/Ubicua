@@ -51,9 +51,6 @@ public class Configuracion extends javax.swing.JPanel {
         Ayuda = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         SalirSesion = new javax.swing.JMenuItem();
-        jPanel1 = new javax.swing.JPanel();
-        jBotonMenu = new javax.swing.JButton();
-        LabelAyuda = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
@@ -61,8 +58,18 @@ public class Configuracion extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
+        jPanel1 = new javax.swing.JPanel();
+        LabelAyuda = new javax.swing.JLabel();
+        jBotonMenu = new javax.swing.JButton();
 
+        jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
+        jPopMenuPrincipal.setForeground(new java.awt.Color(68, 217, 230));
+        jPopMenuPrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(68, 217, 230)));
+
+        VolverPrincipal.setBackground(new java.awt.Color(68, 217, 230));
+        VolverPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         VolverPrincipal.setText("Configuración");
+        VolverPrincipal.setBorder(null);
         VolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VolverPrincipalActionPerformed(evt);
@@ -70,7 +77,10 @@ public class Configuracion extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(VolverPrincipal);
 
+        Notificaciones.setBackground(new java.awt.Color(68, 217, 230));
+        Notificaciones.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Notificaciones.setText("Notificaciones");
+        Notificaciones.setBorder(null);
         Notificaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NotificacionesActionPerformed(evt);
@@ -79,7 +89,10 @@ public class Configuracion extends javax.swing.JPanel {
         jPopMenuPrincipal.add(Notificaciones);
         Notificaciones.getAccessibleContext().setAccessibleName("JMenuItem1");
 
+        Usuario.setBackground(new java.awt.Color(68, 217, 230));
+        Usuario.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Usuario.setText("Usuario");
+        Usuario.setBorder(null);
         Usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsuarioActionPerformed(evt);
@@ -87,7 +100,10 @@ public class Configuracion extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(Usuario);
 
+        Multas.setBackground(new java.awt.Color(68, 217, 230));
+        Multas.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Multas.setText("Multas");
+        Multas.setBorder(null);
         Multas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MultasActionPerformed(evt);
@@ -95,7 +111,10 @@ public class Configuracion extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(Multas);
 
+        Ayuda.setBackground(new java.awt.Color(68, 217, 230));
+        Ayuda.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Ayuda.setText("Ayuda");
+        Ayuda.setBorder(null);
         Ayuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AyudaActionPerformed(evt);
@@ -104,7 +123,10 @@ public class Configuracion extends javax.swing.JPanel {
         jPopMenuPrincipal.add(Ayuda);
         jPopMenuPrincipal.add(jSeparator1);
 
+        SalirSesion.setBackground(new java.awt.Color(68, 217, 230));
+        SalirSesion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         SalirSesion.setText("Salir de sesión");
+        SalirSesion.setBorder(null);
         SalirSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalirSesionActionPerformed(evt);
@@ -117,23 +139,63 @@ public class Configuracion extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(350, 500));
         setPreferredSize(new java.awt.Dimension(350, 500));
 
+        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
+        jCheckBox1.setText("Enviar mis datos");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
+        jCheckBox2.setText("Guardar contraseña durante 6 meses");
+
+        jCheckBox3.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox3.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
+        jCheckBox3.setText("Utilizar identificación en dos pasos");
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Bitstream Vera Sans", 1, 15)); // NOI18N
+        jLabel1.setText("Opciones y Seguridad");
+        jLabel1.setBorder(null);
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Bitstream Vera Sans", 1, 15)); // NOI18N
+        jLabel2.setText("Notificaciones");
+        jLabel2.setBorder(null);
+
+        jCheckBox4.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox4.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
+        jCheckBox4.setText("Mostrar notificaciones emergentes");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox5.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox5.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
+        jCheckBox5.setText("Avisar cuando resten 15 minutos de parking");
+        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox5ActionPerformed(evt);
+            }
+        });
+
         jPanel1.setBackground(new java.awt.Color(68, 217, 230));
         jPanel1.setForeground(new java.awt.Color(68, 217, 230));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 32, Short.MAX_VALUE)
-        );
+        LabelAyuda.setBackground(new java.awt.Color(68, 217, 230));
+        LabelAyuda.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
+        LabelAyuda.setForeground(new java.awt.Color(255, 255, 255));
+        LabelAyuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelAyuda.setText("Configuración");
 
         jBotonMenu.setBackground(new java.awt.Color(68, 217, 230));
         jBotonMenu.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jBotonMenu.setText("Menu");
+        jBotonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoMenuAzul.png"))); // NOI18N
         jBotonMenu.setBorder(null);
         jBotonMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -146,101 +208,68 @@ public class Configuracion extends javax.swing.JPanel {
             }
         });
 
-        LabelAyuda.setBackground(new java.awt.Color(255, 255, 255));
-        LabelAyuda.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
-        LabelAyuda.setForeground(new java.awt.Color(68, 217, 230));
-        LabelAyuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelAyuda.setText("Configuración");
-
-        jCheckBox1.setText("Enviar mis datos");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox2.setText("Guardar contraseña durante 6 meses");
-
-        jCheckBox3.setText("Utilizar identificación en dos pasos");
-
-        jLabel1.setText("Opciones y Seguridad");
-
-        jLabel2.setText("Notificaciones");
-
-        jCheckBox4.setText("Mostrar notificaciones emergentes");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox5.setText("Avisar cuando resten 15 minutos de parking");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jBotonMenu)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelAyuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jBotonMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
+                        .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jCheckBox1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox3)
-                                            .addComponent(jCheckBox2))))))
-                        .addGap(28, 28, 28))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                            .addComponent(jCheckBox3)
+                            .addComponent(jCheckBox2)
+                            .addComponent(jCheckBox1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jCheckBox4))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(29, 29, 29))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox4)
+                    .addComponent(jCheckBox5))
+                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1)
-                .addGap(10, 10, 10)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox1)
-                .addGap(3, 3, 3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(3, 3, 3)
                 .addComponent(jCheckBox3)
-                .addGap(96, 96, 96)
-                .addComponent(jLabel2)
-                .addGap(26, 26, 26)
+                .addGap(45, 45, 45)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(186, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

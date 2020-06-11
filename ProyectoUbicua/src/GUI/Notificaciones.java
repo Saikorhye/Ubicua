@@ -53,14 +53,21 @@ public class Notificaciones extends javax.swing.JPanel {
         Ayuda = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         SalirSesion = new javax.swing.JMenuItem();
-        jPanel1 = new javax.swing.JPanel();
-        jBotonMenu = new javax.swing.JButton();
-        LabelAyuda = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        LabelAyuda1 = new javax.swing.JLabel();
+        jBotonMenu = new javax.swing.JButton();
 
+        jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
+        jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jPopMenuPrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(68, 217, 230)));
+
+        VolverPrincipal.setBackground(new java.awt.Color(68, 217, 230));
+        VolverPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         VolverPrincipal.setText("Notificaciones");
+        VolverPrincipal.setBorder(null);
         VolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VolverPrincipalActionPerformed(evt);
@@ -69,7 +76,10 @@ public class Notificaciones extends javax.swing.JPanel {
         jPopMenuPrincipal.add(VolverPrincipal);
         VolverPrincipal.getAccessibleContext().setAccessibleName("JMenuItem1");
 
+        Usuario.setBackground(new java.awt.Color(68, 217, 230));
+        Usuario.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Usuario.setText("Usuario");
+        Usuario.setBorder(null);
         Usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsuarioActionPerformed(evt);
@@ -77,7 +87,10 @@ public class Notificaciones extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(Usuario);
 
+        Multas.setBackground(new java.awt.Color(68, 217, 230));
+        Multas.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Multas.setText("Multas");
+        Multas.setBorder(null);
         Multas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MultasActionPerformed(evt);
@@ -85,7 +98,10 @@ public class Notificaciones extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(Multas);
 
+        Configuración.setBackground(new java.awt.Color(68, 217, 230));
+        Configuración.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Configuración.setText("Configuración");
+        Configuración.setBorder(null);
         Configuración.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfiguraciónActionPerformed(evt);
@@ -93,16 +109,24 @@ public class Notificaciones extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(Configuración);
 
+        Ayuda.setBackground(new java.awt.Color(68, 217, 230));
+        Ayuda.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Ayuda.setText("Ayuda");
+        Ayuda.setBorder(null);
         Ayuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AyudaActionPerformed(evt);
             }
         });
         jPopMenuPrincipal.add(Ayuda);
+
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jPopMenuPrincipal.add(jSeparator1);
 
+        SalirSesion.setBackground(new java.awt.Color(68, 217, 230));
+        SalirSesion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         SalirSesion.setText("Salir de sesión");
+        SalirSesion.setBorder(null);
         SalirSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalirSesionActionPerformed(evt);
@@ -113,41 +137,6 @@ public class Notificaciones extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(350, 500));
         setMinimumSize(new java.awt.Dimension(350, 500));
-
-        jPanel1.setBackground(new java.awt.Color(68, 217, 230));
-        jPanel1.setForeground(new java.awt.Color(68, 217, 230));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 32, Short.MAX_VALUE)
-        );
-
-        jBotonMenu.setBackground(new java.awt.Color(68, 217, 230));
-        jBotonMenu.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jBotonMenu.setText("Menu");
-        jBotonMenu.setBorder(null);
-        jBotonMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBotonMenuMouseClicked(evt);
-            }
-        });
-        jBotonMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBotonMenuActionPerformed(evt);
-            }
-        });
-
-        LabelAyuda.setBackground(new java.awt.Color(255, 255, 255));
-        LabelAyuda.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
-        LabelAyuda.setForeground(new java.awt.Color(68, 217, 230));
-        LabelAyuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelAyuda.setText("Notificaciones");
 
         jTextField1.setEditable(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -163,38 +152,72 @@ public class Notificaciones extends javax.swing.JPanel {
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jPanel1.setBackground(new java.awt.Color(68, 217, 230));
+        jPanel1.setForeground(new java.awt.Color(68, 217, 230));
+
+        LabelAyuda1.setBackground(new java.awt.Color(68, 217, 230));
+        LabelAyuda1.setFont(new java.awt.Font("Bitstream Vera Sans", 3, 24)); // NOI18N
+        LabelAyuda1.setForeground(new java.awt.Color(255, 255, 255));
+        LabelAyuda1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelAyuda1.setText("Notificaciones");
+
+        jBotonMenu.setBackground(new java.awt.Color(68, 217, 230));
+        jBotonMenu.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jBotonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoMenuAzul.png"))); // NOI18N
+        jBotonMenu.setBorder(null);
+        jBotonMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBotonMenuMouseClicked(evt);
+            }
+        });
+        jBotonMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonMenuActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jBotonMenu)
+                .addGap(43, 43, 43)
+                .addComponent(LabelAyuda1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelAyuda1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(9, 9, 9)
-                            .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(19, 19, 19)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -261,7 +284,7 @@ public class Notificaciones extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Ayuda;
     private javax.swing.JMenuItem Configuración;
-    private javax.swing.JLabel LabelAyuda;
+    private javax.swing.JLabel LabelAyuda1;
     private javax.swing.JMenuItem Multas;
     private javax.swing.JMenuItem SalirSesion;
     private javax.swing.JMenuItem Usuario;

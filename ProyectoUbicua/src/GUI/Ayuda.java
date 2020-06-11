@@ -57,7 +57,14 @@ public class Ayuda extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
+        jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
+        jPopMenuPrincipal.setForeground(new java.awt.Color(68, 217, 230));
+        jPopMenuPrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(68, 217, 230)));
+
+        VolverPrincipal.setBackground(new java.awt.Color(68, 217, 230));
+        VolverPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         VolverPrincipal.setText("Ayuda");
+        VolverPrincipal.setBorder(null);
         VolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VolverPrincipalActionPerformed(evt);
@@ -65,7 +72,10 @@ public class Ayuda extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(VolverPrincipal);
 
+        Notificaciones.setBackground(new java.awt.Color(68, 217, 230));
+        Notificaciones.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Notificaciones.setText("Notificaciones");
+        Notificaciones.setBorder(null);
         Notificaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NotificacionesActionPerformed(evt);
@@ -74,7 +84,10 @@ public class Ayuda extends javax.swing.JPanel {
         jPopMenuPrincipal.add(Notificaciones);
         Notificaciones.getAccessibleContext().setAccessibleName("JMenuItem1");
 
+        Usuario.setBackground(new java.awt.Color(68, 217, 230));
+        Usuario.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Usuario.setText("Usuario");
+        Usuario.setBorder(null);
         Usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsuarioActionPerformed(evt);
@@ -82,7 +95,10 @@ public class Ayuda extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(Usuario);
 
+        Multas.setBackground(new java.awt.Color(68, 217, 230));
+        Multas.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Multas.setText("Multas");
+        Multas.setBorder(null);
         Multas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MultasActionPerformed(evt);
@@ -90,16 +106,24 @@ public class Ayuda extends javax.swing.JPanel {
         });
         jPopMenuPrincipal.add(Multas);
 
+        Configuración.setBackground(new java.awt.Color(68, 217, 230));
+        Configuración.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Configuración.setText("Configuración");
+        Configuración.setBorder(null);
         Configuración.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfiguraciónActionPerformed(evt);
             }
         });
         jPopMenuPrincipal.add(Configuración);
+
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jPopMenuPrincipal.add(jSeparator1);
 
+        SalirSesion.setBackground(new java.awt.Color(68, 217, 230));
+        SalirSesion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         SalirSesion.setText("Salir de sesión");
+        SalirSesion.setBorder(null);
         SalirSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalirSesionActionPerformed(evt);
