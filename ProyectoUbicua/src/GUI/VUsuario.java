@@ -225,6 +225,7 @@ public class VUsuario extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(350, 500));
         setMinimumSize(new java.awt.Dimension(350, 500));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(68, 217, 230));
         jPanel1.setForeground(new java.awt.Color(68, 217, 230));
@@ -270,12 +271,15 @@ public class VUsuario extends javax.swing.JPanel {
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
+
         BEditar.setText("Editar");
         BEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BEditarActionPerformed(evt);
             }
         });
+        add(BEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 58, -1, -1));
 
         BVehiculos.setText("Vehiculos");
         BVehiculos.addActionListener(new java.awt.event.ActionListener() {
@@ -283,16 +287,22 @@ public class VUsuario extends javax.swing.JPanel {
                 BVehiculosActionPerformed(evt);
             }
         });
+        add(BVehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 58, -1, -1));
 
         LNombre.setText("Nombre");
+        add(LNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 132, -1, -1));
 
         LApellidos.setText("Apellidos");
+        add(LApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 180, -1, -1));
 
         LTelefono.setText("Telefono");
+        add(LTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 228, -1, -1));
 
         LEmail.setText("Email");
+        add(LEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 276, -1, -1));
 
         LTarjeta.setText("Tarjeta");
+        add(LTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 324, -1, -1));
 
         BContra.setText("Cambiar contraseña");
         BContra.addActionListener(new java.awt.event.ActionListener() {
@@ -300,6 +310,7 @@ public class VUsuario extends javax.swing.JPanel {
                 BContraActionPerformed(evt);
             }
         });
+        add(BContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 356, -1, -1));
 
         BCambios.setText("Guardar cambios");
         BCambios.addActionListener(new java.awt.event.ActionListener() {
@@ -307,93 +318,22 @@ public class VUsuario extends javax.swing.JPanel {
                 BCambiosActionPerformed(evt);
             }
         });
+        add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 356, -1, -1));
 
         PNombre.setLayout(new java.awt.CardLayout());
+        add(PNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 116, 199, 30));
 
         PApellidos.setLayout(new java.awt.CardLayout());
+        add(PApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 164, 199, 30));
 
         PTelefono.setLayout(new java.awt.CardLayout());
+        add(PTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 212, 199, 30));
 
         PEmail.setLayout(new java.awt.CardLayout());
+        add(PEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 260, 199, 30));
 
         PTarjeta.setLayout(new java.awt.CardLayout());
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(BEditar)
-                        .addGap(88, 88, 88)
-                        .addComponent(BVehiculos))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(21, 21, 21)
-                                    .addComponent(LTelefono))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(LApellidos, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(LTarjeta, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(LEmail, javax.swing.GroupLayout.Alignment.TRAILING))))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(PApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(PTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(PEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(PTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(LNombre)
-                            .addGap(18, 18, 18)
-                            .addComponent(PNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(BContra)
-                        .addGap(47, 47, 47)
-                        .addComponent(BCambios)))
-                .addContainerGap(51, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BEditar)
-                    .addComponent(BVehiculos))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LNombre))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LApellidos))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LTelefono))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LEmail))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LTarjeta))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BContra)
-                    .addComponent(BCambios))
-                .addContainerGap(121, Short.MAX_VALUE))
-        );
+        add(PTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 308, 199, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
