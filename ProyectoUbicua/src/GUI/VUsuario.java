@@ -310,7 +310,7 @@ public class VUsuario extends javax.swing.JPanel {
                 BContraActionPerformed(evt);
             }
         });
-        add(BContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+        add(BContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, -1));
 
         BCambios.setText("Guardar cambios");
         BCambios.addActionListener(new java.awt.event.ActionListener() {
@@ -318,7 +318,7 @@ public class VUsuario extends javax.swing.JPanel {
                 BCambiosActionPerformed(evt);
             }
         });
-        add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, -1, -1));
+        add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, -1, -1));
 
         PNombre.setLayout(new java.awt.CardLayout());
         add(PNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 116, 199, 30));
@@ -333,7 +333,7 @@ public class VUsuario extends javax.swing.JPanel {
         add(PEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 260, 199, 30));
 
         PTarjeta.setLayout(new java.awt.CardLayout());
-        add(PTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 199, 30));
+        add(PTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 199, 30));
 
         jComboBoxPago.setBackground(new java.awt.Color(216, 216, 216));
         jComboBoxPago.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
