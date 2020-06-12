@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author evinha
  */
-public class Multas extends javax.swing.JPanel {
+public class MultasVehiculo extends javax.swing.JPanel {
 
     /**
      * Creates new form VPrincipal
@@ -23,6 +23,7 @@ public class Multas extends javax.swing.JPanel {
     
     private VInicial v;
     private Usuario usu;
+    private String matricula;
     
     public VInicial getV() {
         return v;
@@ -32,11 +33,12 @@ public class Multas extends javax.swing.JPanel {
         this.v = v;
     }
     
-    public Multas(Usuario us) {
+    public MultasVehiculo(Usuario us, String matricula) {
         initComponents();
         this.usu=us;
         this.VolverPrincipal.setText("Volver a Principal");
-       
+       this.matricula = matricula;
+        
         setVehiculoMultas();
     }
 
@@ -191,14 +193,14 @@ public class Multas extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Matrícula", "Numero de multas"
+                "Fecha", "Importe", "Descripcion"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.Object.class, java.lang.Double.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -209,14 +211,10 @@ public class Multas extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        ListaMultas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ListaMultasMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(ListaMultas);
         if (ListaMultas.getColumnModel().getColumnCount() > 0) {
             ListaMultas.getColumnModel().getColumn(0).setMaxWidth(500);
+            ListaMultas.getColumnModel().getColumn(1).setMaxWidth(500);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -295,16 +293,6 @@ public class Multas extends javax.swing.JPanel {
         this.v.setContentPane(vp);
     }//GEN-LAST:event_ConfiguraciónActionPerformed
 
-    private void ListaMultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaMultasMouseClicked
-        this.v.getContentPane().setVisible(false);
-        DefaultTableModel tm = (DefaultTableModel) ListaMultas.getModel();
-        int pos = ListaMultas.getSelectedRow();
-        MultasVehiculo vm = new MultasVehiculo(this.usu, tm.getValueAt(pos, 0).toString());
-        vm.setVisible(true);
-        vm.setV(this.v);
-        this.v.setContentPane(vm);
-    }//GEN-LAST:event_ListaMultasMouseClicked
-
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -325,17 +313,11 @@ public class Multas extends javax.swing.JPanel {
 
 public void setVehiculoMultas(){
     ArrayList<Multa> lista = usu.getMultas();
-    ArrayList<Vehiculo> listavehi = usu.getVehiculos();
     DefaultTableModel mt = (DefaultTableModel) ListaMultas.getModel();
     
-    if (lista.size() > 0) {
-        for (int i = 0; i < listavehi.size(); i++) {
-            int num = 0;
-            for (int j = 0; j < lista.size(); j++) {
-               if(lista.get(j).getMatricula().equals(listavehi.get(i).getMatricula()))
-                   num++;
-            }
-            mt.addRow(new Object[]{listavehi.get(i).getMatricula(), num});
+    for (int i = 0; i < lista.size(); i++) {
+        if (matricula.equals(lista.get(i).getMatricula())) {
+            mt.addRow(new Object[]{lista.get(i).getFecha(), lista.get(i).getImporte(), lista.get(i).getTexto()});
         }
     }
 }
