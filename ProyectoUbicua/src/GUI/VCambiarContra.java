@@ -151,18 +151,33 @@ public class VCambiarContra extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (TContraAnt.getText().equals(usu.getContrasena())) {
+        String AnteriorPass = new String(this.TContraAnt.getPassword());
+        String NuevaPass =  new String(this.TContraNueva.getPassword());
+        String NuevaPassRepe =  new String(this.TContraRepe.getPassword());
+       
+        if (!AnteriorPass.equals(usu.getContrasena())) {
             LError.setText("Las credenciales son incorrectas");
             LError.setVisible(true);
-        } else if (TContraAnt.getText().equals(TContraNueva.getText())) {
-            LError.setText("La contraseña nueva no puede ser igual a la anterior");
-            LError.setVisible(true);
-        } else if (TContraNueva.getText().equals(TContraRepe.getText())) {
-            LError.setText("Las contraseñas no son iguales");
-            LError.setVisible(true);
-        } else {
-            this.dispose();
-            padre.cambiarContra(TContraNueva.getText());
+        } 
+        else{ //la pass proporcionada coincide con la de usuario
+            if (NuevaPass.isEmpty()){
+                LError.setText("La contraseña no puede estar vacía ");
+                LError.setVisible(true);
+            }
+            else{ //la nueva pass no esta vacia
+                if (AnteriorPass.equals(NuevaPass)) {
+                    LError.setText("La contraseña nueva no puede ser igual a la anterior");
+                    LError.setVisible(true);
+                }
+                else if (!NuevaPass.equals(NuevaPassRepe)) {
+                    LError.setText("Las contraseñas no son iguales");
+                    LError.setVisible(true);
+                } 
+                else { //si todo bien
+                    padre.cambiarContra(NuevaPass);
+                    this.dispose();
+                }
+            }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
