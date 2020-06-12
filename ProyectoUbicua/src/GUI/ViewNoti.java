@@ -41,30 +41,35 @@ public class ViewNoti extends javax.swing.JDialog {
         setLocationByPlatform(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        LInfo1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LInfo1.setText("El contenido de la notififación es el siguiente:");
-        getContentPane().add(LInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 280, -1));
+        getContentPane().add(LInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 330, -1));
 
+        BCancelar.setBackground(new java.awt.Color(216, 216, 216));
+        BCancelar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BCancelar.setText("Aceptar");
         BCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 158, 40));
+        getContentPane().add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 158, 40));
 
         Texto.setEditable(false);
         Texto.setColumns(20);
+        Texto.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         Texto.setLineWrap(true);
         Texto.setRows(5);
         Texto.setWrapStyleWord(true);
         jScrollPane1.setViewportView(Texto);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 66, 300, 80));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 300, 80));
 
         Titulo.setEditable(false);
         Titulo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Titulo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 290, -1));
+        Titulo.setBorder(null);
+        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 290, 30));
 
         pack();
         setLocationRelativeTo(null);

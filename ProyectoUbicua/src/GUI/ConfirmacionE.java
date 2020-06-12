@@ -42,22 +42,32 @@ public class ConfirmacionE extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        LInfo1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LInfo1.setText("Esta acción eliminará el siguiente vehiculo");
 
+        LMatricula.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LMatricula.setText("Matricula");
 
+        LDescripcion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LDescripcion.setText("Descripcion");
 
+        LInfo2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LInfo2.setText("¿Estas seguro?");
 
+        BCancelar.setBackground(new java.awt.Color(190, 190, 190));
+        BCancelar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BCancelar.setText("Cancelar");
+        BCancelar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(190, 190, 190)));
         BCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BCancelarActionPerformed(evt);
             }
         });
 
+        BEliminar.setBackground(new java.awt.Color(190, 190, 190));
+        BEliminar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BEliminar.setText("Eliminar");
+        BEliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(190, 190, 190)));
         BEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BEliminarActionPerformed(evt);
@@ -72,21 +82,18 @@ public class ConfirmacionE extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(BCancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BEliminar))
+                        .addComponent(BCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(108, 108, 108)
-                                .addComponent(LInfo2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(116, 116, 116)
-                                .addComponent(LMatricula)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(108, 108, 108)
+                        .addComponent(LInfo2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(LMatricula)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 41, Short.MAX_VALUE)
+                .addGap(0, 9, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(LDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LInfo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -100,13 +107,13 @@ public class ConfirmacionE extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LMatricula)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                .addComponent(LDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(LInfo2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BCancelar)
-                    .addComponent(BEliminar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                    .addComponent(BCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 

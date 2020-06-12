@@ -45,35 +45,43 @@ public class EliminarNoti extends javax.swing.JDialog {
         setLocationByPlatform(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        LInfo1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
         LInfo1.setText("Esta acción eliminará la siguiente notificación:");
-        getContentPane().add(LInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 18, -1, -1));
+        getContentPane().add(LInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        LInfo2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
         LInfo2.setText("¿Estas seguro?");
-        getContentPane().add(LInfo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 164, -1, -1));
+        getContentPane().add(LInfo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, -1));
 
+        BCancelar.setBackground(new java.awt.Color(190, 190, 190));
+        BCancelar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BCancelar.setText("Cancelar");
         BCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 186, -1, -1));
+        getContentPane().add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 110, -1));
 
+        BEliminar.setBackground(new java.awt.Color(190, 190, 190));
+        BEliminar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BEliminar.setText("Eliminar");
         BEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BEliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(BEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 186, 116, -1));
+        getContentPane().add(BEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 116, -1));
 
         Titulo.setEditable(false);
         Titulo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Titulo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 290, -1));
+        Titulo.setBorder(null);
+        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 290, 30));
 
         Texto.setEditable(false);
         Texto.setColumns(20);
+        Texto.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
         Texto.setLineWrap(true);
         Texto.setRows(5);
         Texto.setWrapStyleWord(true);

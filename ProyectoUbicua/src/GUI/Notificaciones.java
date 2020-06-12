@@ -185,9 +185,9 @@ public class Notificaciones extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jBotonMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101))
+                .addGap(39, 39, 39)
+                .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,7 +195,7 @@ public class Notificaciones extends javax.swing.JPanel {
             .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        ListaNotificaciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ListaNotificaciones.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 18)); // NOI18N
         ListaNotificaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -227,7 +227,10 @@ public class Notificaciones extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(ListaNotificaciones);
 
+        BEliminar.setBackground(new java.awt.Color(216, 216, 216));
+        BEliminar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BEliminar.setText("Eliminar notificacion");
+        BEliminar.setBorder(null);
         BEliminar.setEnabled(false);
         BEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -235,7 +238,10 @@ public class Notificaciones extends javax.swing.JPanel {
             }
         });
 
+        BVisualizar.setBackground(new java.awt.Color(216, 216, 216));
+        BVisualizar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BVisualizar.setText("Ver notificacion");
+        BVisualizar.setBorder(null);
         BVisualizar.setEnabled(false);
         BVisualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,8 +258,8 @@ public class Notificaciones extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
-                    .addComponent(BEliminar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
