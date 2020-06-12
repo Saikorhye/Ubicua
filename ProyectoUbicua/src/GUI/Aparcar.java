@@ -446,7 +446,7 @@ public class Aparcar extends javax.swing.JPanel {
     private void jButtonPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPagarActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        ResumenAparcar vp = new ResumenAparcar(this.usu, this.lugar, jSlider1.getValue()/60, jLabelPrezo.getText(), jLabelFin.getText());
+        ResumenAparcar vp = new ResumenAparcar(this.usu, this.lugar, jSlider1.getValue()/60, jLabelPrezo.getText(), jLabelFin.getText(), jComboBoxVehiculo.getSelectedItem().toString());
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
