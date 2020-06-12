@@ -62,7 +62,7 @@ public class Multas extends javax.swing.JPanel {
         jBotonMenu = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListaMultas = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        BPagar = new javax.swing.JButton();
 
         jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
         jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -215,7 +215,7 @@ public class Multas extends javax.swing.JPanel {
             ListaMultas.getColumnModel().getColumn(0).setMaxWidth(500);
         }
 
-        jButton1.setText("jButton1");
+        BPagar.setText("Pagar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -225,7 +225,7 @@ public class Multas extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -236,7 +236,7 @@ public class Multas extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(BPagar)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -301,6 +301,7 @@ public class Multas extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Ayuda;
+    private javax.swing.JButton BPagar;
     private javax.swing.JMenuItem Configuración;
     private javax.swing.JLabel LabelAyuda;
     private javax.swing.JTable ListaMultas;
@@ -309,7 +310,6 @@ public class Multas extends javax.swing.JPanel {
     private javax.swing.JMenuItem Usuario;
     private javax.swing.JMenuItem VolverPrincipal;
     private javax.swing.JButton jBotonMenu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JScrollPane jScrollPane1;
