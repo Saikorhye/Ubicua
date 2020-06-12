@@ -5,7 +5,11 @@
  */
 package GUI;
 
+import Clases.GuardaDatos;
 import Clases.Usuario;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 /**
  *
@@ -16,10 +20,9 @@ public class Ayuda extends javax.swing.JPanel {
     /**
      * Creates new form VPrincipal
      */
-    
     private VInicial v;
     private Usuario usu;
-    
+
     public VInicial getV() {
         return v;
     }
@@ -27,10 +30,10 @@ public class Ayuda extends javax.swing.JPanel {
     public void setV(VInicial v) {
         this.v = v;
     }
-    
+
     public Ayuda(Usuario us) {
         initComponents();
-        this.usu=us;
+        this.usu = us;
         this.VolverPrincipal.setText("Volver a Principal");
     }
 
@@ -208,12 +211,12 @@ public class Ayuda extends javax.swing.JPanel {
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
         // TODO add your handling code here:
-       // menuEmergente.show(this,evt.get .getX(),evt.getY());
+        // menuEmergente.show(this,evt.get .getX(),evt.getY());
     }//GEN-LAST:event_jBotonMenuActionPerformed
 
     private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
         // TODO add your handling code here:
-        jPopMenuPrincipal.show(this,jBotonMenu.getX(),jBotonMenu.getY()+ jBotonMenu.getHeight());
+        jPopMenuPrincipal.show(this, jBotonMenu.getX(), jBotonMenu.getY() + jBotonMenu.getHeight());
     }//GEN-LAST:event_jBotonMenuMouseClicked
 
     private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
@@ -234,11 +237,37 @@ public class Ayuda extends javax.swing.JPanel {
     }//GEN-LAST:event_VolverPrincipalActionPerformed
 
     private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
-        // TODO add your handling code here:
+        //Serializamos los datos en un fichero
+        GuardaDatos object = null;
+        String filename = "listausuarios.txt";
+
+        // Deserialization 
+        try {
+            // Reading the object from a file 
+            FileInputStream file = new FileInputStream(filename);
+            ObjectInputStream in = new ObjectInputStream(file);
+            // Method for deserialization of object 
+            object = (GuardaDatos) in.readObject();
+            in.close();
+            file.close();
+            System.out.println("Object has been deserialized\n"
+                    + "Data after Deserialization.");
+        } catch (IOException ex) {
+            System.out.println("IOException is caught");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("ClassNotFoundException"
+                    + " is caught");
+        }
+
+        this.v.getContentPane().setVisible(false);
+        IniciarSesion vp = new IniciarSesion(object.getUsuario());
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
     }//GEN-LAST:event_SalirSesionActionPerformed
 
     private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
-         this.v.getContentPane().setVisible(false);
+        this.v.getContentPane().setVisible(false);
         VUsuario vp = new VUsuario(this.usu);
         vp.setVisible(true);
         vp.setV(this.v);
@@ -246,7 +275,7 @@ public class Ayuda extends javax.swing.JPanel {
     }//GEN-LAST:event_UsuarioActionPerformed
 
     private void MultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultasActionPerformed
-       this.v.getContentPane().setVisible(false);
+        this.v.getContentPane().setVisible(false);
         Multas vp = new Multas(this.usu);
         vp.setVisible(true);
         vp.setV(this.v);
@@ -254,7 +283,7 @@ public class Ayuda extends javax.swing.JPanel {
     }//GEN-LAST:event_MultasActionPerformed
 
     private void ConfiguraciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguraciónActionPerformed
-          this.v.getContentPane().setVisible(false);
+        this.v.getContentPane().setVisible(false);
         Configuracion vp = new Configuracion(this.usu);
         vp.setVisible(true);
         vp.setV(this.v);

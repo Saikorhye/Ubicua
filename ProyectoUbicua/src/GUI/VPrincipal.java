@@ -241,29 +241,22 @@ public class VPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_ConfiguraciónActionPerformed
 
     private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
-        // TODO add your handling code here:
-        
+
         //Serializamos los datos en un fichero
         GuardaDatos object = null;
         String filename = "listausuarios.txt";
                     
-           // Deserialization 
-        try { 
-  
+        // Deserialization 
+        try {   
             // Reading the object from a file 
             FileInputStream file = new FileInputStream(filename); 
             ObjectInputStream in = new ObjectInputStream (file); 
-  
             // Method for deserialization of object 
             object = (GuardaDatos)in.readObject(); 
-  
             in.close(); 
             file.close(); 
             System.out.println("Object has been deserialized\n"
                                 + "Data after Deserialization."); 
-           // printdata(object); 
-  
-            // System.out.println("z = " + object1.z); 
         } 
   
         catch (IOException ex) { 

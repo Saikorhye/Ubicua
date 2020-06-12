@@ -5,8 +5,12 @@
  */
 package GUI;
 
+import Clases.GuardaDatos;
 import Clases.Usuario;
 import java.awt.CardLayout;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 /**
@@ -371,7 +375,37 @@ public class VUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_AyudaActionPerformed
 
     private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
+        //Serializamos los datos en un fichero
+        GuardaDatos object = null;
+        String filename = "listausuarios.txt";
+                    
+        // Deserialization 
+        try {   
+            // Reading the object from a file 
+            FileInputStream file = new FileInputStream(filename); 
+            ObjectInputStream in = new ObjectInputStream (file); 
+            // Method for deserialization of object 
+            object = (GuardaDatos)in.readObject(); 
+            in.close(); 
+            file.close(); 
+            System.out.println("Object has been deserialized\n"
+                                + "Data after Deserialization."); 
+        } 
+  
+        catch (IOException ex) { 
+            System.out.println("IOException is caught"); 
+        } 
         
+        catch (ClassNotFoundException ex) { 
+            System.out.println("ClassNotFoundException" + 
+                                " is caught"); 
+        } 
+        
+        this.v.getContentPane().setVisible(false);
+        IniciarSesion vp = new  IniciarSesion(object.getUsuario());
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
     }//GEN-LAST:event_SalirSesionActionPerformed
 
     private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
