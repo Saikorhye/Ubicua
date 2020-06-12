@@ -23,8 +23,8 @@ public class Main {
     public static void main(String[] args) {
         // Variables
         ArrayList<Usuario> usuarios = new ArrayList<>();
-        Usuario usu1 = new Usuario("Eva Suarez Vazquez", "eva@gmail.com", "1234", "Tarjeta", "666666666");
-        Usuario usu2 = new Usuario("admin admin", "admin", "admin", "Tarjeta", "666666666");
+        Usuario usu1 = new Usuario("Eva Suarez Vazquez", "eva@gmail.com", "1234", "Tarjeta de Crédito", "666666666");
+        Usuario usu2 = new Usuario("admin admin", "admin", "admin", "Tarjeta de Crédito", "666666666");
      
         //Notificaciones
         Notificacion noti = new Notificacion("Nueva multa!!", "Debe abonar el pago en la seccion de multas.\nPara ello haga click en 'Menu' > 'Multas', y una vez alli siga las instrucciones");
