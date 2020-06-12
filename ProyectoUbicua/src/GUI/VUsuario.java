@@ -24,7 +24,6 @@ public class VUsuario extends javax.swing.JPanel {
     private javax.swing.JTextField TApellidosUsu;
     private javax.swing.JTextField TTelefonoUsu;
     private javax.swing.JTextField TEmailUsu;
-    private javax.swing.JTextField TTarjetaUsu;
     private javax.swing.JLabel LNombreUsu;
     private javax.swing.JLabel LApellidosUsu;
     private javax.swing.JLabel LTelefonoUsu;
@@ -40,6 +39,7 @@ public class VUsuario extends javax.swing.JPanel {
     private javax.swing.JPanel PTelefonoL;
     private javax.swing.JPanel PEmailL;
     private javax.swing.JPanel PTarjetaL;
+    private javax.swing.JComboBox CPago;
 
     public VInicial getV() {
         return v;
@@ -59,7 +59,10 @@ public class VUsuario extends javax.swing.JPanel {
         TApellidosUsu = new javax.swing.JTextField(15);
         TTelefonoUsu = new javax.swing.JTextField(15);
         TEmailUsu = new javax.swing.JTextField(15);
-        TTarjetaUsu = new javax.swing.JTextField(15);
+        CPago = new javax.swing.JComboBox();
+        CPago.addItem("Tarjeta de Crédito");
+        CPago.addItem("Paypal");
+        
 
         String[] nombre = usu.getNombre().split(" ");
         LNombreUsu = new javax.swing.JLabel(nombre[0]);
@@ -86,7 +89,7 @@ public class VUsuario extends javax.swing.JPanel {
         PEmailT = new javax.swing.JPanel();
         PEmailT.add(TEmailUsu);
         PTarjetaT = new javax.swing.JPanel();
-        PTarjetaT.add(TTarjetaUsu);
+        PTarjetaT.add(CPago);
 
         PNombreL = new javax.swing.JPanel();
         PNombreL.add(LNombreUsu);
@@ -150,7 +153,6 @@ public class VUsuario extends javax.swing.JPanel {
         PTelefono = new javax.swing.JPanel();
         PEmail = new javax.swing.JPanel();
         PTarjeta = new javax.swing.JPanel();
-        jComboBoxPago = new javax.swing.JComboBox<>();
 
         jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
         jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -295,16 +297,16 @@ public class VUsuario extends javax.swing.JPanel {
         add(BVehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 58, -1, -1));
 
         LNombre.setText("Nombre");
-        add(LNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        add(LNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
 
         LApellidos.setText("Apellidos");
-        add(LApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        add(LApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         LTelefono.setText("Telefono");
-        add(LTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+        add(LTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
 
         LEmail.setText("Email");
-        add(LEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+        add(LEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
 
         LMetodoPago.setText("Metodo de Pago");
         add(LMetodoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
@@ -326,24 +328,19 @@ public class VUsuario extends javax.swing.JPanel {
         add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, -1, -1));
 
         PNombre.setLayout(new java.awt.CardLayout());
-        add(PNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 116, 199, 30));
+        add(PNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 199, 30));
 
         PApellidos.setLayout(new java.awt.CardLayout());
-        add(PApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 164, 199, 30));
+        add(PApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 199, 30));
 
         PTelefono.setLayout(new java.awt.CardLayout());
-        add(PTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 212, 199, 30));
+        add(PTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 199, 30));
 
         PEmail.setLayout(new java.awt.CardLayout());
-        add(PEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 260, 199, 30));
+        add(PEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 199, 30));
 
         PTarjeta.setLayout(new java.awt.CardLayout());
-        add(PTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 199, 30));
-
-        jComboBoxPago.setBackground(new java.awt.Color(216, 216, 216));
-        jComboBoxPago.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jComboBoxPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tarjeta de crédito", "Paypal", "Bizum" }));
-        add(jComboBoxPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
+        add(PTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 199, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
@@ -374,16 +371,7 @@ public class VUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_AyudaActionPerformed
 
     private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
-        this.v.getContentPane().setVisible(false);
-        Usuario usu1 = new Usuario("Eva Suarez Vazquez", "eva@gmail.com", "1234", "Tarjeta", "666666666");
-        Usuario usu2 = new Usuario("admin", "admin", "admin", "Tarjeta", "666666666");
-        ArrayList<Usuario> usuarios = new ArrayList<>();
-        usuarios.add(usu1);
-        usuarios.add(usu2);
-        IniciarSesion vi = new IniciarSesion(usuarios);
-        vi.setVisible(true);
-        vi.setV(this.v);
-        this.v.setContentPane(vi);
+        
     }//GEN-LAST:event_SalirSesionActionPerformed
 
     private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
@@ -429,7 +417,11 @@ public class VUsuario extends javax.swing.JPanel {
         TEmailUsu.setText(LEmailUsu.getText());
         c.show(PEmail, "TField");
         c = (CardLayout) PTarjeta.getLayout();
-        TTarjetaUsu.setText(LTarjetaUsu.getText());
+        if (LTarjetaUsu.getText().equals("Paypal")) {
+            CPago.setSelectedIndex(1);
+        } else {
+            CPago.setSelectedIndex(0);
+        }
         c.show(PTarjeta, "TField");
     }//GEN-LAST:event_BEditarActionPerformed
 
@@ -461,10 +453,6 @@ public class VUsuario extends javax.swing.JPanel {
             vacios.set(3, 1);
             fallo = true;
         }
-        if (TTarjetaUsu.getText().equals("")) {
-            vacios.set(4, 1);
-            fallo = true;
-        }
 
         if (fallo) {
             VErrorEditar vee = new VErrorEditar(v, true, vacios);
@@ -488,8 +476,13 @@ public class VUsuario extends javax.swing.JPanel {
             LEmailUsu.setText(TEmailUsu.getText());
             c.show(PEmail, "label");
             c = (CardLayout) PTarjeta.getLayout();
-            LTarjetaUsu.setText(TTarjetaUsu.getText());
+            LTarjetaUsu.setText(CPago.getSelectedItem().toString());
             c.show(PTarjeta, "label");
+            
+            usu.setNombre(LNombreUsu.getText() + " " + LApellidosUsu.getText());
+            usu.setTelefono(LTelefonoUsu.getText());
+            usu.setCorreo(LEmailUsu.getText());
+            usu.setMetodoPago(LTarjetaUsu.getText());
         }
     }//GEN-LAST:event_BCambiosActionPerformed
 
@@ -525,7 +518,6 @@ public class VUsuario extends javax.swing.JPanel {
     private javax.swing.JMenuItem SalirSesion;
     private javax.swing.JMenuItem VolverPrincipal;
     private javax.swing.JButton jBotonMenu;
-    private javax.swing.JComboBox<String> jComboBoxPago;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JPopupMenu.Separator jSeparator2;
