@@ -8,6 +8,7 @@ package GUI;
 import Clases.GuardaDatos;
 import Clases.Tarxeta;
 import Clases.Usuario;
+import java.awt.Color;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -40,6 +41,7 @@ public class PagoTarxeta extends javax.swing.JPanel {
         initComponents();
         this.usus=usuarios;
         this.us=usua;
+        this.RadioButtonSelecR();
     }
 
     /**
@@ -56,7 +58,7 @@ public class PagoTarxeta extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        jPanelTarjeta = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTextNumero = new javax.swing.JTextField();
@@ -72,7 +74,7 @@ public class PagoTarxeta extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelPaypal = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jRadioButton2 = new javax.swing.JRadioButton();
         jLabel12 = new javax.swing.JLabel();
@@ -81,7 +83,7 @@ public class PagoTarxeta extends javax.swing.JPanel {
         jPassword = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(68, 217, 230));
 
         jPanel3.setBackground(new java.awt.Color(68, 217, 230));
 
@@ -113,7 +115,7 @@ public class PagoTarxeta extends javax.swing.JPanel {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(null);
 
-        jPanel5.setBackground(new java.awt.Color(235, 235, 235));
+        jPanelTarjeta.setBackground(new java.awt.Color(235, 235, 235));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
@@ -126,6 +128,7 @@ public class PagoTarxeta extends javax.swing.JPanel {
 
         jTextNumero.setBackground(new java.awt.Color(216, 216, 216));
         jTextNumero.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
+        jTextNumero.setBorder(null);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
@@ -138,6 +141,7 @@ public class PagoTarxeta extends javax.swing.JPanel {
 
         jTextCad.setBackground(new java.awt.Color(216, 216, 216));
         jTextCad.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
+        jTextCad.setBorder(null);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
@@ -150,6 +154,7 @@ public class PagoTarxeta extends javax.swing.JPanel {
 
         jTextCodigo.setBackground(new java.awt.Color(216, 216, 216));
         jTextCodigo.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
+        jTextCodigo.setBorder(null);
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
@@ -162,6 +167,7 @@ public class PagoTarxeta extends javax.swing.JPanel {
 
         jTextTitular.setBackground(new java.awt.Color(216, 216, 216));
         jTextTitular.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
+        jTextTitular.setBorder(null);
 
         jButton1.setBackground(new java.awt.Color(68, 217, 230));
         jButton1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
@@ -177,32 +183,37 @@ public class PagoTarxeta extends javax.swing.JPanel {
         jLabel10.setText("Tarjeta de crédito");
 
         buttonGroup1.add(jRadioButton1);
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelTarjetaLayout = new javax.swing.GroupLayout(jPanelTarjeta);
+        jPanelTarjeta.setLayout(jPanelTarjetaLayout);
+        jPanelTarjetaLayout.setHorizontalGroup(
+            jPanelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTarjetaLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGroup(jPanelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelTarjetaLayout.createSequentialGroup()
                             .addComponent(jLabel5)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabel9))
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelTarjetaLayout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel8))
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jTextNumero, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanelTarjetaLayout.createSequentialGroup()
                                     .addComponent(jLabel2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel6))
-                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanelTarjetaLayout.createSequentialGroup()
                                     .addComponent(jLabel3)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel7))
@@ -210,44 +221,44 @@ public class PagoTarxeta extends javax.swing.JPanel {
                             .addComponent(jTextCodigo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jTextTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(21, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(jPanelTarjetaLayout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jRadioButton1))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+        jPanelTarjetaLayout.setVerticalGroup(
+            jPanelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTarjetaLayout.createSequentialGroup()
+                .addGroup(jPanelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelTarjetaLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel10))
                     .addComponent(jRadioButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jTextNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextCad, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel8))
+                .addGroup(jPanelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextTitular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -257,6 +268,11 @@ public class PagoTarxeta extends javax.swing.JPanel {
         jLabel11.setText("Paypal");
 
         buttonGroup1.add(jRadioButton2);
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
@@ -275,40 +291,45 @@ public class PagoTarxeta extends javax.swing.JPanel {
         jButton2.setBackground(new java.awt.Color(68, 217, 230));
         jButton2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jButton2.setText("Iniciar sesión");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelPaypalLayout = new javax.swing.GroupLayout(jPanelPaypal);
+        jPanelPaypal.setLayout(jPanelPaypalLayout);
+        jPanelPaypalLayout.setHorizontalGroup(
+            jPanelPaypalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPaypalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addGap(96, 96, 96)
                 .addComponent(jRadioButton2))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanelPaypalLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanelPaypalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanelPaypalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPaypalLayout.createSequentialGroup()
                     .addGap(25, 25, 25)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanelPaypalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jTextCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelPaypalLayout.createSequentialGroup()
+                            .addGroup(jPanelPaypalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel12)
                                 .addComponent(jLabel13))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                     .addContainerGap(25, Short.MAX_VALUE)))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanelPaypalLayout.setVerticalGroup(
+            jPanelPaypalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelPaypalLayout.createSequentialGroup()
                 .addComponent(jRadioButton2)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanelPaypalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
@@ -316,8 +337,8 @@ public class PagoTarxeta extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addGap(10, 10, 10))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanelPaypalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPaypalLayout.createSequentialGroup()
                     .addGap(58, 58, 58)
                     .addComponent(jLabel12)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -334,17 +355,17 @@ public class PagoTarxeta extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelTarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelPaypal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelPaypal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -403,6 +424,79 @@ public class PagoTarxeta extends javax.swing.JPanel {
         vp.setFondoMapaPrincipal();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.usus.add(us);
+            
+             //Serializamos los datos en un fichero
+                    GuardaDatos object = new GuardaDatos(this.usus);
+                    String filename = "listausuarios.txt";
+
+                    // Serialization  
+                    try {
+                        //Saving of object in a file 
+                        FileOutputStream file = new FileOutputStream(filename);
+                        ObjectOutputStream out = new ObjectOutputStream(file);
+
+                        // Method for serialization of object 
+                        out.writeObject(object);
+
+                        out.close();
+                        file.close();
+
+                        System.out.println("Object has been serialized");
+
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        System.out.println(" /nIOException is caught");
+                    }
+                    
+        this.v.getContentPane().setVisible(false);
+        VPrincipal vp = new VPrincipal(us);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+        vp.setFondoMapaPrincipal();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+        if(jRadioButton1.isSelected()){
+            jPanelPaypal.setBackground(Color.gray);
+            jTextCorreo.setEditable(false);
+            jPassword.setEnabled(false);
+            //jButtonBuscarLibre.setBackground(Color.LIGHT_GRAY);
+            jButton2.setEnabled(false);
+            
+            jPanelTarjeta.setBackground(Color.decode("#E6E6E6"));
+            jTextNumero.setEditable(true);
+            jTextCad.setEditable(true);
+            jTextCodigo.setEditable(true);
+            jTextTitular.setEnabled(true);
+            jButton1.setBackground(Color.decode("#44d9e6"));
+            jButton1.setEnabled(true);
+        }
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+        if(jRadioButton2.isSelected()){
+            jPanelTarjeta.setBackground(Color.gray);
+            jTextNumero.setEditable(false);
+            jTextCad.setEditable(false);
+            jTextCodigo.setEditable(false);
+            jTextTitular.setEnabled(false);
+            //jButtonBuscarLibre.setBackground(Color.LIGHT_GRAY);
+            jButton1.setEnabled(false);
+            
+            jPanelPaypal.setBackground(Color.decode("#E6E6E6"));
+            jTextCorreo.setEditable(true);
+            jPassword.setEnabled(true);
+            jButton2.setBackground(Color.decode("#44d9e6"));
+            jButton2.setEnabled(true);
+        }
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -421,10 +515,10 @@ public class PagoTarxeta extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanelPaypal;
+    private javax.swing.JPanel jPanelTarjeta;
     private javax.swing.JPasswordField jPassword;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
@@ -435,4 +529,43 @@ public class PagoTarxeta extends javax.swing.JPanel {
     private javax.swing.JTextField jTextNumero;
     private javax.swing.JTextField jTextTitular;
     // End of variables declaration//GEN-END:variables
+
+     public void RadioButtonSelecR(){
+        if(this.us.getMetodoPago().equals("Tarjeta de crédito")){
+            jRadioButton1.setSelected(true);
+        }
+        else{
+            jRadioButton2.setSelected(true);
+        }
+        if(jRadioButton1.isSelected()){
+            jPanelPaypal.setBackground(Color.gray);
+            jTextCorreo.setEditable(false);
+            jPassword.setEnabled(false);
+            //jButtonBuscarLibre.setBackground(Color.LIGHT_GRAY);
+            jButton2.setEnabled(false);
+            
+            jPanelTarjeta.setBackground(Color.decode("#E6E6E6"));
+            jTextNumero.setEditable(true);
+            jTextCad.setEditable(true);
+            jTextCodigo.setEditable(true);
+            jTextTitular.setEnabled(true);
+            jButton1.setBackground(Color.decode("#44d9e6"));
+            jButton1.setEnabled(true);
+        }
+        else{
+            jPanelTarjeta.setBackground(Color.gray);
+            jTextNumero.setEditable(false);
+            jTextCad.setEditable(false);
+            jTextCodigo.setEditable(false);
+            jTextTitular.setEnabled(false);
+            //jButtonBuscarLibre.setBackground(Color.LIGHT_GRAY);
+            jButton1.setEnabled(false);
+            
+            jPanelPaypal.setBackground(Color.decode("#E6E6E6"));
+            jTextCorreo.setEditable(true);
+            jPassword.setEnabled(true);
+            jButton2.setBackground(Color.decode("#44d9e6"));
+            jButton2.setEnabled(true);
+        }
+    }
 }
