@@ -328,7 +328,7 @@ public void setVehiculoMultas(){
     ArrayList<Vehiculo> listavehi = usu.getVehiculos();
     DefaultTableModel mt = (DefaultTableModel) ListaMultas.getModel();
     
-    if (lista.size() > 0) {
+    if (listavehi.size() > 0) {
         for (int i = 0; i < listavehi.size(); i++) {
             int num = 0;
             for (int j = 0; j < lista.size(); j++) {

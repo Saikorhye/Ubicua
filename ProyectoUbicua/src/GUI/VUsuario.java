@@ -65,8 +65,13 @@ public class VUsuario extends javax.swing.JPanel {
         LNombreUsu = new javax.swing.JLabel(nombre[0]);
         if (nombre.length > 2) {
             LApellidosUsu = new javax.swing.JLabel(nombre[1] + " " + nombre[2]);
-        } else {
-            LApellidosUsu = new javax.swing.JLabel(nombre[1]);
+        } else if (nombre.length == 2)
+        {
+            LApellidosUsu = new javax.swing.JLabel(nombre[1]+" ");
+        }
+        else
+        {
+            LApellidosUsu = new javax.swing.JLabel(" ");
         }
         LTelefonoUsu = new javax.swing.JLabel(usu.getTelefono());
         LEmailUsu = new javax.swing.JLabel(usu.getCorreo());
