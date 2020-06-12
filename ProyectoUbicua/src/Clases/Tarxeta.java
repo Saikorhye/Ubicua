@@ -5,11 +5,13 @@
  */
 package Clases;
 
+import java.io.Serializable;
+
 /**
  *
  * @author evinha
  */
-public class Tarxeta {
+public class Tarxeta implements Serializable{
     
     private String numero;
     private String caducidad;

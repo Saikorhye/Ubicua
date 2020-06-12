@@ -6,6 +6,7 @@
 package GUI;
 
 import Clases.GuardaDatos;
+import Clases.Tarxeta;
 import Clases.Usuario;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -255,7 +256,7 @@ public class IniciarSesion extends javax.swing.JPanel {
                         ex.printStackTrace();
                         System.out.println(" /nIOException is caught");
                     }
-
+                    
                     //Credenciales correctas, pasase a seguinte ventana
                     this.v.getContentPane().setVisible(false);
                     VPrincipal vp = new VPrincipal(usuario);

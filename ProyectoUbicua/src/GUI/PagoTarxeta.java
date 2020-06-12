@@ -5,8 +5,12 @@
  */
 package GUI;
 
+import Clases.GuardaDatos;
 import Clases.Tarxeta;
 import Clases.Usuario;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -218,6 +222,31 @@ public class PagoTarxeta extends javax.swing.JPanel {
         // TODO add your handling code here:
         Tarxeta tar = new Tarxeta(jTextNumero.getText(), jTextCad.getText(), jTextCodigo.getText(), jTextTitular.getText());
         this.us.addTarxeta(tar);
+        this.usus.add(us);
+            
+             //Serializamos los datos en un fichero
+                    GuardaDatos object = new GuardaDatos(this.usus);
+                    String filename = "listausuarios.txt";
+
+                    // Serialization  
+                    try {
+                        //Saving of object in a file 
+                        FileOutputStream file = new FileOutputStream(filename);
+                        ObjectOutputStream out = new ObjectOutputStream(file);
+
+                        // Method for serialization of object 
+                        out.writeObject(object);
+
+                        out.close();
+                        file.close();
+
+                        System.out.println("Object has been serialized");
+
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        System.out.println(" /nIOException is caught");
+                    }
+                    
         this.v.getContentPane().setVisible(false);
         VPrincipal vp = new VPrincipal(us);
         vp.setVisible(true);
