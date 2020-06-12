@@ -137,7 +137,7 @@ public class VUsuario extends javax.swing.JPanel {
         LApellidos = new javax.swing.JLabel();
         LTelefono = new javax.swing.JLabel();
         LEmail = new javax.swing.JLabel();
-        LTarjeta = new javax.swing.JLabel();
+        LMetodoPago = new javax.swing.JLabel();
         BContra = new javax.swing.JButton();
         BCambios = new javax.swing.JButton();
         PNombre = new javax.swing.JPanel();
@@ -145,6 +145,7 @@ public class VUsuario extends javax.swing.JPanel {
         PTelefono = new javax.swing.JPanel();
         PEmail = new javax.swing.JPanel();
         PTarjeta = new javax.swing.JPanel();
+        jComboBoxPago = new javax.swing.JComboBox<>();
 
         jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
         jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -300,8 +301,8 @@ public class VUsuario extends javax.swing.JPanel {
         LEmail.setText("Email");
         add(LEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
 
-        LTarjeta.setText("Tarjeta");
-        add(LTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+        LMetodoPago.setText("Metodo de Pago");
+        add(LMetodoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         BContra.setText("Cambiar contraseña");
         BContra.addActionListener(new java.awt.event.ActionListener() {
@@ -309,7 +310,7 @@ public class VUsuario extends javax.swing.JPanel {
                 BContraActionPerformed(evt);
             }
         });
-        add(BContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
+        add(BContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
 
         BCambios.setText("Guardar cambios");
         BCambios.addActionListener(new java.awt.event.ActionListener() {
@@ -317,7 +318,7 @@ public class VUsuario extends javax.swing.JPanel {
                 BCambiosActionPerformed(evt);
             }
         });
-        add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, -1, -1));
+        add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, -1, -1));
 
         PNombre.setLayout(new java.awt.CardLayout());
         add(PNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 116, 199, 30));
@@ -332,7 +333,12 @@ public class VUsuario extends javax.swing.JPanel {
         add(PEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 260, 199, 30));
 
         PTarjeta.setLayout(new java.awt.CardLayout());
-        add(PTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 308, 199, 30));
+        add(PTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 199, 30));
+
+        jComboBoxPago.setBackground(new java.awt.Color(216, 216, 216));
+        jComboBoxPago.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jComboBoxPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tarjeta de crédito", "Paypal", "Bizum" }));
+        add(jComboBoxPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
@@ -500,8 +506,8 @@ public class VUsuario extends javax.swing.JPanel {
     private javax.swing.JMenuItem Configuración;
     private javax.swing.JLabel LApellidos;
     private javax.swing.JLabel LEmail;
+    private javax.swing.JLabel LMetodoPago;
     private javax.swing.JLabel LNombre;
-    private javax.swing.JLabel LTarjeta;
     private javax.swing.JLabel LTelefono;
     private javax.swing.JLabel LabelAyuda;
     private javax.swing.JMenuItem Multas;
@@ -514,6 +520,7 @@ public class VUsuario extends javax.swing.JPanel {
     private javax.swing.JMenuItem SalirSesion;
     private javax.swing.JMenuItem VolverPrincipal;
     private javax.swing.JButton jBotonMenu;
+    private javax.swing.JComboBox<String> jComboBoxPago;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JPopupMenu.Separator jSeparator2;
