@@ -20,12 +20,11 @@ public class MultasVehiculo extends javax.swing.JPanel {
     /**
      * Creates new form VPrincipal
      */
-    
     private VInicial v;
     private Usuario usu;
     private String matricula;
     private ArrayList<Multa> multas;
-    
+
     public VInicial getV() {
         return v;
     }
@@ -33,14 +32,13 @@ public class MultasVehiculo extends javax.swing.JPanel {
     public void setV(VInicial v) {
         this.v = v;
     }
-    
+
     public MultasVehiculo(Usuario us, String matricula) {
         initComponents();
-        this.usu=us;
-        this.VolverPrincipal.setText("Volver a Principal");
-       this.matricula = matricula;
-       this.multas = new ArrayList<>(); 
-       
+        this.usu = us;
+        this.matricula = matricula;
+        this.multas = new ArrayList<>();
+
         setVehiculoMultas();
     }
 
@@ -53,93 +51,11 @@ public class MultasVehiculo extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopMenuPrincipal = new javax.swing.JPopupMenu();
-        VolverPrincipal = new javax.swing.JMenuItem();
-        Notificaciones = new javax.swing.JMenuItem();
-        Usuario = new javax.swing.JMenuItem();
-        Configuración = new javax.swing.JMenuItem();
-        Ayuda = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        SalirSesion = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         LabelAyuda = new javax.swing.JLabel();
         jBotonMenu = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListaMultas = new javax.swing.JTable();
-
-        jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
-        jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jPopMenuPrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(68, 217, 230)));
-
-        VolverPrincipal.setBackground(new java.awt.Color(68, 217, 230));
-        VolverPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        VolverPrincipal.setText("Multas");
-        VolverPrincipal.setBorder(null);
-        VolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverPrincipalActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(VolverPrincipal);
-
-        Notificaciones.setBackground(new java.awt.Color(68, 217, 230));
-        Notificaciones.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        Notificaciones.setText("Notificaciones");
-        Notificaciones.setBorder(null);
-        Notificaciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NotificacionesActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(Notificaciones);
-        Notificaciones.getAccessibleContext().setAccessibleName("JMenuItem1");
-
-        Usuario.setBackground(new java.awt.Color(68, 217, 230));
-        Usuario.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        Usuario.setText("Usuario");
-        Usuario.setBorder(null);
-        Usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(Usuario);
-
-        Configuración.setBackground(new java.awt.Color(68, 217, 230));
-        Configuración.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        Configuración.setText("Configuración");
-        Configuración.setBorder(null);
-        Configuración.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConfiguraciónActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(Configuración);
-
-        Ayuda.setBackground(new java.awt.Color(68, 217, 230));
-        Ayuda.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        Ayuda.setText("Ayuda");
-        Ayuda.setBorder(null);
-        Ayuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AyudaActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(Ayuda);
-
-        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
-        jPopMenuPrincipal.add(jSeparator1);
-
-        SalirSesion.setBackground(new java.awt.Color(68, 217, 230));
-        SalirSesion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        SalirSesion.setText("Salir de sesión");
-        SalirSesion.setBorder(null);
-        SalirSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirSesionActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(SalirSesion);
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(350, 500));
@@ -245,102 +161,51 @@ public class MultasVehiculo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
-        // TODO add your handling code here:
-       // menuEmergente.show(this,evt.get .getX(),evt.getY());
     }//GEN-LAST:event_jBotonMenuActionPerformed
 
     private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
-        // TODO add your handling code here:
-        jPopMenuPrincipal.show(this,jBotonMenu.getX(),jBotonMenu.getY()+ jBotonMenu.getHeight());
+        this.v.getContentPane().setVisible(false);
+        Multas vp = new Multas(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
     }//GEN-LAST:event_jBotonMenuMouseClicked
 
-    private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
-        this.v.getContentPane().setVisible(false);
-        Notificaciones vp = new Notificaciones(this.usu);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-        
-    }//GEN-LAST:event_NotificacionesActionPerformed
-
-    private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
-        this.v.getContentPane().setVisible(false);
-        Ayuda vp = new Ayuda(this.usu);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-    }//GEN-LAST:event_AyudaActionPerformed
-
-    private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
-      
-    }//GEN-LAST:event_SalirSesionActionPerformed
-
-    private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
-         this.v.getContentPane().setVisible(false);
-        VUsuario vp = new VUsuario(this.usu);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-    }//GEN-LAST:event_UsuarioActionPerformed
-
-    private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
-        this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(this.usu);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-        vp.setFondoMapaPrincipal();
-    }//GEN-LAST:event_VolverPrincipalActionPerformed
-
-    private void ConfiguraciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguraciónActionPerformed
-        this.v.getContentPane().setVisible(false);
-        Configuracion vp = new Configuracion(this.usu);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-    }//GEN-LAST:event_ConfiguraciónActionPerformed
-
     private void ListaMultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaMultasMouseClicked
-        DefaultTableModel tm = (DefaultTableModel) ListaMultas.getModel();
         int pos = ListaMultas.getSelectedRow();
         MultasPago vmp = new MultasPago(this.v, true, this.multas.get(pos), this.usu, this);
         vmp.setVisible(true);
     }//GEN-LAST:event_ListaMultasMouseClicked
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Ayuda;
-    private javax.swing.JMenuItem Configuración;
     private javax.swing.JLabel LabelAyuda;
     private javax.swing.JTable ListaMultas;
-    private javax.swing.JMenuItem Notificaciones;
-    private javax.swing.JMenuItem SalirSesion;
-    private javax.swing.JMenuItem Usuario;
-    private javax.swing.JMenuItem VolverPrincipal;
     private javax.swing.JButton jBotonMenu;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 
-public void setVehiculoMultas(){
-    ArrayList<Multa> lista = usu.getMultas();
-    DefaultTableModel mt = (DefaultTableModel) ListaMultas.getModel();
-    
-    for (int i = 0; i < lista.size(); i++) {
-        if (matricula.equals(lista.get(i).getMatricula())) {
-            mt.addRow(new Object[]{lista.get(i).getFecha(), lista.get(i).getImporte(), lista.get(i).getTexto()});
-            this.multas.add(lista.get(i));
+    public void setVehiculoMultas() {
+        ArrayList<Multa> lista = usu.getMultas();
+        DefaultTableModel mt = (DefaultTableModel) ListaMultas.getModel();
+
+        for (int i = 0; i < lista.size(); i++) {
+            if (matricula.equals(lista.get(i).getMatricula())) {
+                mt.addRow(new Object[]{lista.get(i).getFecha(), lista.get(i).getImporte(), lista.get(i).getTexto()});
+                this.multas.add(lista.get(i));
+            }
         }
     }
-}
 
-public void eliminarMulta(Multa multa) {
-    DefaultTableModel tm = (DefaultTableModel) ListaMultas.getModel();
-    tm.removeRow(this.multas.indexOf(multa));
-    this.multas.remove(multa);
-}
+    public void eliminarMulta(Multa multa) {
+        DefaultTableModel tm = (DefaultTableModel) ListaMultas.getModel();
+        tm.removeRow(this.multas.indexOf(multa));
+        this.multas.remove(multa);
+
+        ArrayList<Multa> actMultas = this.usu.getMultas();
+        actMultas.remove(multa);
+        this.usu.setMultas(actMultas);
+    }
 
 }
