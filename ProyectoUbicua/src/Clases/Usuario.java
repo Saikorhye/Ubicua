@@ -28,6 +28,14 @@ public class Usuario implements Serializable {
         this.vehiculos = new ArrayList<>();
         this.tarxetas = new ArrayList<>();
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
     
     public String getCorreo(){
         return this.correo;
