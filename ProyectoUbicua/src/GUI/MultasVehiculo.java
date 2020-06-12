@@ -24,6 +24,7 @@ public class MultasVehiculo extends javax.swing.JPanel {
     private VInicial v;
     private Usuario usu;
     private String matricula;
+    private ArrayList<Multa> multas;
     
     public VInicial getV() {
         return v;
@@ -38,7 +39,8 @@ public class MultasVehiculo extends javax.swing.JPanel {
         this.usu=us;
         this.VolverPrincipal.setText("Volver a Principal");
        this.matricula = matricula;
-        
+       this.multas = new ArrayList<>(); 
+       
         setVehiculoMultas();
     }
 
@@ -211,6 +213,11 @@ public class MultasVehiculo extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        ListaMultas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaMultasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(ListaMultas);
         if (ListaMultas.getColumnModel().getColumnCount() > 0) {
             ListaMultas.getColumnModel().getColumn(0).setMaxWidth(500);
@@ -293,6 +300,13 @@ public class MultasVehiculo extends javax.swing.JPanel {
         this.v.setContentPane(vp);
     }//GEN-LAST:event_ConfiguraciónActionPerformed
 
+    private void ListaMultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaMultasMouseClicked
+        DefaultTableModel tm = (DefaultTableModel) ListaMultas.getModel();
+        int pos = ListaMultas.getSelectedRow();
+        MultasPago vmp = new MultasPago(this.v, true, this.multas.get(pos), this.usu, this);
+        vmp.setVisible(true);
+    }//GEN-LAST:event_ListaMultasMouseClicked
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -318,8 +332,15 @@ public void setVehiculoMultas(){
     for (int i = 0; i < lista.size(); i++) {
         if (matricula.equals(lista.get(i).getMatricula())) {
             mt.addRow(new Object[]{lista.get(i).getFecha(), lista.get(i).getImporte(), lista.get(i).getTexto()});
+            this.multas.add(lista.get(i));
         }
     }
+}
+
+public void eliminarMulta(Multa multa) {
+    DefaultTableModel tm = (DefaultTableModel) ListaMultas.getModel();
+    tm.removeRow(this.multas.indexOf(multa));
+    this.multas.remove(multa);
 }
 
 }
