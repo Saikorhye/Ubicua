@@ -5,7 +5,11 @@
  */
 package GUI;
 
+import Clases.Multa;
 import Clases.Usuario;
+import Clases.Vehiculo;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,6 +36,8 @@ public class Multas extends javax.swing.JPanel {
         initComponents();
         this.usu=us;
         this.VolverPrincipal.setText("Volver a Principal");
+       
+        setVehiculoMultas();
     }
 
     /**
@@ -55,7 +61,8 @@ public class Multas extends javax.swing.JPanel {
         LabelAyuda = new javax.swing.JLabel();
         jBotonMenu = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        ListaMultas = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
         jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -180,15 +187,12 @@ public class Multas extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        ListaMultas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2"
+                "Matrícula", "Numero de multas"
             }
         ) {
             Class[] types = new Class [] {
@@ -206,10 +210,12 @@ public class Multas extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setMaxWidth(50);
+        jScrollPane1.setViewportView(ListaMultas);
+        if (ListaMultas.getColumnModel().getColumnCount() > 0) {
+            ListaMultas.getColumnModel().getColumn(0).setMaxWidth(500);
         }
+
+        jButton1.setText("jButton1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -218,7 +224,9 @@ public class Multas extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -226,8 +234,10 @@ public class Multas extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -287,20 +297,40 @@ public class Multas extends javax.swing.JPanel {
         this.v.setContentPane(vp);
     }//GEN-LAST:event_ConfiguraciónActionPerformed
 
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Ayuda;
     private javax.swing.JMenuItem Configuración;
     private javax.swing.JLabel LabelAyuda;
+    private javax.swing.JTable ListaMultas;
     private javax.swing.JMenuItem Notificaciones;
     private javax.swing.JMenuItem SalirSesion;
     private javax.swing.JMenuItem Usuario;
     private javax.swing.JMenuItem VolverPrincipal;
     private javax.swing.JButton jBotonMenu;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+public void setVehiculoMultas(){
+    ArrayList<Multa> lista = usu.getMultas();
+    ArrayList<Vehiculo> listavehi = usu.getVehiculos();
+    DefaultTableModel mt = (DefaultTableModel) ListaMultas.getModel();
+    
+    if (lista.size() > 0) {
+        for (int i = 0; i < listavehi.size(); i++) {
+            int num = 0;
+            for (int j = 0; j < lista.size(); j++) {
+               if(lista.get(j).getMatricula().equals(listavehi.get(i).getMatricula()))
+                   num++;
+            }
+            mt.addRow(new Object[]{listavehi.get(i).getMatricula(), num});
+        }
+    }
+}
+
 }
