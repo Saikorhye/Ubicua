@@ -15,6 +15,7 @@ public class Usuario implements Serializable {
     private ArrayList<Notificacion> notificaciones;
     private ArrayList<Multa> multas;
     private ArrayList<Vehiculo> vehiculos;
+    private ArrayList<Tarxeta> tarxetas;
     
     public Usuario(String nombr, String corre, String contrasen, String metodoPag, String telefon){
         this.nombre=nombr;
@@ -25,7 +26,7 @@ public class Usuario implements Serializable {
         this.notificaciones = new ArrayList<>();
         this.multas = new ArrayList<>();
         this.vehiculos = new ArrayList<>();
-    
+        this.tarxetas = new ArrayList<>();
     }
     
     public String getCorreo(){
@@ -59,6 +60,10 @@ public class Usuario implements Serializable {
     public ArrayList<Vehiculo> getVehiculos(){
         return this.vehiculos;
     }
+    
+    public ArrayList<Tarxeta> getTarxetas(){
+        return this.tarxetas;
+    }
      
     public void setContrasena(String nova){
         this.contrasena=nova;
@@ -83,6 +88,10 @@ public class Usuario implements Serializable {
     public void setVehiculos(ArrayList<Vehiculo> veh){
         this.vehiculos=veh;
     }
+    
+    public void setTarxetas(ArrayList<Tarxeta> tar){
+        this.tarxetas=tar;
+    }
      
      public void addNotificacion(Notificacion n){
          notificaciones.add(n);
@@ -95,6 +104,10 @@ public class Usuario implements Serializable {
      public void addVehiculo(Vehiculo ve){
          this.vehiculos.add(ve);
      }
+     
+    public void addTarxeta(Tarxeta a){
+        this.tarxetas.add(a);
+    }
      
      public void removeVehiculo(String matricula) {
          for (int i = 0; i < this.vehiculos.size(); i++) {
