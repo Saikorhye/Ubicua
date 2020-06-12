@@ -284,65 +284,87 @@ public class VUsuario extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
+        BEditar.setBackground(new java.awt.Color(68, 217, 230));
+        BEditar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BEditar.setText("Editar");
+        BEditar.setBorder(null);
         BEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BEditarActionPerformed(evt);
             }
         });
-        add(BEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 58, -1, -1));
+        add(BEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 58, 120, 30));
 
+        BVehiculos.setBackground(new java.awt.Color(68, 217, 230));
+        BVehiculos.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BVehiculos.setText("Vehiculos");
+        BVehiculos.setBorder(null);
         BVehiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BVehiculosActionPerformed(evt);
             }
         });
-        add(BVehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 58, -1, -1));
+        add(BVehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 58, 140, 30));
 
+        LNombre.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LNombre.setText("Nombre");
         add(LNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
 
+        LApellidos.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LApellidos.setText("Apellidos");
         add(LApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
+        LTelefono.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LTelefono.setText("Telefono");
         add(LTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
 
+        LEmail.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LEmail.setText("Email");
         add(LEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
 
+        LMetodoPago.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LMetodoPago.setText("Metodo de Pago");
-        add(LMetodoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+        add(LMetodoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
+        BContra.setBackground(new java.awt.Color(216, 216, 216));
+        BContra.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
         BContra.setText("Cambiar contraseña");
+        BContra.setBorder(null);
         BContra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BContraActionPerformed(evt);
             }
         });
-        add(BContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, -1));
+        add(BContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 170, 30));
 
+        BCambios.setBackground(new java.awt.Color(216, 216, 216));
+        BCambios.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
         BCambios.setText("Guardar cambios");
+        BCambios.setBorder(null);
         BCambios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BCambiosActionPerformed(evt);
             }
         });
-        add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, -1, -1));
+        add(BCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 150, 30));
 
+        PNombre.setBackground(new java.awt.Color(216, 216, 216));
         PNombre.setLayout(new java.awt.CardLayout());
         add(PNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 199, 30));
 
+        PApellidos.setBackground(new java.awt.Color(216, 216, 216));
         PApellidos.setLayout(new java.awt.CardLayout());
         add(PApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 199, 30));
 
+        PTelefono.setBackground(new java.awt.Color(216, 216, 216));
         PTelefono.setLayout(new java.awt.CardLayout());
         add(PTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 199, 30));
 
+        PEmail.setBackground(new java.awt.Color(216, 216, 216));
         PEmail.setLayout(new java.awt.CardLayout());
         add(PEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 199, 30));
 
+        PTarjeta.setBackground(new java.awt.Color(216, 216, 216));
         PTarjeta.setLayout(new java.awt.CardLayout());
         add(PTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 199, 30));
     }// </editor-fold>//GEN-END:initComponents

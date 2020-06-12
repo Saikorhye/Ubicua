@@ -48,10 +48,13 @@ public class VRegistrarVehiculo extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        LMatricula.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LMatricula.setText("Matricula");
 
+        LDescripcion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LDescripcion.setText("Descripcion");
 
+        TMatricula.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         TMatricula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TMatriculaActionPerformed(evt);
@@ -59,9 +62,12 @@ public class VRegistrarVehiculo extends javax.swing.JDialog {
         });
 
         TDescripcion.setColumns(20);
+        TDescripcion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         TDescripcion.setRows(5);
         jScrollPane1.setViewportView(TDescripcion);
 
+        BCancelar.setBackground(new java.awt.Color(216, 216, 216));
+        BCancelar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BCancelar.setText("Cancelar");
         BCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +75,8 @@ public class VRegistrarVehiculo extends javax.swing.JDialog {
             }
         });
 
+        BRegistrar.setBackground(new java.awt.Color(216, 216, 216));
+        BRegistrar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BRegistrar.setText("Registrar");
         BRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +84,7 @@ public class VRegistrarVehiculo extends javax.swing.JDialog {
             }
         });
 
+        LError.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LError.setForeground(new java.awt.Color(255, 0, 0));
         LError.setText("Error");
 
@@ -93,12 +102,13 @@ public class VRegistrarVehiculo extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TMatricula)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(BCancelar)
-                        .addGap(86, 86, 86)
-                        .addComponent(BRegistrar)))
+                        .addComponent(BCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(BRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(94, 94, 94)
@@ -118,7 +128,7 @@ public class VRegistrarVehiculo extends javax.swing.JDialog {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LError)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BCancelar)
                     .addComponent(BRegistrar))

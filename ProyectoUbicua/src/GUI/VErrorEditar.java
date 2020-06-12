@@ -58,8 +58,11 @@ public class VErrorEditar extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        LLabel.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
         LLabel.setText("Los siguientes campos no pueden estar vacios");
 
+        BAceptar.setBackground(new java.awt.Color(216, 216, 216));
+        BAceptar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BAceptar.setText("Aceptar");
         BAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,18 +70,23 @@ public class VErrorEditar extends javax.swing.JDialog {
             }
         });
 
+        LNombre.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
         LNombre.setForeground(new java.awt.Color(255, 0, 0));
         LNombre.setText("Nombre");
 
+        LApellidos.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
         LApellidos.setForeground(new java.awt.Color(255, 0, 0));
         LApellidos.setText("Apellidos");
 
+        LTelefono.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
         LTelefono.setForeground(new java.awt.Color(255, 0, 0));
         LTelefono.setText("Telefono");
 
+        LEmail.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
         LEmail.setForeground(new java.awt.Color(255, 0, 0));
         LEmail.setText("Email");
 
+        LTarjeta.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
         LTarjeta.setForeground(new java.awt.Color(255, 0, 0));
         LTarjeta.setText("Tarjeta");
 
@@ -101,7 +109,7 @@ public class VErrorEditar extends javax.swing.JDialog {
                         .addComponent(LLabel))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(80, 80, 80)
-                        .addComponent(BAceptar)))
+                        .addComponent(BAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -119,7 +127,7 @@ public class VErrorEditar extends javax.swing.JDialog {
                 .addComponent(LEmail)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LTarjeta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BAceptar)
                 .addContainerGap())
         );

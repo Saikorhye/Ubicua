@@ -190,6 +190,9 @@ public class Multas extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jScrollPane1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+
+        ListaMultas.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         ListaMultas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

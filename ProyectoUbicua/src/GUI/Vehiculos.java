@@ -180,9 +180,9 @@ public class Vehiculos extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jBotonMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(54, 54, 54)
                 .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,6 +190,9 @@ public class Vehiculos extends javax.swing.JPanel {
             .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        jScrollPane1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+
+        ListaVehiculos.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         ListaVehiculos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -224,14 +227,20 @@ public class Vehiculos extends javax.swing.JPanel {
             ListaVehiculos.getColumnModel().getColumn(0).setMaxWidth(500);
         }
 
-        BRegistrar.setText("Registrar un vehiculo nuevo");
+        BRegistrar.setBackground(new java.awt.Color(216, 216, 216));
+        BRegistrar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
+        BRegistrar.setText("Registrar un vehiculo");
+        BRegistrar.setBorder(null);
         BRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BRegistrarActionPerformed(evt);
             }
         });
 
+        BEliminar.setBackground(new java.awt.Color(216, 216, 216));
+        BEliminar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
         BEliminar.setText("Eliminar vehiculo");
+        BEliminar.setBorder(null);
         BEliminar.setEnabled(false);
         BEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,16 +254,14 @@ public class Vehiculos extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(BEliminar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BRegistrar)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addComponent(BEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,9 +271,9 @@ public class Vehiculos extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BRegistrar)
-                    .addComponent(BEliminar))
-                .addContainerGap(56, Short.MAX_VALUE))
+                    .addComponent(BRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

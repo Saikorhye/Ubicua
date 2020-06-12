@@ -24,11 +24,11 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="101" max="-2" attributes="0"/>
+              <EmptySpace pref="98" max="32767" attributes="0"/>
+              <Component id="jButton2" min="-2" pref="92" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
@@ -40,10 +40,10 @@
                           <Component id="LContraRepe" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="TContraAnt" alignment="0" min="-2" pref="211" max="-2" attributes="0"/>
-                          <Component id="TContraNueva" alignment="0" min="-2" pref="211" max="-2" attributes="0"/>
-                          <Component id="TContraRepe" alignment="0" min="-2" pref="211" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="TContraNueva" alignment="0" pref="179" max="32767" attributes="0"/>
+                          <Component id="TContraAnt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TContraRepe" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -75,12 +75,12 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="LError" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -88,21 +88,36 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="LContraAnt">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a antigua"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="LContraNueva">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a nueva"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="LContraRepe">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Repita la contrase&#xf1;a nueva"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d8" green="d8" red="d8" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
       <Events>
@@ -111,6 +126,12 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d8" green="d8" red="d8" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Cambiar"/>
       </Properties>
       <Events>
@@ -118,16 +139,34 @@
       </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="TContraRepe">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="12" style="0"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TContraRepeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="TContraNueva">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="12" style="0"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="TContraAnt">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="12" style="0"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="LError">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="15" style="0"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>

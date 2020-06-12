@@ -48,12 +48,17 @@ public class VCambiarContra extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        LContraAnt.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
         LContraAnt.setText("Contraseña antigua");
 
+        LContraNueva.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
         LContraNueva.setText("Contraseña nueva");
 
+        LContraRepe.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
         LContraRepe.setText("Repita la contraseña nueva");
 
+        jButton1.setBackground(new java.awt.Color(216, 216, 216));
+        jButton1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jButton1.setText("Cancelar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +66,8 @@ public class VCambiarContra extends javax.swing.JDialog {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(216, 216, 216));
+        jButton2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jButton2.setText("Cambiar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,12 +75,18 @@ public class VCambiarContra extends javax.swing.JDialog {
             }
         });
 
+        TContraRepe.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
         TContraRepe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TContraRepeActionPerformed(evt);
             }
         });
 
+        TContraNueva.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
+
+        TContraAnt.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 12)); // NOI18N
+
+        LError.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LError.setForeground(new java.awt.Color(255, 0, 0));
         LError.setText("Error");
 
@@ -82,11 +95,11 @@ public class VCambiarContra extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(72, 72, 72))
+                .addGap(49, 49, 49)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -96,10 +109,10 @@ public class VCambiarContra extends javax.swing.JDialog {
                             .addComponent(LContraNueva)
                             .addComponent(LContraRepe))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TContraAnt, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TContraNueva, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TContraRepe, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(TContraNueva, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                            .addComponent(TContraAnt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TContraRepe)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(LError)))
@@ -122,11 +135,11 @@ public class VCambiarContra extends javax.swing.JDialog {
                     .addComponent(TContraRepe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(LError)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap())
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();

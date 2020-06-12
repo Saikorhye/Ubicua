@@ -41,7 +41,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                      <Component id="BAceptar" min="-2" max="-2" attributes="0"/>
+                      <Component id="BAceptar" min="-2" pref="106" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -63,7 +63,7 @@
               <Component id="LEmail" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="LTarjeta" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="11" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="BAceptar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -73,11 +73,20 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="LLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="14" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Los siguientes campos no pueden estar vacios"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="BAceptar">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d8" green="d8" red="d8" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Aceptar"/>
       </Properties>
       <Events>
@@ -86,6 +95,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="LNombre">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="14" style="0"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
@@ -94,6 +106,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="LApellidos">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="14" style="0"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
@@ -102,6 +117,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="LTelefono">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="14" style="0"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
@@ -110,6 +128,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="LEmail">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="14" style="0"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
@@ -118,6 +139,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="LTarjeta">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Bitstream Vera Sans" size="14" style="0"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>

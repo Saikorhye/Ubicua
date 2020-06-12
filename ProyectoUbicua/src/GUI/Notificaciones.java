@@ -195,6 +195,8 @@ public class Notificaciones extends javax.swing.JPanel {
             .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        jScrollPane1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+
         ListaNotificaciones.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 18)); // NOI18N
         ListaNotificaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
