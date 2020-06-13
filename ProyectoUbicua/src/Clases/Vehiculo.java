@@ -17,11 +17,21 @@ public class Vehiculo implements Serializable{
     private String matricula;
     private String descripcion;
     private Timestamp ticket;
+    private Timestamp horaMaxima;
     
     public Vehiculo(String matri, String descrip){
         this.descripcion=descrip;
         this.matricula=matri;
         this.ticket = null;
+        this.horaMaxima = null;
+    }
+
+    public void setHoraMaxima(Timestamp horaMaxima) {
+        this.horaMaxima = horaMaxima;
+    }
+
+    public Timestamp getHoraMaxima() {
+        return horaMaxima;
     }
 
     public Timestamp getTicket() {

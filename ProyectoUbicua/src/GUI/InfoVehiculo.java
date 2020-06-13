@@ -56,12 +56,15 @@ public class InfoVehiculo extends javax.swing.JPanel {
             Calendar c = Calendar.getInstance();
             
             int horas = (int) (vehi.getTicket().getTime() - c.getTimeInMillis()) / 3600000;
-            int minutos = (int) (vehi.getTicket().getTime() - c.getTimeInMillis()) / 60000;
-            int segundos = (int) (vehi.getTicket().getTime() - c.getTimeInMillis()) / 1000;
-            
-            System.out.println(c.getTime());
+            int minutos = (int) ((vehi.getTicket().getTime() - c.getTimeInMillis()) / 60000) % 60;
+            int segundos = (int) ((vehi.getTicket().getTime() - c.getTimeInMillis()) / 1000) % 60;
 
-            LTicketHora = new javax.swing.JLabel(vehi.getTicket().toString());
+            String formato = vehi.getTicket().toString();
+            String formatoFecha = formato.split(" ")[0];
+            formatoFecha = formatoFecha.split("-")[2] + "/" + formatoFecha.split("-")[1] + "/" + formatoFecha.split("-")[0];
+            formato = formatoFecha + " " + formato.split(" ")[1];
+            
+            LTicketHora = new javax.swing.JLabel(formato);
             PTicketHora.add(LTicketHora);
             LTicketTiempo = new javax.swing.JLabel(horas + " horas, " + minutos + " minutos y " + segundos + " segundos.");
             PTicketTiempo.add(LTicketTiempo);

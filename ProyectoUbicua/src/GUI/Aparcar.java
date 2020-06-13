@@ -563,7 +563,6 @@ public class Aparcar extends javax.swing.JPanel {
 
         //Calcular fecha
         Calendar calendar = Calendar.getInstance();
-        System.out.println(calendar.getTime());
         //Cmabiar fecha actual
         jLabelInicio.setText("Data inicio: " + calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH) + 1) + "/" + calendar.get(Calendar.YEAR) + " " + calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE));
         int h = calendar.get(Calendar.HOUR_OF_DAY);
@@ -575,7 +574,6 @@ public class Aparcar extends javax.swing.JPanel {
         }
         calendar.add(Calendar.MINUTE, jSlider1.getValue());//
         min = calendar.get(Calendar.MINUTE);//+jSlider1.getValue();
-        calendar.add(Calendar.HOUR_OF_DAY, jSlider1.getValue() / 60);
         int ho = calendar.get(Calendar.HOUR_OF_DAY);
         //int ho=horasS+h;
         jLabelFin.setText("Data fin: " + calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH) + 1) + "/" + calendar.get(Calendar.YEAR) + " " + ho + ":" + min);
