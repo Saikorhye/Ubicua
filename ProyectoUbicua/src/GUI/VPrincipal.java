@@ -64,7 +64,6 @@ public class VPrincipal extends javax.swing.JPanel {
         jBotonSearch = new javax.swing.JButton();
         jBotonMenu = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButtonAparcar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
@@ -176,15 +175,6 @@ public class VPrincipal extends javax.swing.JPanel {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Leyenda(2).png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(216, 216, 216)));
 
-        jButtonAparcar.setBackground(new java.awt.Color(68, 217, 230));
-        jButtonAparcar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jButtonAparcar.setText("Aparca aquí");
-        jButtonAparcar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAparcarActionPerformed(evt);
-            }
-        });
-
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoUbi(2).png"))); // NOI18N
         jButton2.setBorderPainted(false);
@@ -208,8 +198,7 @@ public class VPrincipal extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addComponent(jButtonAparcar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -226,9 +215,7 @@ public class VPrincipal extends javax.swing.JPanel {
                 .addGap(159, 159, 159)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonAparcar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButton1)
                 .addGap(42, 42, 42))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -328,18 +315,14 @@ public class VPrincipal extends javax.swing.JPanel {
         vp.setFondoBuscarRuta();
     }//GEN-LAST:event_jBotonSearchActionPerformed
 
-    private void jButtonAparcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAparcarActionPerformed
-        // TODO add your handling code here:
-        this.v.getContentPane().setVisible(false);
-        Aparcar vp = new Aparcar(this.usu, "Calle Gomez Ulloa");
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-        vp.setFondoMapaPrincipal();
-    }//GEN-LAST:event_jButtonAparcarActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        InfoPlaza vi = new InfoPlaza(this.usu, "Avenida de Vilagarcia", "7", "Libre", "Carga y descarga", "0", "30 minutos");
+        vi.setVisible(true);
+        vi.setV(this.v);
+        this.v.setContentPane(vi);
+        vi.setFondoInfo();
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
@@ -354,7 +337,6 @@ public class VPrincipal extends javax.swing.JPanel {
     private javax.swing.JButton jBotonSearch;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButtonAparcar;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables

@@ -557,7 +557,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     
     public void setFondoBuscarRuta() {
 	// Construimos la imagen y se la asignamos al atributo background.
-        URL url = getClass().getResource("/Imagenes/mapimage.png");
+        URL url = getClass().getResource("/Imagenes/MapaXeral.png");
 	this.setOpaque(false);
 	this.image = new ImageIcon(url).getImage();
 	repaint();
