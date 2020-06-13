@@ -289,7 +289,7 @@ public class Ruta extends javax.swing.JPanel {
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
-        vp.setFondoMapaPrincipal();
+        vp.setFondoMapaRuta();
     }//GEN-LAST:event_jButtonAparcarActionPerformed
 
 

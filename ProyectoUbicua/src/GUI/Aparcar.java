@@ -524,6 +524,22 @@ public class Aparcar extends javax.swing.JPanel {
 	repaint();
     }
     
+    public void setFondoMapaRuta() {
+	// Construimos la imagen y se la asignamos al atributo background.
+        URL url = getClass().getResource("/Imagenes/MaparutaverPlazas.png");
+	this.setOpaque(false);
+	this.image = new ImageIcon(url).getImage();
+	repaint();
+    }
+    
+    public void setFondoMapaLibre() {
+	// Construimos la imagen y se la asignamos al atributo background.
+        URL url = getClass().getResource("/Imagenes/MapaUbiPlazas.png");
+	this.setOpaque(false);
+	this.image = new ImageIcon(url).getImage();
+	repaint();
+    }
+    
     public void actualizarCombo(){
         
         for(Vehiculo vehiculo : usu.getVehiculos()){

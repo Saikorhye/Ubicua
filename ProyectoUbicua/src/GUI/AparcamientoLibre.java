@@ -287,7 +287,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
-        vp.setFondoMapaPrincipal();
+        vp.setFondoMapaLibre();
     }//GEN-LAST:event_jButtonAparcarActionPerformed
 
 
