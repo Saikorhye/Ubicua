@@ -80,7 +80,7 @@ public class InfoPlaza extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jButtonAparcar = new javax.swing.JButton();
         jBotonSearch = new javax.swing.JButton();
         jBotonMenu = new javax.swing.JButton();
 
@@ -207,9 +207,14 @@ public class InfoPlaza extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabel8.setText("Plaza libre a las  ");
 
-        jButton2.setBackground(new java.awt.Color(68, 217, 230));
-        jButton2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jButton2.setText("Aparcar aquí");
+        jButtonAparcar.setBackground(new java.awt.Color(68, 217, 230));
+        jButtonAparcar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jButtonAparcar.setText("Aparcar aquí");
+        jButtonAparcar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAparcarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -223,7 +228,7 @@ public class InfoPlaza extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonAparcar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
@@ -259,7 +264,7 @@ public class InfoPlaza extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
                 .addGap(50, 50, 50)
-                .addComponent(jButton2)
+                .addComponent(jButtonAparcar)
                 .addContainerGap(70, Short.MAX_VALUE))
         );
 
@@ -419,13 +424,23 @@ public class InfoPlaza extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jSalirSesionActionPerformed
 
+    private void jButtonAparcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAparcarActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        Aparcar vp = new Aparcar(this.usu, jLabel2.getText(), jLabel3.getText());
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+        vp.setFondoMapaPrincipal();
+    }//GEN-LAST:event_jButtonAparcarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem jAyuda;
     private javax.swing.JButton jBotonMenu;
     private javax.swing.JButton jBotonSearch;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonAparcar;
     private javax.swing.JMenuItem jConfiguracion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

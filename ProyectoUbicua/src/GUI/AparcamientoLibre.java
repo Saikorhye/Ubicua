@@ -283,7 +283,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private void jButtonAparcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAparcarActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Aparcar vp = new Aparcar(this.usu, this.lugar);
+        Aparcar vp = new Aparcar(this.usu, this.lugar, "7");
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);

@@ -33,10 +33,11 @@ public class ResumenAparcar extends javax.swing.JPanel {
     
     
     
-    public ResumenAparcar(Usuario us, String lugar, double tempo, String coste, String date, String ve) {
+    public ResumenAparcar(Usuario us, String plaza, String lugar, double tempo, String coste, String date, String ve) {
         initComponents();
         this.usu=us;
-        jLabel3.setText("Calle: "+lugar);
+        jLabel2.setText(plaza);
+        jLabel3.setText(lugar);
         jLabel4.setText("Tiempo: "+tempo+" horas");
         jLabel5.setText(coste);
         jLabel6.setText(date);
