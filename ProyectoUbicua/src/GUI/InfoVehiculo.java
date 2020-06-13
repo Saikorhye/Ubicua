@@ -70,7 +70,9 @@ public class InfoVehiculo extends javax.swing.JPanel {
             PTicketTiempo.add(LTicketTiempo);
 
             BCancelar.setEnabled(true);
-            BAumentar.setEnabled(true);
+            if (((vehi.getHoraMaxima().getTime() - vehi.getTicket().getTime()) * 60000) > 5) {
+                BAumentar.setEnabled(true);
+            }
         } else {
             LTicketHora = new javax.swing.JLabel("No hay ningun ticket asignado");
             PTicketHora.add(LTicketHora);
@@ -329,13 +331,13 @@ public class InfoVehiculo extends javax.swing.JPanel {
 
         LTicketHora.setText("No hay ningun ticket asignado");
         LTicketTiempo.setText("");
-        
+
         BCancelar.setEnabled(false);
         BAumentar.setEnabled(false);
     }//GEN-LAST:event_BCancelarActionPerformed
 
     private void BAumentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAumentarActionPerformed
-        TiempoAumentar ta = new TiempoAumentar(this.v, true, this.usu, this.vehi);
+        TiempoAumentar ta = new TiempoAumentar(this.v, true, this.usu, this.vehi, this);
         ta.setVisible(true);
     }//GEN-LAST:event_BAumentarActionPerformed
 
@@ -362,5 +364,28 @@ public class InfoVehiculo extends javax.swing.JPanel {
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    public void actualizar() {
+        Calendar c = Calendar.getInstance();
+
+        int horas = (int) (vehi.getTicket().getTime() - c.getTimeInMillis()) / 3600000;
+        int minutos = (int) ((vehi.getTicket().getTime() - c.getTimeInMillis()) / 60000) % 60;
+        int segundos = (int) ((vehi.getTicket().getTime() - c.getTimeInMillis()) / 1000) % 60;
+
+        String formato = vehi.getTicket().toString();
+        String formatoFecha = formato.split(" ")[0];
+        formatoFecha = formatoFecha.split("-")[2] + "/" + formatoFecha.split("-")[1] + "/" + formatoFecha.split("-")[0];
+        formato = formatoFecha + " " + formato.split(" ")[1];
+
+        LTicketHora = new javax.swing.JLabel(formato);
+        PTicketHora.add(LTicketHora);
+        LTicketTiempo = new javax.swing.JLabel(horas + " horas, " + minutos + " minutos y " + segundos + " segundos.");
+        PTicketTiempo.add(LTicketTiempo);
+
+        BCancelar.setEnabled(true);
+        if (((vehi.getHoraMaxima().getTime() - vehi.getTicket().getTime()) * 60000) > 5) {
+            BAumentar.setEnabled(true);
+        }
+    }
 
 }

@@ -7,6 +7,7 @@ package GUI;
 
 import Clases.Usuario;
 import Clases.Vehiculo;
+import java.sql.Timestamp;
 import java.util.Calendar;
 
 /**
@@ -17,15 +18,17 @@ public class TiempoAumentar extends javax.swing.JDialog {
 
     private Usuario usu;
     private Vehiculo vehi;
+    private InfoVehiculo padre;
     
     /**
      * Creates new form TiempoAumentar
      */
-    public TiempoAumentar(java.awt.Frame parent, boolean modal, Usuario usu, Vehiculo vehi) {
+    public TiempoAumentar(java.awt.Frame parent, boolean modal, Usuario usu, Vehiculo vehi, InfoVehiculo padre) {
         super(parent, modal);
         initComponents();
         this.usu = usu;
         this.vehi = vehi;
+        this.padre = padre;
         
         int max = (int) (vehi.getHoraMaxima().getTime() - vehi.getTicket().getTime()) / 60000 ;
         
@@ -98,6 +101,7 @@ public class TiempoAumentar extends javax.swing.JDialog {
         getContentPane().add(LPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarActionPerformed
@@ -106,6 +110,8 @@ public class TiempoAumentar extends javax.swing.JDialog {
 
     private void BPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BPagarActionPerformed
         this.dispose();
+        vehi.setTicket(new Timestamp(vehi.getTicket().getTime() + STiempo.getValue()*60000));
+        padre.actualizar();
     }//GEN-LAST:event_BPagarActionPerformed
 
     private void STiempoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_STiempoStateChanged
