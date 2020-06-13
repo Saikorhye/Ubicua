@@ -134,4 +134,16 @@ public class Usuario implements Serializable {
              }
          }
      }
+        
+    public Vehiculo getVehiculoMatricula(String matricula) {
+        Vehiculo vehi = null;
+        for (int i = 0; i < this.vehiculos.size(); i++) {
+            if (this.vehiculos.get(i).getMatricula().equals(matricula)) {
+                vehi = this.vehiculos.get(i);
+                break;
+            }
+        }
+        
+        return vehi;
+    }
 }

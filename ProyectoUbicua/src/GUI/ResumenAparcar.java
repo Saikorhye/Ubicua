@@ -7,6 +7,7 @@ package GUI;
 
 import Clases.Usuario;
 import java.awt.Image;
+import java.sql.Timestamp;
 import java.util.Date;
 
 /**
@@ -22,6 +23,7 @@ public class ResumenAparcar extends javax.swing.JPanel {
     private VInicial v;
     private Usuario usu;
     private Image image;
+    private String matricula;
     
     public VInicial getV() {
         return v;
@@ -42,6 +44,7 @@ public class ResumenAparcar extends javax.swing.JPanel {
         jLabel5.setText(coste);
         jLabel6.setText(date);
         jLabel7.setText("Vehículo: "+ve);
+        this.matricula = ve;
     }
 
     /**
@@ -156,6 +159,14 @@ public class ResumenAparcar extends javax.swing.JPanel {
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
         // TODO add your handling code here:
+        String Ticket = jLabel6.getText().replace("/","-") + ":00.000";
+        String fechaTicket = Ticket.split(" ")[2];
+        String horaTicket = Ticket.split(" ")[3];
+        fechaTicket = fechaTicket.split("-")[2] + "-" + fechaTicket.split("-")[1] + "-" + fechaTicket.split("-")[0];
+        Ticket = fechaTicket + " " + horaTicket;
+        Timestamp ts = Timestamp.valueOf(Ticket);
+        this.usu.getVehiculoMatricula(this.matricula).setTicket(ts);
+        
         this.v.getContentPane().setVisible(false);
         VPrincipal vp = new VPrincipal(this.usu);
         vp.setVisible(true);
