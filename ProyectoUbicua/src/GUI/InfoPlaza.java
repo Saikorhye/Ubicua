@@ -25,6 +25,7 @@ public class InfoPlaza extends javax.swing.JPanel {
     private Image image;
     private VInicial v;
     private Usuario usu;
+    private int vent;
     
     public VInicial getV() {
         return v;
@@ -35,13 +36,14 @@ public class InfoPlaza extends javax.swing.JPanel {
     }
     
     
-    public InfoPlaza(Usuario usus, String calle, String plaza, String estado, String tipo, String coste, String max) {
+    public InfoPlaza(Usuario usus, String calle, String plaza, String estado, String tipo, String coste, String max, int ventan) {
         initComponents();
         this.usu=usus;
+        this.vent=ventan;
         jLabel2.setText("Calle: "+calle);
         jLabel3.setText("Plaza: "+plaza);
         jLabel4.setText("Estado: "+estado);
-        jLabel5.setText("Tipo: : "+tipo);
+        jLabel5.setText("Tipo: "+tipo);
         jLabel6.setText("Coste: "+coste);
         jLabel7.setText("Tiempo máximo: "+max);
         if(estado.equals("ocupada")){
@@ -205,11 +207,9 @@ public class InfoPlaza extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jLabel2.setText("Calle: ");
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jLabel3.setText("Plaza: ");
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -315,7 +315,7 @@ public class InfoPlaza extends javax.swing.JPanel {
                     .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -381,7 +381,7 @@ public class InfoPlaza extends javax.swing.JPanel {
     private void jButtonAparcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAparcarActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Aparcar vp = new Aparcar(this.usu, jLabel2.getText(), jLabel3.getText(), Integer.valueOf(jLabel7.getText().split(" ")[2]));
+        Aparcar vp = new Aparcar(this.usu, jLabel2.getText(), jLabel3.getText(), Integer.valueOf(jLabel7.getText().split(" ")[2]), this.vent);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -390,12 +390,30 @@ public class InfoPlaza extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(this.usu);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-        vp.setFondoMapaPrincipal();
+        if(vent==1){
+            this.v.getContentPane().setVisible(false);
+            VPrincipal vp = new VPrincipal(this.usu);
+            vp.setVisible(true);
+            vp.setV(this.v);
+            this.v.setContentPane(vp);
+            vp.setFondoMapaPrincipal();
+        }
+        if(this.vent==2){
+            this.v.getContentPane().setVisible(false);
+            Ruta vp = new Ruta(this.usu, "", jLabel2.getText());
+            vp.setVisible(true);
+            vp.setV(this.v);
+            this.v.setContentPane(vp);
+            vp.setFondoMapaRuta();
+        }
+        if(this.vent==3){
+            this.v.getContentPane().setVisible(false);
+            AparcamientoLibre vp = new AparcamientoLibre(this.usu, jLabel2.getText());
+            vp.setVisible(true);
+            vp.setV(this.v);
+            this.v.setContentPane(vp);
+            vp.setFondoMapaLibre();
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jBotonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSearchActionPerformed
@@ -446,5 +464,21 @@ public class InfoPlaza extends javax.swing.JPanel {
 	this.setOpaque(false);
 	this.image = new ImageIcon(url).getImage();
 	repaint();
+    }
+    
+    public void setFondoMapaLibre() {
+	// Construimos la imagen y se la asignamos al atributo background.
+        URL url = getClass().getResource("/Imagenes/ImaxeVUbi.png");
+	this.setOpaque(false);
+	this.image = new ImageIcon(url).getImage();
+	repaint();
+    }
+    
+    public void setFondoMapaRuta() {
+        // Construimos la imagen y se la asignamos al atributo background.
+        URL url = getClass().getResource("/Imagenes/ImaxeVRuta.png");
+        this.setOpaque(false);
+        this.image = new ImageIcon(url).getImage();
+        repaint();
     }
 }

@@ -29,6 +29,7 @@ public class Aparcar extends javax.swing.JPanel {
     private Usuario usu;
     private String lugar;
     private int tiempomax;
+    private int vent;
 
     public VInicial getV() {
         return v;
@@ -38,15 +39,16 @@ public class Aparcar extends javax.swing.JPanel {
         this.v = v;
     }
 
-    public Aparcar(Usuario us, String lug, String plaza, int tiempomax) {
+    public Aparcar(Usuario us, String lug, String plaza, int tiempomax, int vent) {
         initComponents();
         this.usu = us;
         actualizarCombo();
         this.lugar = lug;
         jLabelLugar.setText(this.lugar);
-        jLabelPlaza.setText("Plaza " + plaza);
+        jLabelPlaza.setText(plaza);
         actualizarSlider();
         this.tiempomax = tiempomax;
+        this.vent=vent;
     }
 
     /**
@@ -193,7 +195,7 @@ public class Aparcar extends javax.swing.JPanel {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jLabel1.setText("Tempo a aparcar");
+        jLabel1.setText("Tiempo a aparcar");
 
         jButtonPagar.setBackground(new java.awt.Color(68, 217, 230));
         jButtonPagar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -218,7 +220,6 @@ public class Aparcar extends javax.swing.JPanel {
         jSlider1.setMaximum(240);
         jSlider1.setMinimum(10);
         jSlider1.setValue(120);
-        jSlider1.setBorder(null);
         jSlider1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSlider1StateChanged(evt);
@@ -233,7 +234,6 @@ public class Aparcar extends javax.swing.JPanel {
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 10)); // NOI18N
         jLabel4.setText("10 minutos");
-        jLabel4.setBorder(null);
 
         jLabelPrezo.setBackground(new java.awt.Color(255, 255, 255));
         jLabelPrezo.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 18)); // NOI18N
@@ -244,18 +244,15 @@ public class Aparcar extends javax.swing.JPanel {
         jLabelInicio.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabelInicio.setText("Data inicio: 16/06/2020  15:40");
         jLabelInicio.setToolTipText("");
-        jLabelInicio.setBorder(null);
 
         jLabelFin.setBackground(new java.awt.Color(255, 255, 255));
         jLabelFin.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabelFin.setText("Data fin: 16/06/2020 17:40");
-        jLabelFin.setBorder(null);
 
         jLabelLugar.setBackground(new java.awt.Color(255, 255, 255));
         jLabelLugar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
         jLabelLugar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLugar.setText("Rúa Goméz López");
-        jLabelLugar.setBorder(null);
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
@@ -458,12 +455,31 @@ public class Aparcar extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(this.usu);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-        vp.setFondoMapaPrincipal();
+        if(vent==1){
+            this.v.getContentPane().setVisible(false);
+            VPrincipal vp = new VPrincipal(this.usu);
+            vp.setVisible(true);
+            vp.setV(this.v);
+            this.v.setContentPane(vp);
+            vp.setFondoMapaPrincipal();
+        }
+        if(this.vent==2){
+            this.v.getContentPane().setVisible(false);
+            Ruta vp = new Ruta(this.usu, "", jLabelLugar.getText());
+            vp.setVisible(true);
+            vp.setV(this.v);
+            this.v.setContentPane(vp);
+            vp.setFondoMapaRuta();
+        }
+        if(this.vent==3){
+            this.v.getContentPane().setVisible(false);
+            AparcamientoLibre vp = new AparcamientoLibre(this.usu, jLabelLugar.getText());
+            vp.setVisible(true);
+            vp.setV(this.v);
+            this.v.setContentPane(vp);
+            vp.setFondoMapaLibre();
+        }
+       
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider1StateChanged
