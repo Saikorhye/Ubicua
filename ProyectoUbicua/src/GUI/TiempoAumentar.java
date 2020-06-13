@@ -58,9 +58,11 @@ public class TiempoAumentar extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabel1.setText("Hora Final");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
 
+        STiempo.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         STiempo.setMinimum(5);
         STiempo.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -69,34 +71,43 @@ public class TiempoAumentar extends javax.swing.JDialog {
         });
         getContentPane().add(STiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabel2.setText("Hora Inicial");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
+        LHoraAct.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LHoraAct.setText("jLabel3");
         getContentPane().add(LHoraAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
+        LHoraFin.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LHoraFin.setText("jLabel4");
         getContentPane().add(LHoraFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
 
+        BPagar.setBackground(new java.awt.Color(216, 216, 216));
+        BPagar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BPagar.setText("Pagar");
         BPagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BPagarActionPerformed(evt);
             }
         });
-        getContentPane().add(BPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
+        getContentPane().add(BPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 190, 90, -1));
 
+        BCancelar.setBackground(new java.awt.Color(216, 216, 216));
+        BCancelar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BCancelar.setText("Cancelar");
         BCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        getContentPane().add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 100, -1));
 
-        jLabel5.setText("Tempo a aparcar");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
+        jLabel5.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jLabel5.setText("Tiempo a aparcar");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
 
+        LPrecio.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LPrecio.setText("jLabel3");
         getContentPane().add(LPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, -1));
 

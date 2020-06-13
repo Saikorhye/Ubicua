@@ -231,18 +231,21 @@ public class InfoVehiculo extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
+        jLabel1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabel1.setText("Matricula");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
 
         PMatricula.setLayout(new java.awt.BorderLayout());
         add(PMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 300, 40));
 
+        jLabel2.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabel2.setText("Descripcion");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, -1));
 
         PDescripcion.setLayout(new java.awt.BorderLayout());
         add(PDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 300, 130));
 
+        jLabel3.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jLabel3.setText("Ticket");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, -1));
 
@@ -252,21 +255,25 @@ public class InfoVehiculo extends javax.swing.JPanel {
         PTicketTiempo.setLayout(new java.awt.BorderLayout());
         add(PTicketTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 300, 40));
 
+        BCancelar.setBackground(new java.awt.Color(216, 216, 216));
+        BCancelar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BCancelar.setText("CancelarTicket");
         BCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BCancelarActionPerformed(evt);
             }
         });
-        add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, -1));
+        add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 140, -1));
 
+        BAumentar.setBackground(new java.awt.Color(216, 216, 216));
+        BAumentar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         BAumentar.setText("Aumentar Tiempo");
         BAumentar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BAumentarActionPerformed(evt);
             }
         });
-        add(BAumentar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, -1, -1));
+        add(BAumentar, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 450, 170, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
