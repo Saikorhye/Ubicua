@@ -8,21 +8,27 @@ package GUI;
 import Clases.Usuario;
 import Clases.Vehiculo;
 import java.util.ArrayList;
+import java.util.Calendar;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author evinha
  */
-public class Vehiculos extends javax.swing.JPanel {
+public class InfoVehiculo extends javax.swing.JPanel {
 
     /**
      * Creates new form VPrincipal
      */
-    
     private VInicial v;
     private Usuario usu;
+    private Vehiculo vehi;
     
+    private javax.swing.JLabel LMatricula;
+    private javax.swing.JLabel LDescripcion;
+    private javax.swing.JLabel LTicketHora;
+    private javax.swing.JLabel LTicketTiempo;
+
     public VInicial getV() {
         return v;
     }
@@ -30,23 +36,38 @@ public class Vehiculos extends javax.swing.JPanel {
     public void setV(VInicial v) {
         this.v = v;
     }
-    
-    public Vehiculos(Usuario us) {
-        this.usu=us;
+
+    public InfoVehiculo(Usuario us, Vehiculo vehi) {
+        this.usu = us;
+        this.vehi = vehi;
         initComponents();
         this.VolverPrincipal.setText("Volver a Principal");
-        
-        ArrayList<Vehiculo> lista = usu.getVehiculos();
-        DefaultTableModel mt = (DefaultTableModel) ListaVehiculos.getModel();
-        if (lista.size() > 0) {
-            for (int i = 0; i < lista.size(); i++) {
-                Vehiculo v = lista.get(i);
-                if (v.getTicket() != null) {
-                    mt.addRow(new Object[]{v.getMatricula(), v.getDescripcion(), v.getTicket()});
-                } else {
-                    mt.addRow(new Object[]{v.getMatricula(), v.getDescripcion(), "No"});
-                }
-            }
+
+        LabelAyuda.setText(vehi.getMatricula());
+        BCancelar.setEnabled(false);
+        BAumentar.setEnabled(false);
+
+        LMatricula = new javax.swing.JLabel(vehi.getMatricula());
+        PMatricula.add(LMatricula);
+        LDescripcion = new javax.swing.JLabel(vehi.getDescripcion());
+        PDescripcion.add(LDescripcion);
+        if (vehi.getTicket() != null) {
+
+            Calendar c = Calendar.getInstance();
+            
+            int horas = (int) (vehi.getTicket().getTime() - c.getTimeInMillis()) / 3600000;
+            int minutos = (int) (vehi.getTicket().getTime() - c.getTimeInMillis()) / 60000;
+            int segundos = (int) (vehi.getTicket().getTime() - c.getTimeInMillis()) / 1000;
+            
+            System.out.println(c.getTime());
+
+            LTicketHora = new javax.swing.JLabel(vehi.getTicket().toString());
+            PTicketHora.add(LTicketHora);
+            LTicketTiempo = new javax.swing.JLabel(horas + " horas, " + minutos + " minutos y " + segundos + " segundos.");
+            PTicketTiempo.add(LTicketTiempo);
+        } else {
+            LTicketHora = new javax.swing.JLabel("No hay ningun ticket asignado");
+            PTicketHora.add(LTicketHora);
         }
     }
 
@@ -70,11 +91,15 @@ public class Vehiculos extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         LabelAyuda = new javax.swing.JLabel();
         jBotonMenu = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        ListaVehiculos = new javax.swing.JTable();
-        BRegistrar = new javax.swing.JButton();
-        BEliminar = new javax.swing.JButton();
-        BInfo = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        PMatricula = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        PDescripcion = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        PTicketHora = new javax.swing.JPanel();
+        PTicketTiempo = new javax.swing.JPanel();
+        BCancelar = new javax.swing.JButton();
+        BAumentar = new javax.swing.JButton();
 
         jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
         jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -153,6 +178,7 @@ public class Vehiculos extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(350, 500));
         setMinimumSize(new java.awt.Dimension(350, 500));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(68, 217, 230));
         jPanel1.setForeground(new java.awt.Color(68, 217, 230));
@@ -187,7 +213,7 @@ public class Vehiculos extends javax.swing.JPanel {
                 .addComponent(jBotonMenu)
                 .addGap(54, 54, 54)
                 .addComponent(LabelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,120 +221,49 @@ public class Vehiculos extends javax.swing.JPanel {
             .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jScrollPane1.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
-        ListaVehiculos.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        ListaVehiculos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        jLabel1.setText("Matricula");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
 
-            },
-            new String [] {
-                "Matricula", "Descripcion", "Ticket"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
+        PMatricula.setLayout(new java.awt.BorderLayout());
+        add(PMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 300, 40));
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
+        jLabel2.setText("Descripcion");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, -1));
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        ListaVehiculos.getTableHeader().setReorderingAllowed(false);
-        ListaVehiculos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ListaVehiculosMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(ListaVehiculos);
-        if (ListaVehiculos.getColumnModel().getColumnCount() > 0) {
-            ListaVehiculos.getColumnModel().getColumn(0).setMaxWidth(500);
-            ListaVehiculos.getColumnModel().getColumn(2).setMaxWidth(500);
-        }
+        PDescripcion.setLayout(new java.awt.BorderLayout());
+        add(PDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 300, 130));
 
-        BRegistrar.setBackground(new java.awt.Color(216, 216, 216));
-        BRegistrar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
-        BRegistrar.setText("Registrar un vehiculo");
-        BRegistrar.setBorder(null);
-        BRegistrar.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setText("Ticket");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, -1));
+
+        PTicketHora.setLayout(new java.awt.BorderLayout());
+        add(PTicketHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 300, 40));
+
+        PTicketTiempo.setLayout(new java.awt.BorderLayout());
+        add(PTicketTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 300, 40));
+
+        BCancelar.setText("CancelarTicket");
+        BCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BRegistrarActionPerformed(evt);
+                BCancelarActionPerformed(evt);
             }
         });
+        add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, -1));
 
-        BEliminar.setBackground(new java.awt.Color(216, 216, 216));
-        BEliminar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
-        BEliminar.setText("Eliminar vehiculo");
-        BEliminar.setBorder(null);
-        BEliminar.setEnabled(false);
-        BEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BEliminarActionPerformed(evt);
-            }
-        });
-
-        BInfo.setBackground(new java.awt.Color(216, 216, 216));
-        BInfo.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 14)); // NOI18N
-        BInfo.setText("Info del vehiculo");
-        BInfo.setBorder(null);
-        BInfo.setEnabled(false);
-        BInfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BInfoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(BRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(93, 93, 93))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(BRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        BAumentar.setText("Aumentar Tiempo");
+        add(BAumentar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
         // TODO add your handling code here:
-       // menuEmergente.show(this,evt.get .getX(),evt.getY());
+        // menuEmergente.show(this,evt.get .getX(),evt.getY());
     }//GEN-LAST:event_jBotonMenuActionPerformed
 
     private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
         // TODO add your handling code here:
-        jPopMenuPrincipal.show(this,jBotonMenu.getX(),jBotonMenu.getY()+ jBotonMenu.getHeight());
+        jPopMenuPrincipal.show(this, jBotonMenu.getX(), jBotonMenu.getY() + jBotonMenu.getHeight());
     }//GEN-LAST:event_jBotonMenuMouseClicked
 
     private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
@@ -317,7 +272,7 @@ public class Vehiculos extends javax.swing.JPanel {
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
-        
+
     }//GEN-LAST:event_NotificacionesActionPerformed
 
     private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
@@ -329,7 +284,7 @@ public class Vehiculos extends javax.swing.JPanel {
     }//GEN-LAST:event_AyudaActionPerformed
 
     private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
-    
+
     }//GEN-LAST:event_SalirSesionActionPerformed
 
     private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
@@ -357,64 +312,32 @@ public class Vehiculos extends javax.swing.JPanel {
         this.v.setContentPane(vp);
     }//GEN-LAST:event_ConfiguraciónActionPerformed
 
-    private void BEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BEliminarActionPerformed
-        DefaultTableModel tm = (DefaultTableModel) ListaVehiculos.getModel();
-        int pos = ListaVehiculos.getSelectedRow();
-        ConfirmacionE ce = new ConfirmacionE(v, true, tm.getValueAt(pos, 0).toString(), tm.getValueAt(pos, 1).toString(), this);
-        ce.setVisible(true);
-    }//GEN-LAST:event_BEliminarActionPerformed
-
-    private void ListaVehiculosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaVehiculosMouseClicked
-        BEliminar.setEnabled(true);
-        BInfo.setEnabled(true);
-    }//GEN-LAST:event_ListaVehiculosMouseClicked
-
-    private void BRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BRegistrarActionPerformed
-        VRegistrarVehiculo rv = new VRegistrarVehiculo(v, true, usu.getVehiculos(), this);
-        rv.setVisible(true);
-    }//GEN-LAST:event_BRegistrarActionPerformed
-
-    private void BInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BInfoActionPerformed
-        this.v.getContentPane().setVisible(false);
-        DefaultTableModel tm = (DefaultTableModel) ListaVehiculos.getModel();
-        int pos = ListaVehiculos.getSelectedRow();
-        Vehiculo vehi = this.usu.getVehiculoMatricula(tm.getValueAt(pos, 0).toString());
-        InfoVehiculo iv = new InfoVehiculo(this.usu, vehi);
-        iv.setVisible(true);
-        iv.setV(this.v);
-        this.v.setContentPane(iv);
-    }//GEN-LAST:event_BInfoActionPerformed
+    private void BCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Ayuda;
-    private javax.swing.JButton BEliminar;
-    private javax.swing.JButton BInfo;
-    private javax.swing.JButton BRegistrar;
+    private javax.swing.JButton BAumentar;
+    private javax.swing.JButton BCancelar;
     private javax.swing.JMenuItem Configuración;
     private javax.swing.JLabel LabelAyuda;
-    private javax.swing.JTable ListaVehiculos;
     private javax.swing.JMenuItem Multas;
     private javax.swing.JMenuItem Notificaciones;
+    private javax.swing.JPanel PDescripcion;
+    private javax.swing.JPanel PMatricula;
+    private javax.swing.JPanel PTicketHora;
+    private javax.swing.JPanel PTicketTiempo;
     private javax.swing.JMenuItem SalirSesion;
     private javax.swing.JMenuItem VolverPrincipal;
     private javax.swing.JButton jBotonMenu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 
-    public void eliminar() {
-        DefaultTableModel tm = (DefaultTableModel) ListaVehiculos.getModel();
-        usu.removeVehiculo(tm.getValueAt(ListaVehiculos.getSelectedRow(), 0).toString());
-        tm.removeRow(ListaVehiculos.getSelectedRow());
-        BEliminar.setEnabled(false);
-    }
-
-    public void registrar(String matricula, String descripcion) {
-        DefaultTableModel tm = (DefaultTableModel) ListaVehiculos.getModel();
-        tm.addRow(new Object[]{matricula, descripcion});
-        usu.addVehiculo(new Vehiculo(matricula, descripcion));
-    }
 }

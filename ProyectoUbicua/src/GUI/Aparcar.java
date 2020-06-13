@@ -24,12 +24,11 @@ public class Aparcar extends javax.swing.JPanel {
     /**
      * Creates new form Aparcar
      */
-    
     private Image image;
     private VInicial v;
     private Usuario usu;
     private String lugar;
-    
+
     public VInicial getV() {
         return v;
     }
@@ -37,15 +36,15 @@ public class Aparcar extends javax.swing.JPanel {
     public void setV(VInicial v) {
         this.v = v;
     }
-    
-    
+
     public Aparcar(Usuario us, String lug, String plaza) {
         initComponents();
-        this.usu=us;
+        this.usu = us;
         actualizarCombo();
-        this.lugar=lug;
+        this.lugar = lug;
         jLabelLugar.setText(this.lugar);
-        jLabelPlaza.setText("Plaza "+plaza);
+        jLabelPlaza.setText("Plaza " + plaza);
+        actualizarSlider();
     }
 
     /**
@@ -384,7 +383,7 @@ public class Aparcar extends javax.swing.JPanel {
 
     private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
         // TODO add your handling code here:
-        jPopMenuPrincipal.show(this,jBotonMenu.getX(),jBotonMenu.getY()+ jBotonMenu.getHeight());
+        jPopMenuPrincipal.show(this, jBotonMenu.getX(), jBotonMenu.getY() + jBotonMenu.getHeight());
     }//GEN-LAST:event_jBotonMenuMouseClicked
 
     private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
@@ -473,7 +472,7 @@ public class Aparcar extends javax.swing.JPanel {
     private void jButtonPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPagarActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        ResumenAparcar vp = new ResumenAparcar(this.usu, jLabelPlaza.getText(), jLabelLugar.getText(), jSlider1.getValue()/60, jLabelPrezo.getText(), jLabelFin.getText(), jComboBoxVehiculo.getSelectedItem().toString());
+        ResumenAparcar vp = new ResumenAparcar(this.usu, jLabelPlaza.getText(), jLabelLugar.getText(), jSlider1.getValue() / 60, jLabelPrezo.getText(), jLabelFin.getText(), jComboBoxVehiculo.getSelectedItem().toString());
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -509,72 +508,79 @@ public class Aparcar extends javax.swing.JPanel {
     private javax.swing.JMenuItem jUsuario;
     // End of variables declaration//GEN-END:variables
 
-    public void paintComponent(Graphics g){
+    public void paintComponent(Graphics g) {
         Dimension tam = this.getSize();
         g.drawImage(this.image, 0, 0, tam.width, tam.height, null);
         super.paintComponent(g);
     }
-    
-    
+
     public void setFondoMapaPrincipal() {
-	// Construimos la imagen y se la asignamos al atributo background.
+        // Construimos la imagen y se la asignamos al atributo background.
         URL url = getClass().getResource("/Imagenes/MapaInicioUbi.png");
-	this.setOpaque(false);
-	this.image = new ImageIcon(url).getImage();
-	repaint();
+        this.setOpaque(false);
+        this.image = new ImageIcon(url).getImage();
+        repaint();
     }
-    
+
     public void setFondoMapaRuta() {
-	// Construimos la imagen y se la asignamos al atributo background.
+        // Construimos la imagen y se la asignamos al atributo background.
         URL url = getClass().getResource("/Imagenes/Imaxeruta2.png");
-	this.setOpaque(false);
-	this.image = new ImageIcon(url).getImage();
-	repaint();
+        this.setOpaque(false);
+        this.image = new ImageIcon(url).getImage();
+        repaint();
     }
-    
+
     public void setFondoMapaLibre() {
-	// Construimos la imagen y se la asignamos al atributo background.
+        // Construimos la imagen y se la asignamos al atributo background.
         URL url = getClass().getResource("/Imagenes/Imaxeubi.png");
-	this.setOpaque(false);
-	this.image = new ImageIcon(url).getImage();
-	repaint();
+        this.setOpaque(false);
+        this.image = new ImageIcon(url).getImage();
+        repaint();
     }
-    
-    public void actualizarCombo(){
+
+    public void actualizarCombo() {
         
-        for(Vehiculo vehiculo : usu.getVehiculos()){
-            System.out.println("Item: "+vehiculo.getMatricula()+"\n");
-            jComboBoxVehiculo.addItem(vehiculo.getMatricula());
+        boolean vacio = true;
+        
+        for (Vehiculo vehiculo : usu.getVehiculos()) {
+            if (vehiculo.getTicket() == null) {
+                jComboBoxVehiculo.addItem(vehiculo.getMatricula());
+                vacio = false;
+            }
+        }
+        
+        if (vacio) {
+            jButtonPagar.setEnabled(false);
+            jComboBoxVehiculo.addItem("No hay ningun coche disponible");
         }
     }
-    
-    public void actualizarSlider(){
+
+    public void actualizarSlider() {
         //Calcular prezo
-        double valor= jSlider1.getValue()*1.75; //En centimos
-        String prezo=""+valor/100+"€";
+        double valor = jSlider1.getValue() * 1.75; //En centimos
+        String prezo = "" + valor / 100 + "€";
         jLabelPrezo.setText(prezo);
-        
+
         //Calcular fecha
-        java.util.Date fecha = new Date();
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(fecha); //fecha actual es un Date;
+        System.out.println(calendar.getTime());
         //Cmabiar fecha actual
-        jLabelInicio.setText("Data inicio: "+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)+" "+calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(Calendar.MINUTE));
-        int h=calendar.get(Calendar.HOUR_OF_DAY);
+        jLabelInicio.setText("Data inicio: " + calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH) + 1) + "/" + calendar.get(Calendar.YEAR) + " " + calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE));
+        int h = calendar.get(Calendar.HOUR_OF_DAY);
         //Calcular nova fecha
-        int min=0;
-        int horasS=0;
-        if(jSlider1.getValue()>59){
-            horasS=jSlider1.getValue()/60;
+        int min = 0;
+        int horasS = 0;
+        if (jSlider1.getValue() > 59) {
+            horasS = jSlider1.getValue() / 60;
         }
         calendar.add(Calendar.MINUTE, jSlider1.getValue());//
-        min=calendar.get(Calendar.MINUTE);//+jSlider1.getValue();
-        calendar.add(Calendar.HOUR_OF_DAY, jSlider1.getValue()/60);
-        int ho=calendar.get(Calendar.HOUR_OF_DAY);
+        min = calendar.get(Calendar.MINUTE);//+jSlider1.getValue();
+        calendar.add(Calendar.HOUR_OF_DAY, jSlider1.getValue() / 60);
+        int ho = calendar.get(Calendar.HOUR_OF_DAY);
         //int ho=horasS+h;
-        jLabelFin.setText("Data fin: "+calendar.get(Calendar.DATE)+"/"+calendar.get(Calendar.MONTH)+"/"+calendar.get(Calendar.YEAR)+" "+ho+":"+min);
-        ho=0;
-        h=0;
-        horasS=0;
+        jLabelFin.setText("Data fin: " + calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH) + 1) + "/" + calendar.get(Calendar.YEAR) + " " + ho + ":" + min);
+        ho = 0;
+        h = 0;
+        horasS = 0;
     }
 }
