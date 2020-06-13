@@ -455,7 +455,7 @@ public class InfoPlaza extends javax.swing.JPanel {
     
     public void setFondoInfo() {
 	// Construimos la imagen y se la asignamos al atributo background.
-        URL url = getClass().getResource("/Imagenes/MapaXeral.png");
+        URL url = getClass().getResource("/Imagenes/MapaProba1.png");
 	this.setOpaque(false);
 	this.image = new ImageIcon(url).getImage();
 	repaint();
