@@ -526,7 +526,7 @@ public class Aparcar extends javax.swing.JPanel {
     
     public void setFondoMapaRuta() {
 	// Construimos la imagen y se la asignamos al atributo background.
-        URL url = getClass().getResource("/Imagenes/MaparutaverPlazas.png");
+        URL url = getClass().getResource("/Imagenes/Imaxeruta.png");
 	this.setOpaque(false);
 	this.image = new ImageIcon(url).getImage();
 	repaint();
@@ -534,7 +534,7 @@ public class Aparcar extends javax.swing.JPanel {
     
     public void setFondoMapaLibre() {
 	// Construimos la imagen y se la asignamos al atributo background.
-        URL url = getClass().getResource("/Imagenes/MapaUbiPlazas.png");
+        URL url = getClass().getResource("/Imagenes/Imaxeubi.png");
 	this.setOpaque(false);
 	this.image = new ImageIcon(url).getImage();
 	repaint();
