@@ -45,7 +45,8 @@ public class InfoPlaza extends javax.swing.JPanel {
         jLabel6.setText("Coste: "+coste);
         jLabel7.setText("Tiempo máximo: "+max);
         if(estado.equals("ocupada")){
-            jLabel8.setText("Plaza libre a las 17:17 el 14/06/2020");
+            jLabel8.setText("Plaza libre 14/06/2020 15:30");
+            jButtonAparcar.setEnabled(false);
         }
         else{
             jLabel8.setText("");
