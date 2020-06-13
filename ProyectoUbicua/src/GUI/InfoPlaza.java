@@ -69,7 +69,8 @@ public class InfoPlaza extends javax.swing.JPanel {
         jAyuda = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jSalirSesion = new javax.swing.JMenuItem();
-        jPanel1 = new javax.swing.JPanel();
+        jBotonMenu = new javax.swing.JButton();
+        jBotonSearch = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -81,8 +82,6 @@ public class InfoPlaza extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButtonAparcar = new javax.swing.JButton();
-        jBotonSearch = new javax.swing.JButton();
-        jBotonMenu = new javax.swing.JButton();
 
         jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         jPopMenuPrincipal.setForeground(new java.awt.Color(255, 255, 255));
@@ -160,7 +159,31 @@ public class InfoPlaza extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jBotonMenu.setBackground(new java.awt.Color(68, 217, 230));
+        jBotonMenu.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
+        jBotonMenu.setForeground(new java.awt.Color(255, 255, 255));
+        jBotonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoMenuAzul.png"))); // NOI18N
+        jBotonMenu.setBorder(null);
+        jBotonMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBotonMenuMouseClicked(evt);
+            }
+        });
+        jBotonMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonMenuActionPerformed(evt);
+            }
+        });
+
+        jBotonSearch.setBackground(new java.awt.Color(216, 215, 214));
+        jBotonSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchicon.png"))); // NOI18N
+        jBotonSearch.setBorder(null);
+        jBotonSearch.setEnabled(false);
+        jBotonSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonSearchActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -265,115 +288,35 @@ public class InfoPlaza extends javax.swing.JPanel {
                 .addComponent(jLabel8)
                 .addGap(50, 50, 50)
                 .addComponent(jButtonAparcar)
-                .addContainerGap(70, Short.MAX_VALUE))
-        );
-
-        jBotonSearch.setBackground(new java.awt.Color(216, 215, 214));
-        jBotonSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchicon.png"))); // NOI18N
-        jBotonSearch.setBorder(null);
-        jBotonSearch.setEnabled(false);
-        jBotonSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBotonSearchActionPerformed(evt);
-            }
-        });
-
-        jBotonMenu.setBackground(new java.awt.Color(68, 217, 230));
-        jBotonMenu.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jBotonMenu.setForeground(new java.awt.Color(255, 255, 255));
-        jBotonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoMenuAzul.png"))); // NOI18N
-        jBotonMenu.setBorder(null);
-        jBotonMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBotonMenuMouseClicked(evt);
-            }
-        });
-        jBotonMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBotonMenuActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(17, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jBotonMenu)
-                    .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jBotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBotonMenu)
+                    .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(this.usu);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-        vp.setFondoMapaPrincipal();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jBotonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSearchActionPerformed
-        // TODO add your handling code here:
-        this.v.getContentPane().setVisible(false);
-        BuscarRuta vp = new BuscarRuta(this.usu);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-        vp.setFondoBuscarRuta();
-    }//GEN-LAST:event_jBotonSearchActionPerformed
-
-    private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
-        // TODO add your handling code here:
-        jPopMenuPrincipal.show(this,jBotonMenu.getX(),jBotonMenu.getY()+ jBotonMenu.getHeight());
-    }//GEN-LAST:event_jBotonMenuMouseClicked
-
-    private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
-        // TODO add your handling code here:
-        // menuEmergente.show(this,evt.get .getX(),evt.getY());
-    }//GEN-LAST:event_jBotonMenuActionPerformed
 
     private void jNotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNotificacionesActionPerformed
         // TODO add your handling code here:
@@ -424,6 +367,16 @@ public class InfoPlaza extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jSalirSesionActionPerformed
 
+    private void jBotonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMenuActionPerformed
+        // TODO add your handling code here:
+        // menuEmergente.show(this,evt.get .getX(),evt.getY());
+    }//GEN-LAST:event_jBotonMenuActionPerformed
+
+    private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
+        // TODO add your handling code here:
+        jPopMenuPrincipal.show(this,jBotonMenu.getX(),jBotonMenu.getY()+ jBotonMenu.getHeight());
+    }//GEN-LAST:event_jBotonMenuMouseClicked
+
     private void jButtonAparcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAparcarActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
@@ -433,6 +386,26 @@ public class InfoPlaza extends javax.swing.JPanel {
         this.v.setContentPane(vp);
         vp.setFondoMapaPrincipal();
     }//GEN-LAST:event_jButtonAparcarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        VPrincipal vp = new VPrincipal(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+        vp.setFondoMapaPrincipal();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jBotonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSearchActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        BuscarRuta vp = new BuscarRuta(this.usu);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+        vp.setFondoBuscarRuta();
+    }//GEN-LAST:event_jBotonSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -452,7 +425,6 @@ public class InfoPlaza extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JMenuItem jMultas;
     private javax.swing.JMenuItem jNotificaciones;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JMenuItem jSalirSesion;
@@ -460,17 +432,16 @@ public class InfoPlaza extends javax.swing.JPanel {
     private javax.swing.JMenuItem jUsuario;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void paintComponent(Graphics g){
+   public void paintComponent(Graphics g){
         Dimension tam = this.getSize();
         g.drawImage(this.image, 0, 0, tam.width, tam.height, null);
         super.paintComponent(g);
     }
     
     
-    public void setFondoInfo() {
+    public void setFondoMapaPrincipalI() {
 	// Construimos la imagen y se la asignamos al atributo background.
-        URL url = getClass().getResource("/Imagenes/MapaProba1.png");
+        URL url = getClass().getResource("/Imagenes/MapaInicioUbi.png");
 	this.setOpaque(false);
 	this.image = new ImageIcon(url).getImage();
 	repaint();

@@ -185,7 +185,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="22" max="-2" attributes="0"/>
+              <Component id="jButtonUbi" min="-2" pref="22" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -199,7 +199,7 @@
                   <Component id="jBotonSearch" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="188" max="32767" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="jButtonUbi" min="-2" pref="23" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
@@ -267,7 +267,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="jButtonUbi">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="de" type="rgb"/>
@@ -281,7 +281,7 @@
         <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonUbiActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -64,7 +64,7 @@ public class VPrincipal extends javax.swing.JPanel {
         jBotonSearch = new javax.swing.JButton();
         jBotonMenu = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonUbi = new javax.swing.JButton();
 
         jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
         jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
@@ -175,13 +175,13 @@ public class VPrincipal extends javax.swing.JPanel {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Leyenda(2).png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(216, 216, 216)));
 
-        jButton2.setBackground(new java.awt.Color(222, 0, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BotonUbi.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonUbi.setBackground(new java.awt.Color(222, 0, 0));
+        jButtonUbi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BotonUbi.png"))); // NOI18N
+        jButtonUbi.setBorder(null);
+        jButtonUbi.setBorderPainted(false);
+        jButtonUbi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonUbiActionPerformed(evt);
             }
         });
 
@@ -203,7 +203,7 @@ public class VPrincipal extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonUbi, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(160, 160, 160))
         );
         layout.setVerticalGroup(
@@ -214,7 +214,7 @@ public class VPrincipal extends javax.swing.JPanel {
                     .addComponent(jBotonMenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBotonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonUbi, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(jButton1)
                 .addGap(42, 42, 42))
@@ -316,15 +316,15 @@ public class VPrincipal extends javax.swing.JPanel {
         vp.setFondoBuscarRuta();
     }//GEN-LAST:event_jBotonSearchActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonUbiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUbiActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
         InfoPlaza vi = new InfoPlaza(this.usu, "San Pedro de Mezonzo", "21", "Libre", "Zona ORA", "1,05€/hora", "4 horas");
         vi.setVisible(true);
         vi.setV(this.v);
         this.v.setContentPane(vi);
-        vi.setFondoInfo();
-    }//GEN-LAST:event_jButton2ActionPerformed
+        vi.setFondoMapaPrincipalI();
+    }//GEN-LAST:event_jButtonUbiActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -337,7 +337,7 @@ public class VPrincipal extends javax.swing.JPanel {
     private javax.swing.JButton jBotonMenu;
     private javax.swing.JButton jBotonSearch;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonUbi;
     private javax.swing.JPopupMenu jPopMenuPrincipal;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
