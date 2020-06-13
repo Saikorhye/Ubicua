@@ -76,6 +76,8 @@ public class Ruta extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
         jPopMenuPrincipal.setBorder(null);
@@ -180,7 +182,8 @@ public class Ruta extends javax.swing.JPanel {
 
         jButtonAparcar.setBackground(new java.awt.Color(68, 217, 230));
         jButtonAparcar.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jButtonAparcar.setText("Aparca aquí");
+        jButtonAparcar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoR1.png"))); // NOI18N
+        jButtonAparcar.setBorder(null);
         jButtonAparcar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAparcarActionPerformed(evt);
@@ -343,6 +346,22 @@ public class Ruta extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoR2.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoR3.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -354,11 +373,20 @@ public class Ruta extends javax.swing.JPanel {
                 .addComponent(jBotonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonAparcar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addGap(59, 59, 59)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(jButtonAparcar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 12, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(172, 172, 172))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -367,14 +395,15 @@ public class Ruta extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jBotonMenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBotonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
+                .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButtonAparcar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                    .addComponent(jButtonAparcar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -448,20 +477,42 @@ public class Ruta extends javax.swing.JPanel {
     }//GEN-LAST:event_jSalirSesionActionPerformed
 
     private void jButtonAparcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAparcarActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
         this.v.getContentPane().setVisible(false);
-        Aparcar vp = new Aparcar(this.usu, this.destino, "12", 4, 2);
+        InfoPlaza vp = new InfoPlaza(this.usu, "Avenida das Ciencias", "12", "libre", "Carga o descarga", "Ninguno", "30 minutos", 2);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
         vp.setFondoMapaRuta();
     }//GEN-LAST:event_jButtonAparcarActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        InfoPlaza vp = new InfoPlaza(this.usu, "Avenida do Doutor Ángel", "7", "libre", "Carga o descarga", "Ninguno", "30 minutos", 2);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+        vp.setFondoMapaRuta();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.v.getContentPane().setVisible(false);
+        InfoPlaza vp = new InfoPlaza(this.usu, "Avenida das Ciencias", "3", "libre", "Zona ORA", "1,05€/hora", "4 horas", 2);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+        vp.setFondoMapaRuta();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem jAyuda;
     private javax.swing.JButton jBotonMenu;
     private javax.swing.JButton jBotonSearch;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAparcar;
     private javax.swing.JMenuItem jConfiguracion;
