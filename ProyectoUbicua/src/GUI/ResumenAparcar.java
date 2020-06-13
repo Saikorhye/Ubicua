@@ -8,6 +8,7 @@ package GUI;
 import Clases.Usuario;
 import java.awt.Image;
 import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -24,6 +25,7 @@ public class ResumenAparcar extends javax.swing.JPanel {
     private Usuario usu;
     private Image image;
     private String matricula;
+    private int tiempomax;
     
     public VInicial getV() {
         return v;
@@ -35,16 +37,17 @@ public class ResumenAparcar extends javax.swing.JPanel {
     
     
     
-    public ResumenAparcar(Usuario us, String plaza, String lugar, double tempo, String coste, String date, String ve) {
+    public ResumenAparcar(Usuario us, String plaza, String lugar, double tempo, String coste, String date, String ve, int tiempomax) {
         initComponents();
         this.usu=us;
         jLabel2.setText(plaza);
         jLabel3.setText(lugar);
         jLabel4.setText("Tiempo: "+tempo+" horas");
-        jLabel5.setText(coste);
+        jLabel5.setText("Coste: "+coste);
         jLabel6.setText(date);
         jLabel7.setText("Vehículo: "+ve);
         this.matricula = ve;
+        this.tiempomax = tiempomax;
     }
 
     /**
@@ -165,7 +168,12 @@ public class ResumenAparcar extends javax.swing.JPanel {
         fechaTicket = fechaTicket.split("-")[2] + "-" + fechaTicket.split("-")[1] + "-" + fechaTicket.split("-")[0];
         Ticket = fechaTicket + " " + horaTicket;
         Timestamp ts = Timestamp.valueOf(Ticket);
+        
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.HOUR_OF_DAY, tiempomax);
+        
         this.usu.getVehiculoMatricula(this.matricula).setTicket(ts);
+        this.usu.getVehiculoMatricula(matricula).setHoraMaxima(new Timestamp(c.getTimeInMillis()));
         
         this.v.getContentPane().setVisible(false);
         VPrincipal vp = new VPrincipal(this.usu);

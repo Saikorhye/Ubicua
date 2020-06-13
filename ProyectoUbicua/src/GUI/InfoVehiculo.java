@@ -23,7 +23,7 @@ public class InfoVehiculo extends javax.swing.JPanel {
     private VInicial v;
     private Usuario usu;
     private Vehiculo vehi;
-    
+
     private javax.swing.JLabel LMatricula;
     private javax.swing.JLabel LDescripcion;
     private javax.swing.JLabel LTicketHora;
@@ -54,7 +54,7 @@ public class InfoVehiculo extends javax.swing.JPanel {
         if (vehi.getTicket() != null) {
 
             Calendar c = Calendar.getInstance();
-            
+
             int horas = (int) (vehi.getTicket().getTime() - c.getTimeInMillis()) / 3600000;
             int minutos = (int) ((vehi.getTicket().getTime() - c.getTimeInMillis()) / 60000) % 60;
             int segundos = (int) ((vehi.getTicket().getTime() - c.getTimeInMillis()) / 1000) % 60;
@@ -63,11 +63,14 @@ public class InfoVehiculo extends javax.swing.JPanel {
             String formatoFecha = formato.split(" ")[0];
             formatoFecha = formatoFecha.split("-")[2] + "/" + formatoFecha.split("-")[1] + "/" + formatoFecha.split("-")[0];
             formato = formatoFecha + " " + formato.split(" ")[1];
-            
+
             LTicketHora = new javax.swing.JLabel(formato);
             PTicketHora.add(LTicketHora);
             LTicketTiempo = new javax.swing.JLabel(horas + " horas, " + minutos + " minutos y " + segundos + " segundos.");
             PTicketTiempo.add(LTicketTiempo);
+
+            BCancelar.setEnabled(true);
+            BAumentar.setEnabled(true);
         } else {
             LTicketHora = new javax.swing.JLabel("No hay ningun ticket asignado");
             PTicketHora.add(LTicketHora);
@@ -256,6 +259,11 @@ public class InfoVehiculo extends javax.swing.JPanel {
         add(BCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, -1));
 
         BAumentar.setText("Aumentar Tiempo");
+        BAumentar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BAumentarActionPerformed(evt);
+            }
+        });
         add(BAumentar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -316,8 +324,20 @@ public class InfoVehiculo extends javax.swing.JPanel {
     }//GEN-LAST:event_ConfiguraciónActionPerformed
 
     private void BCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarActionPerformed
-        // TODO add your handling code here:
+        vehi.setTicket(null);
+        vehi.setHoraMaxima(null);
+
+        LTicketHora.setText("No hay ningun ticket asignado");
+        LTicketTiempo.setText("");
+        
+        BCancelar.setEnabled(false);
+        BAumentar.setEnabled(false);
     }//GEN-LAST:event_BCancelarActionPerformed
+
+    private void BAumentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAumentarActionPerformed
+        TiempoAumentar ta = new TiempoAumentar(this.v, true, this.usu, this.vehi);
+        ta.setVisible(true);
+    }//GEN-LAST:event_BAumentarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

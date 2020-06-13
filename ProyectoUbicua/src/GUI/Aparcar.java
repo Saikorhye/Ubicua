@@ -28,6 +28,7 @@ public class Aparcar extends javax.swing.JPanel {
     private VInicial v;
     private Usuario usu;
     private String lugar;
+    private int tiempomax;
 
     public VInicial getV() {
         return v;
@@ -37,7 +38,7 @@ public class Aparcar extends javax.swing.JPanel {
         this.v = v;
     }
 
-    public Aparcar(Usuario us, String lug, String plaza) {
+    public Aparcar(Usuario us, String lug, String plaza, int tiempomax) {
         initComponents();
         this.usu = us;
         actualizarCombo();
@@ -45,6 +46,7 @@ public class Aparcar extends javax.swing.JPanel {
         jLabelLugar.setText(this.lugar);
         jLabelPlaza.setText("Plaza " + plaza);
         actualizarSlider();
+        this.tiempomax = tiempomax;
     }
 
     /**
@@ -472,7 +474,7 @@ public class Aparcar extends javax.swing.JPanel {
     private void jButtonPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPagarActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        ResumenAparcar vp = new ResumenAparcar(this.usu, jLabelPlaza.getText(), jLabelLugar.getText(), jSlider1.getValue() / 60, jLabelPrezo.getText(), jLabelFin.getText(), jComboBoxVehiculo.getSelectedItem().toString());
+        ResumenAparcar vp = new ResumenAparcar(this.usu, jLabelPlaza.getText(), jLabelLugar.getText(), jSlider1.getValue() / 60, jLabelPrezo.getText(), jLabelFin.getText(), jComboBoxVehiculo.getSelectedItem().toString(), tiempomax);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
