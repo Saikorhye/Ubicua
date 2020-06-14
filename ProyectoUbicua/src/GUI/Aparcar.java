@@ -493,6 +493,11 @@ public class Aparcar extends javax.swing.JPanel {
 
     private void jButtonPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPagarActionPerformed
         // TODO add your handling code here:
+        for(Plaza pla : plazas){
+            if(pla.getCalle().equals(jLabelLugar.getText())){
+                pla.setEstado("ocupada");
+            }
+        }
         this.v.getContentPane().setVisible(false);
         ResumenAparcar vp = new ResumenAparcar(this.usu, jLabelPlaza.getText(), jLabelLugar.getText(), jSlider1.getValue() / 60, jLabelPrezo.getText(), jLabelFin.getText(), jComboBoxVehiculo.getSelectedItem().toString(), tiempomax, this.plazas);
         vp.setVisible(true);
