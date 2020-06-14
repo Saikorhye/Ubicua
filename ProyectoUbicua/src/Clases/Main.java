@@ -23,15 +23,15 @@ public class Main {
     public static void main(String[] args) {
         // Variables
         ArrayList<Usuario> usuarios = new ArrayList<>();
-        Usuario usu1 = new Usuario("Eva Suarez Vazquez", "eva@gmail.com", "1234", "Tarjeta de Crédito", "666666666");
+        Usuario usu1 = new Usuario("Ricardo Castro Souto", "ricardocastro@gmail.com", "0000", "Tarjeta de Crédito", "682882090");
         Usuario usu2 = new Usuario("admin admin", "admin", "admin", "Tarjeta de Crédito", "666666666");
-     
+        
         //Notificaciones
         Notificacion noti = new Notificacion("Nueva multa!!", "Debe abonar el pago en la seccion de multas.\nPara ello haga click en 'Menu' > 'Multas', y una vez alli siga las instrucciones");
         Notificacion noti2 = new Notificacion("Nueva actualización!", "Versión 0.9.3 ya disponible!");
         //Vehiculos
-        Vehiculo vehi1 = new Vehiculo("2332DDD", "Coche rojo");
-        Vehiculo vehi2 = new Vehiculo("1655TXC", "Coche azul");
+        Vehiculo vehi1 = new Vehiculo("2332DDD", "Opel Corsa blanco");
+        Vehiculo vehi2 = new Vehiculo("1655TXC", "Seat Ibiza rojo");
         //Multas
         Calendar c = Calendar.getInstance();
         c.set(Calendar.DATE, c.get(Calendar.DATE) -7);
@@ -46,6 +46,7 @@ public class Main {
         usu2.addNotificacion(noti);
         usu2.addNotificacion(noti2);
         usu1.addVehiculo(vehi1);
+        usu1.addVehiculo(vehi2);
         usu2.addVehiculo(vehi1);
         usu2.addVehiculo(vehi2);
         //Nuevos usuarios
