@@ -129,7 +129,7 @@ public class Ayuda extends javax.swing.JPanel {
 
         SalirSesion.setBackground(new java.awt.Color(68, 217, 230));
         SalirSesion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        SalirSesion.setText("Salir de sesión");
+        SalirSesion.setText("Cerrar sesión");
         SalirSesion.setBorder(null);
         SalirSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -5,12 +5,16 @@
  */
 package GUI;
 
+import Clases.GuardaDatos;
 import Clases.Plaza;
 import Clases.Usuario;
 import Clases.Vehiculo;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -450,7 +454,38 @@ public class Aparcar extends javax.swing.JPanel {
     }//GEN-LAST:event_jAyudaActionPerformed
 
     private void jSalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirSesionActionPerformed
-        // TODO add your handling code here:
+         //Serializamos los datos en un fichero
+        GuardaDatos object = null;
+        String filename = "listausuarios.txt";
+                    
+        // Deserialization 
+        try {   
+            // Reading the object from a file 
+            FileInputStream file = new FileInputStream(filename); 
+            ObjectInputStream in = new ObjectInputStream (file); 
+            // Method for deserialization of object 
+            object = (GuardaDatos)in.readObject(); 
+            in.close(); 
+            file.close(); 
+            System.out.println("Object has been deserialized\n"
+                                + "Data after Deserialization."); 
+        } 
+  
+        catch (IOException ex) { 
+            System.out.println("IOException is caught"); 
+        } 
+        
+        catch (ClassNotFoundException ex) { 
+            System.out.println("ClassNotFoundException" + 
+                                " is caught"); 
+        } 
+        
+        this.v.getContentPane().setVisible(false);
+        IniciarSesion vp = new  IniciarSesion(object.getUsuario(), this.plazas);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
+
     }//GEN-LAST:event_jSalirSesionActionPerformed
 
     private void jComboBoxVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVehiculoActionPerformed
