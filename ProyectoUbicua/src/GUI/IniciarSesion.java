@@ -6,6 +6,7 @@
 package GUI;
 
 import Clases.GuardaDatos;
+import Clases.Plaza;
 import Clases.Tarxeta;
 import Clases.Usuario;
 import java.awt.event.KeyEvent;
@@ -26,6 +27,7 @@ public class IniciarSesion extends javax.swing.JPanel {
      */
     private VInicial v;
     private ArrayList<Usuario> usus;
+    private ArrayList<Plaza> plazas;
 
     public VInicial getV() {
         return v;
@@ -35,9 +37,10 @@ public class IniciarSesion extends javax.swing.JPanel {
         this.v = v;
     }
 
-    public IniciarSesion(ArrayList<Usuario> Usuarios) {
+    public IniciarSesion(ArrayList<Usuario> Usuarios, ArrayList<Plaza> plaza) {
         initComponents();
         this.usus = Usuarios;
+        this.plazas=plaza;
     }
 
     /**
@@ -190,7 +193,7 @@ public class IniciarSesion extends javax.swing.JPanel {
     private void jButtonRegistrarteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarteActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Registrar vp = new Registrar(this.usus);
+        Registrar vp = new Registrar(this.usus, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -259,7 +262,7 @@ public class IniciarSesion extends javax.swing.JPanel {
                     
                     //Credenciales correctas, pasase a seguinte ventana
                     this.v.getContentPane().setVisible(false);
-                    VPrincipal vp = new VPrincipal(usuario);
+                    VPrincipal vp = new VPrincipal(usuario, this.plazas);
                     vp.setVisible(true);
                     vp.setV(this.v);
                     this.v.setContentPane(vp);

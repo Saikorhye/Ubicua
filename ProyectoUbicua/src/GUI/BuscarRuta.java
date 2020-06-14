@@ -5,12 +5,14 @@
  */
 package GUI;
 
+import Clases.Plaza;
 import Clases.Usuario;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.net.URL;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -26,6 +28,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     private Image image;
     private VInicial v;
     private Usuario usu;
+    private ArrayList<Plaza> plazas;
     
     public VInicial getV() {
         return v;
@@ -35,10 +38,11 @@ public class BuscarRuta extends javax.swing.JPanel {
         this.v = v;
     }
     
-    public BuscarRuta(Usuario usus) {
+    public BuscarRuta(Usuario usus, ArrayList<Plaza> plaz) {
         initComponents();
         this.usu=usus;
         this.RadioButtonSelec();
+        this.plazas=plaz;
     }
 
     /**
@@ -405,7 +409,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     private void jBotonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSearchActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        BuscarRuta vp = new BuscarRuta(this.usu);
+        BuscarRuta vp = new BuscarRuta(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -415,7 +419,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     private void jNotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNotificacionesActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Notificaciones vp = new Notificaciones(this.usu);
+        Notificaciones vp = new Notificaciones(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -428,7 +432,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     private void jUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsuarioActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        VUsuario vp = new VUsuario(this.usu);
+        VUsuario vp = new VUsuario(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -437,7 +441,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     private void jMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMultasActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Multas vp = new Multas(this.usu);
+        Multas vp = new Multas(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -446,7 +450,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     private void jConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfiguracionActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Configuracion vp = new Configuracion(this.usu);
+        Configuracion vp = new Configuracion(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -455,7 +459,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     private void jAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAyudaActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Ayuda vp = new Ayuda(this.usu);
+        Ayuda vp = new Ayuda(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -490,7 +494,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(this.usu);
+        VPrincipal vp = new VPrincipal(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -500,7 +504,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     private void jButtonBuscarRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarRutaActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Ruta vp = new Ruta(this.usu, jTextOrigen.getText(), jTextDestino.getText());
+        Ruta vp = new Ruta(this.usu, jTextOrigen.getText(), jTextDestino.getText(), this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -510,7 +514,7 @@ public class BuscarRuta extends javax.swing.JPanel {
     private void jButtonBuscarLibreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarLibreActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        AparcamientoLibre vp = new AparcamientoLibre(this.usu, jTextLugar.getText());
+        AparcamientoLibre vp = new AparcamientoLibre(this.usu, jTextLugar.getText(), this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);

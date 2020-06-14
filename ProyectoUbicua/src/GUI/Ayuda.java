@@ -6,10 +6,12 @@
 package GUI;
 
 import Clases.GuardaDatos;
+import Clases.Plaza;
 import Clases.Usuario;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
 
 /**
  *
@@ -22,6 +24,7 @@ public class Ayuda extends javax.swing.JPanel {
      */
     private VInicial v;
     private Usuario usu;
+    private ArrayList<Plaza> plazas;
 
     public VInicial getV() {
         return v;
@@ -31,10 +34,11 @@ public class Ayuda extends javax.swing.JPanel {
         this.v = v;
     }
 
-    public Ayuda(Usuario us) {
+    public Ayuda(Usuario us, ArrayList<Plaza> plaz) {
         initComponents();
         this.usu = us;
         this.VolverPrincipal.setText("Volver a Principal");
+        this.plazas=plaz;
     }
 
     /**
@@ -225,7 +229,7 @@ public class Ayuda extends javax.swing.JPanel {
 
     private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
         this.v.getContentPane().setVisible(false);
-        Notificaciones vp = new Notificaciones(this.usu);
+        Notificaciones vp = new Notificaciones(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -233,7 +237,7 @@ public class Ayuda extends javax.swing.JPanel {
 
     private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
         this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(this.usu);
+        VPrincipal vp = new VPrincipal(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -264,7 +268,7 @@ public class Ayuda extends javax.swing.JPanel {
         }
 
         this.v.getContentPane().setVisible(false);
-        IniciarSesion vp = new IniciarSesion(object.getUsuario());
+        IniciarSesion vp = new IniciarSesion(object.getUsuario(), this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -272,7 +276,7 @@ public class Ayuda extends javax.swing.JPanel {
 
     private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
         this.v.getContentPane().setVisible(false);
-        VUsuario vp = new VUsuario(this.usu);
+        VUsuario vp = new VUsuario(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -280,7 +284,7 @@ public class Ayuda extends javax.swing.JPanel {
 
     private void MultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultasActionPerformed
         this.v.getContentPane().setVisible(false);
-        Multas vp = new Multas(this.usu);
+        Multas vp = new Multas(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -288,7 +292,7 @@ public class Ayuda extends javax.swing.JPanel {
 
     private void ConfiguraciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguraciónActionPerformed
         this.v.getContentPane().setVisible(false);
-        Configuracion vp = new Configuracion(this.usu);
+        Configuracion vp = new Configuracion(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);

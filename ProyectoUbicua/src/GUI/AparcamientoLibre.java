@@ -5,11 +5,13 @@
  */
 package GUI;
 
+import Clases.Plaza;
 import Clases.Usuario;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.net.URL;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -26,6 +28,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private Usuario usu;
     private Image image;
     private String lugar; 
+    private ArrayList<Plaza> plazas;
     
     public VInicial getV() {
         return v;
@@ -36,10 +39,11 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     }
     
     
-    public AparcamientoLibre(Usuario us, String lug) {
+    public AparcamientoLibre(Usuario us, String lug, ArrayList<Plaza> plaz) {
         initComponents();
         this.usu=us;
         this.lugar=lug;
+        this.plazas=plaz;
     }
 
     /**
@@ -427,7 +431,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private void jNotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNotificacionesActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Notificaciones vp = new Notificaciones(this.usu);
+        Notificaciones vp = new Notificaciones(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -436,7 +440,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private void jUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsuarioActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        VUsuario vp = new VUsuario(this.usu);
+        VUsuario vp = new VUsuario(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -445,7 +449,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private void jMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMultasActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Multas vp = new Multas(this.usu);
+        Multas vp = new Multas(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -454,7 +458,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private void jConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfiguracionActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Configuracion vp = new Configuracion(this.usu);
+        Configuracion vp = new Configuracion(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -463,7 +467,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private void jAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAyudaActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Ayuda vp = new Ayuda(this.usu);
+        Ayuda vp = new Ayuda(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -486,7 +490,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private void jBotonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSearchActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        BuscarRuta vp = new BuscarRuta(this.usu);
+        BuscarRuta vp = new BuscarRuta(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -496,7 +500,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private void jButtonAparcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAparcarActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        InfoPlaza vp = new InfoPlaza(this.usu, "Avenida das Ciencias", "5", "ocupada", "Carga o descarga", "ninguno", "30 minutos", 3);
+        InfoPlaza vp = new InfoPlaza(this.usu, "Avenida das Ciencias", "5", "ocupada", "Carga o descarga", "ninguno", "30 minutos", 3, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -506,7 +510,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        InfoPlaza vi = new InfoPlaza(this.usu, "Avenida de Vigo", "8", "libre", "Zona ORA", "1,05€/hora", "4 horas", 3);
+        InfoPlaza vi = new InfoPlaza(this.usu, "Avenida de Vigo", "8", "libre", "Zona ORA", "1,05€/hora", "4 horas", 3, this.plazas);
         vi.setVisible(true);
         vi.setV(this.v);
         this.v.setContentPane(vi);
@@ -516,7 +520,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        InfoPlaza vi = new InfoPlaza(this.usu, "Avenida das Ciencias", "12", "libre", "Zona ORA", "1,05€/hora", "4 horas", 3);
+        InfoPlaza vi = new InfoPlaza(this.usu, "Avenida das Ciencias", "12", "libre", "Zona ORA", "1,05€/hora", "4 horas", 3, this.plazas);
         vi.setVisible(true);
         vi.setV(this.v);
         this.v.setContentPane(vi);
@@ -526,7 +530,7 @@ public class AparcamientoLibre extends javax.swing.JPanel {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        InfoPlaza vi = new InfoPlaza(this.usu, "Avenida do Doutor Ángel", "2", "libre", "Carga o descarga", "Ninguno", "30 minutos", 3);
+        InfoPlaza vi = new InfoPlaza(this.usu, "Avenida do Doutor Ángel", "2", "libre", "Carga o descarga", "Ninguno", "30 minutos", 3, this.plazas);
         vi.setVisible(true);
         vi.setV(this.v);
         this.v.setContentPane(vi);

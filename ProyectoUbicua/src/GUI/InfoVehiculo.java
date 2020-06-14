@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Clases.Plaza;
 import Clases.Usuario;
 import Clases.Vehiculo;
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class InfoVehiculo extends javax.swing.JPanel {
     private VInicial v;
     private Usuario usu;
     private Vehiculo vehi;
+    private ArrayList<Plaza> plazas;
 
     private javax.swing.JLabel LMatricula;
     private javax.swing.JLabel LDescripcion;
@@ -37,9 +39,10 @@ public class InfoVehiculo extends javax.swing.JPanel {
         this.v = v;
     }
 
-    public InfoVehiculo(Usuario us, Vehiculo vehi) {
+    public InfoVehiculo(Usuario us, Vehiculo vehi, ArrayList<Plaza> plaz) {
         this.usu = us;
         this.vehi = vehi;
+        this.plazas=plaz;
         initComponents();
         this.VolverPrincipal.setText("Volver a Principal");
 
@@ -288,7 +291,7 @@ public class InfoVehiculo extends javax.swing.JPanel {
 
     private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
         this.v.getContentPane().setVisible(false);
-        Notificaciones vp = new Notificaciones(this.usu);
+        Notificaciones vp = new Notificaciones(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -297,7 +300,7 @@ public class InfoVehiculo extends javax.swing.JPanel {
 
     private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
         this.v.getContentPane().setVisible(false);
-        Ayuda vp = new Ayuda(this.usu);
+        Ayuda vp = new Ayuda(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -309,7 +312,7 @@ public class InfoVehiculo extends javax.swing.JPanel {
 
     private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
         this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(this.usu);
+        VPrincipal vp = new VPrincipal(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -318,7 +321,7 @@ public class InfoVehiculo extends javax.swing.JPanel {
 
     private void MultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultasActionPerformed
         this.v.getContentPane().setVisible(false);
-        Multas vp = new Multas(this.usu);
+        Multas vp = new Multas(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -326,7 +329,7 @@ public class InfoVehiculo extends javax.swing.JPanel {
 
     private void ConfiguraciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguraciónActionPerformed
         this.v.getContentPane().setVisible(false);
-        Configuracion vp = new Configuracion(this.usu);
+        Configuracion vp = new Configuracion(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);

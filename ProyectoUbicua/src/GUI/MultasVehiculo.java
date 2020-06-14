@@ -6,6 +6,7 @@
 package GUI;
 
 import Clases.Multa;
+import Clases.Plaza;
 import Clases.Usuario;
 import Clases.Vehiculo;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class MultasVehiculo extends javax.swing.JPanel {
     private Usuario usu;
     private String matricula;
     private ArrayList<Multa> multas;
+    private ArrayList<Plaza> plazas;
 
     public VInicial getV() {
         return v;
@@ -33,9 +35,10 @@ public class MultasVehiculo extends javax.swing.JPanel {
         this.v = v;
     }
 
-    public MultasVehiculo(Usuario us, String matricula) {
+    public MultasVehiculo(Usuario us, String matricula, ArrayList<Plaza> plaz) {
         initComponents();
         this.usu = us;
+        this.plazas=plaz;
         this.matricula = matricula;
         this.multas = new ArrayList<>();
 
@@ -166,7 +169,7 @@ public class MultasVehiculo extends javax.swing.JPanel {
 
     private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
         this.v.getContentPane().setVisible(false);
-        Multas vp = new Multas(this.usu);
+        Multas vp = new Multas(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);

@@ -6,6 +6,7 @@
 package GUI;
 
 import Clases.GuardaDatos;
+import Clases.Plaza;
 import Clases.Tarxeta;
 import Clases.Usuario;
 import java.awt.Color;
@@ -24,9 +25,10 @@ public class PagoTarxeta extends javax.swing.JPanel {
      * Creates new form PagoTarxeta
      */
     
-     private VInicial v;
-    ArrayList<Usuario> usus;
+    private VInicial v;
+    private ArrayList<Usuario> usus;
     private Usuario us;
+    private ArrayList<Plaza> plazas;
     
     public VInicial getV() {
         return v;
@@ -37,10 +39,11 @@ public class PagoTarxeta extends javax.swing.JPanel {
     }
     
     
-    public PagoTarxeta(ArrayList<Usuario> usuarios, Usuario usua) {
+    public PagoTarxeta(ArrayList<Usuario> usuarios, Usuario usua, ArrayList<Plaza> plaz) {
         initComponents();
         this.usus=usuarios;
         this.us=usua;
+        this.plazas=plaz;
         this.RadioButtonSelecR();
     }
 
@@ -417,7 +420,7 @@ public class PagoTarxeta extends javax.swing.JPanel {
                     }
                     
         this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(us);
+        VPrincipal vp = new VPrincipal(us, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -452,7 +455,7 @@ public class PagoTarxeta extends javax.swing.JPanel {
                     }
                     
         this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(us);
+        VPrincipal vp = new VPrincipal(us, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);

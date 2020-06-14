@@ -6,6 +6,7 @@
 package GUI;
 
 import Clases.GuardaDatos;
+import Clases.Plaza;
 import Clases.Usuario;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -29,7 +30,8 @@ public class VPrincipal extends javax.swing.JPanel {
     
     private VInicial v;
     private Usuario usu;
-     private Image image;
+    private Image image;
+    private ArrayList<Plaza> plazas;
     
     public VInicial getV() {
         return v;
@@ -39,9 +41,10 @@ public class VPrincipal extends javax.swing.JPanel {
         this.v = v;
     }
     
-    public VPrincipal(Usuario us) {
+    public VPrincipal(Usuario us, ArrayList<Plaza> plaza) {
         initComponents();
         this.usu=us;
+        this.plazas=plaza;
     }
 
     /**
@@ -423,7 +426,7 @@ public class VPrincipal extends javax.swing.JPanel {
 
     private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
         this.v.getContentPane().setVisible(false);
-        Notificaciones vp = new Notificaciones(this.usu);
+        Notificaciones vp = new Notificaciones(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -431,7 +434,7 @@ public class VPrincipal extends javax.swing.JPanel {
 
     private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
         this.v.getContentPane().setVisible(false);
-        Ayuda vp = new Ayuda(this.usu);
+        Ayuda vp = new Ayuda(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -439,7 +442,7 @@ public class VPrincipal extends javax.swing.JPanel {
 
     private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
         this.v.getContentPane().setVisible(false);
-        VUsuario vp = new VUsuario(this.usu);
+        VUsuario vp = new VUsuario(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -447,7 +450,7 @@ public class VPrincipal extends javax.swing.JPanel {
 
     private void MultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultasActionPerformed
         this.v.getContentPane().setVisible(false);
-        Multas vp = new Multas(this.usu);
+        Multas vp = new Multas(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -455,7 +458,7 @@ public class VPrincipal extends javax.swing.JPanel {
 
     private void ConfiguraciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguraciónActionPerformed
         this.v.getContentPane().setVisible(false);
-        Configuracion vp = new  Configuracion(this.usu);
+        Configuracion vp = new  Configuracion(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -490,7 +493,7 @@ public class VPrincipal extends javax.swing.JPanel {
         } 
         
         this.v.getContentPane().setVisible(false);
-        IniciarSesion vp = new  IniciarSesion(object.getUsuario());
+        IniciarSesion vp = new  IniciarSesion(object.getUsuario(), this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -499,7 +502,7 @@ public class VPrincipal extends javax.swing.JPanel {
     private void jBotonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSearchActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        BuscarRuta vp = new BuscarRuta(this.usu);
+        BuscarRuta vp = new BuscarRuta(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -509,7 +512,7 @@ public class VPrincipal extends javax.swing.JPanel {
     private void jButtonUbiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUbiActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        InfoPlaza vi = new InfoPlaza(this.usu, "San Pedro de Mezonzo", "21", "Libre", "Zona ORA", "1,05€/hora", "4 horas", 1);
+        InfoPlaza vi = new InfoPlaza(this.usu, "San Pedro de Mezonzo", "21", "Libre", "Zona ORA", "1,05€/hora", "4 horas", 1, this.plazas);
         vi.setVisible(true);
         vi.setV(this.v);
         this.v.setContentPane(vi);
@@ -519,7 +522,7 @@ public class VPrincipal extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        InfoPlaza vi = new InfoPlaza(this.usu, "República Argentina", "32", "ocupada", "Zona ORA", "1,05€/hora", "4 horas", 1);
+        InfoPlaza vi = new InfoPlaza(this.usu, "República Argentina", "32", "ocupada", "Zona ORA", "1,05€/hora", "4 horas", 1, this.plazas);
         vi.setVisible(true);
         vi.setV(this.v);
         this.v.setContentPane(vi);
@@ -529,7 +532,7 @@ public class VPrincipal extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        InfoPlaza vi = new InfoPlaza(this.usu, "Santiago León de Caracas", "2", "ocupada", "Carga descarga", "Ninguno", "30 minutos", 1);
+        InfoPlaza vi = new InfoPlaza(this.usu, "Santiago León de Caracas", "2", "ocupada", "Carga descarga", "Ninguno", "30 minutos", 1, this.plazas);
         vi.setVisible(true);
         vi.setV(this.v);
         this.v.setContentPane(vi);

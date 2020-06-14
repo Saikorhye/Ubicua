@@ -6,6 +6,7 @@
 package GUI;
 
 import Clases.GuardaDatos;
+import Clases.Plaza;
 import Clases.Usuario;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -23,7 +24,8 @@ public class Registrar extends javax.swing.JPanel {
      */
     
     private VInicial v;
-    ArrayList<Usuario> usus;
+    private ArrayList<Usuario> usus;
+    private ArrayList<Plaza> plazas;
     
     public VInicial getV() {
         return v;
@@ -33,9 +35,10 @@ public class Registrar extends javax.swing.JPanel {
         this.v = v;
     }
     
-    public Registrar(ArrayList<Usuario> usuarios) {
+    public Registrar(ArrayList<Usuario> usuarios, ArrayList<Plaza> plaz) {
         initComponents();
         this.usus=usuarios;
+        this.plazas=plaz;
     }
 
     /**
@@ -245,7 +248,7 @@ public class Registrar extends javax.swing.JPanel {
             System.out.println("Metodo pago: "+jComboBoxPago.getSelectedItem().toString()+"\n");
         
             this.v.getContentPane().setVisible(false);
-            PagoTarxeta vp = new PagoTarxeta(this.usus, us);
+            PagoTarxeta vp = new PagoTarxeta(this.usus, us, this.plazas);
             vp.setVisible(true);
             vp.setV(this.v);
             this.v.setContentPane(vp);
@@ -261,7 +264,7 @@ public class Registrar extends javax.swing.JPanel {
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        IniciarSesion vp = new IniciarSesion(this.usus);
+        IniciarSesion vp = new IniciarSesion(this.usus, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);

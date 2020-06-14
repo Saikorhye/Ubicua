@@ -5,12 +5,14 @@
  */
 package GUI;
 
+import Clases.Plaza;
 import Clases.Usuario;
 import Clases.Vehiculo;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.ImageIcon;
@@ -30,6 +32,7 @@ public class Aparcar extends javax.swing.JPanel {
     private String lugar;
     private int tiempomax;
     private int vent;
+    private ArrayList<Plaza> plazas;
 
     public VInicial getV() {
         return v;
@@ -39,7 +42,7 @@ public class Aparcar extends javax.swing.JPanel {
         this.v = v;
     }
 
-    public Aparcar(Usuario us, String lug, String plaza, int tiempomax, int vent) {
+    public Aparcar(Usuario us, String lug, String plaza, int tiempomax, int vent, ArrayList<Plaza> plaz) {
         initComponents();
         this.usu = us;
         actualizarCombo();
@@ -49,6 +52,7 @@ public class Aparcar extends javax.swing.JPanel {
         actualizarSlider();
         this.tiempomax = tiempomax;
         this.vent=vent;
+        this.plazas=plaz;
     }
 
     /**
@@ -393,7 +397,7 @@ public class Aparcar extends javax.swing.JPanel {
     private void jBotonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSearchActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        BuscarRuta vp = new BuscarRuta(this.usu);
+        BuscarRuta vp = new BuscarRuta(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -403,7 +407,7 @@ public class Aparcar extends javax.swing.JPanel {
     private void jNotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNotificacionesActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Notificaciones vp = new Notificaciones(this.usu);
+        Notificaciones vp = new Notificaciones(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -412,7 +416,7 @@ public class Aparcar extends javax.swing.JPanel {
     private void jUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsuarioActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        VUsuario vp = new VUsuario(this.usu);
+        VUsuario vp = new VUsuario(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -421,7 +425,7 @@ public class Aparcar extends javax.swing.JPanel {
     private void jMultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMultasActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Multas vp = new Multas(this.usu);
+        Multas vp = new Multas(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -430,7 +434,7 @@ public class Aparcar extends javax.swing.JPanel {
     private void jConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfiguracionActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Configuracion vp = new Configuracion(this.usu);
+        Configuracion vp = new Configuracion(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -439,7 +443,7 @@ public class Aparcar extends javax.swing.JPanel {
     private void jAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAyudaActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        Ayuda vp = new Ayuda(this.usu);
+        Ayuda vp = new Ayuda(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
@@ -457,7 +461,7 @@ public class Aparcar extends javax.swing.JPanel {
         // TODO add your handling code here:
         if(vent==1){
             this.v.getContentPane().setVisible(false);
-            VPrincipal vp = new VPrincipal(this.usu);
+            VPrincipal vp = new VPrincipal(this.usu, this.plazas);
             vp.setVisible(true);
             vp.setV(this.v);
             this.v.setContentPane(vp);
@@ -465,7 +469,7 @@ public class Aparcar extends javax.swing.JPanel {
         }
         if(this.vent==2){
             this.v.getContentPane().setVisible(false);
-            Ruta vp = new Ruta(this.usu, "", jLabelLugar.getText());
+            Ruta vp = new Ruta(this.usu, "", jLabelLugar.getText(), this.plazas);
             vp.setVisible(true);
             vp.setV(this.v);
             this.v.setContentPane(vp);
@@ -473,7 +477,7 @@ public class Aparcar extends javax.swing.JPanel {
         }
         if(this.vent==3){
             this.v.getContentPane().setVisible(false);
-            AparcamientoLibre vp = new AparcamientoLibre(this.usu, jLabelLugar.getText());
+            AparcamientoLibre vp = new AparcamientoLibre(this.usu, jLabelLugar.getText(), this.plazas);
             vp.setVisible(true);
             vp.setV(this.v);
             this.v.setContentPane(vp);
@@ -490,7 +494,7 @@ public class Aparcar extends javax.swing.JPanel {
     private void jButtonPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPagarActionPerformed
         // TODO add your handling code here:
         this.v.getContentPane().setVisible(false);
-        ResumenAparcar vp = new ResumenAparcar(this.usu, jLabelPlaza.getText(), jLabelLugar.getText(), jSlider1.getValue() / 60, jLabelPrezo.getText(), jLabelFin.getText(), jComboBoxVehiculo.getSelectedItem().toString(), tiempomax);
+        ResumenAparcar vp = new ResumenAparcar(this.usu, jLabelPlaza.getText(), jLabelLugar.getText(), jSlider1.getValue() / 60, jLabelPrezo.getText(), jLabelFin.getText(), jComboBoxVehiculo.getSelectedItem().toString(), tiempomax, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);

@@ -5,9 +5,11 @@
  */
 package GUI;
 
+import Clases.Plaza;
 import Clases.Usuario;
 import java.awt.Image;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -26,6 +28,7 @@ public class ResumenAparcar extends javax.swing.JPanel {
     private Image image;
     private String matricula;
     private int tiempomax;
+    private ArrayList<Plaza> plazas;
     
     public VInicial getV() {
         return v;
@@ -37,9 +40,10 @@ public class ResumenAparcar extends javax.swing.JPanel {
     
     
     
-    public ResumenAparcar(Usuario us, String plaza, String lugar, double tempo, String coste, String date, String ve, int tiempomax) {
+    public ResumenAparcar(Usuario us, String plaza, String lugar, double tempo, String coste, String date, String ve, int tiempomax, ArrayList<Plaza> plaz) {
         initComponents();
         this.usu=us;
+        this.plazas=plaz;
         jLabel2.setText(plaza);
         jLabel3.setText(lugar);
         jLabel4.setText("Tiempo: "+tempo+" horas");
@@ -176,7 +180,7 @@ public class ResumenAparcar extends javax.swing.JPanel {
         this.usu.getVehiculoMatricula(matricula).setHoraMaxima(new Timestamp(c.getTimeInMillis()));
         
         this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(this.usu);
+        VPrincipal vp = new VPrincipal(this.usu, this.plazas);
         vp.setVisible(true);
         vp.setV(this.v);
         this.v.setContentPane(vp);
