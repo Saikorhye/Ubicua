@@ -423,15 +423,20 @@ public class InfoVehiculo extends javax.swing.JPanel {
         formatoFecha = formatoFecha.split("-")[2] + "/" + formatoFecha.split("-")[1] + "/" + formatoFecha.split("-")[0];
         formato = formatoFecha + " " + formato.split(" ")[1];
 
-        LTicketHora = new javax.swing.JLabel(formato);
+        LTicketHora.setText(formato);
         PTicketHora.add(LTicketHora);
-        LTicketTiempo = new javax.swing.JLabel(horas + " horas, " + minutos + " minutos y " + segundos + " segundos.");
+        LTicketTiempo.setText(horas + " horas, " + minutos + " minutos y " + segundos + " segundos.");
         PTicketTiempo.add(LTicketTiempo);
 
         BCancelar.setEnabled(true);
         if (((vehi.getHoraMaxima().getTime() - vehi.getTicket().getTime()) * 60000) > 5) {
             BAumentar.setEnabled(true);
+        } else {
+            BAumentar.setEnabled(false);
         }
+        
+        revalidate();
+        repaint();
     }
 
 }
