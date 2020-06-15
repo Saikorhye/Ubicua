@@ -64,6 +64,7 @@ public class MultasPago extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TObs.setEditable(false);
         TObs.setColumns(20);
         TObs.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         TObs.setRows(5);
@@ -73,32 +74,26 @@ public class MultasPago extends javax.swing.JDialog {
 
         LMatricula.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LMatricula.setText("Matricula:");
-        LMatricula.setBorder(null);
         getContentPane().add(LMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
         LFecha.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LFecha.setText("Fecha:");
-        LFecha.setBorder(null);
         getContentPane().add(LFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
         LImporte.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LImporte.setText("Importe:");
-        LImporte.setBorder(null);
         getContentPane().add(LImporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         LObservaciones.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LObservaciones.setText("Observaciones:");
-        LObservaciones.setBorder(null);
         getContentPane().add(LObservaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
 
         LLabel.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LLabel.setText("Se le aplicaran XX,XX€ mediante el metodo ");
-        LLabel.setBorder(null);
         getContentPane().add(LLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
         LMetodo.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LMetodo.setText("Metodo de pago:");
-        LMetodo.setBorder(null);
         getContentPane().add(LMetodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 130, -1));
 
         BPagar.setBackground(new java.awt.Color(216, 216, 216));
@@ -123,17 +118,14 @@ public class MultasPago extends javax.swing.JDialog {
 
         LMat.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LMat.setText("Mat");
-        LMat.setBorder(null);
         getContentPane().add(LMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
         LFec.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LFec.setText("Fec");
-        LFec.setBorder(null);
         getContentPane().add(LFec, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
 
         LImpor.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
         LImpor.setText("Impor");
-        LImpor.setBorder(null);
         getContentPane().add(LImpor, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
         LPag.setText("Pag");
