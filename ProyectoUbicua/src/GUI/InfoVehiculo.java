@@ -263,7 +263,7 @@ public class InfoVehiculo extends javax.swing.JPanel {
         PTicketTiempo.add(LTicketTiempo);
 
         BCancelar.setEnabled(true);
-        if (((vehi.getHoraMaxima().getTime() - vehi.getTicket().getTime()) * 60000) > 5) {
+        if (((vehi.getHoraMaxima().getTime() - vehi.getTicket().getTime()) / 60000) > 5) {
             BAumentar.setEnabled(true);
         } else {
             BAumentar.setEnabled(false);
