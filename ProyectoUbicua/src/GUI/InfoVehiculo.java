@@ -48,7 +48,6 @@ public class InfoVehiculo extends javax.swing.JPanel {
         this.vehi = vehi;
         this.plazas=plaz;
         initComponents();
-        this.VolverPrincipal.setText("Volver a Principal");
 
         LabelAyuda.setText(vehi.getMatricula());
         BCancelar.setEnabled(false);
@@ -95,14 +94,6 @@ public class InfoVehiculo extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopMenuPrincipal = new javax.swing.JPopupMenu();
-        VolverPrincipal = new javax.swing.JMenuItem();
-        Notificaciones = new javax.swing.JMenuItem();
-        Multas = new javax.swing.JMenuItem();
-        Configuración = new javax.swing.JMenuItem();
-        Ayuda = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        SalirSesion = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         LabelAyuda = new javax.swing.JLabel();
         jBotonMenu = new javax.swing.JButton();
@@ -115,80 +106,6 @@ public class InfoVehiculo extends javax.swing.JPanel {
         PTicketTiempo = new javax.swing.JPanel();
         BCancelar = new javax.swing.JButton();
         BAumentar = new javax.swing.JButton();
-
-        jPopMenuPrincipal.setBackground(new java.awt.Color(68, 217, 230));
-        jPopMenuPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        jPopMenuPrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(68, 217, 230)));
-
-        VolverPrincipal.setBackground(new java.awt.Color(68, 217, 230));
-        VolverPrincipal.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        VolverPrincipal.setText("Usuario");
-        VolverPrincipal.setBorder(null);
-        VolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverPrincipalActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(VolverPrincipal);
-
-        Notificaciones.setBackground(new java.awt.Color(68, 217, 230));
-        Notificaciones.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        Notificaciones.setText("Notificaciones");
-        Notificaciones.setBorder(null);
-        Notificaciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NotificacionesActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(Notificaciones);
-        Notificaciones.getAccessibleContext().setAccessibleName("JMenuItem1");
-
-        Multas.setBackground(new java.awt.Color(68, 217, 230));
-        Multas.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        Multas.setText("Multas");
-        Multas.setBorder(null);
-        Multas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MultasActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(Multas);
-
-        Configuración.setBackground(new java.awt.Color(68, 217, 230));
-        Configuración.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        Configuración.setText("Configuración");
-        Configuración.setBorder(null);
-        Configuración.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConfiguraciónActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(Configuración);
-
-        Ayuda.setBackground(new java.awt.Color(68, 217, 230));
-        Ayuda.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        Ayuda.setText("Ayuda");
-        Ayuda.setBorder(null);
-        Ayuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AyudaActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(Ayuda);
-
-        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
-        jPopMenuPrincipal.add(jSeparator1);
-
-        SalirSesion.setBackground(new java.awt.Color(68, 217, 230));
-        SalirSesion.setFont(new java.awt.Font("Bitstream Vera Sans", 0, 15)); // NOI18N
-        SalirSesion.setText("Cerrar sesión");
-        SalirSesion.setBorder(null);
-        SalirSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirSesionActionPerformed(evt);
-            }
-        });
-        jPopMenuPrincipal.add(SalirSesion);
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(350, 500));
@@ -289,87 +206,12 @@ public class InfoVehiculo extends javax.swing.JPanel {
     }//GEN-LAST:event_jBotonMenuActionPerformed
 
     private void jBotonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonMenuMouseClicked
-        // TODO add your handling code here:
-        jPopMenuPrincipal.show(this, jBotonMenu.getX(), jBotonMenu.getY() + jBotonMenu.getHeight());
+        this.v.getContentPane().setVisible(false);
+        Vehiculos vp = new Vehiculos(this.usu, this.plazas);
+        vp.setVisible(true);
+        vp.setV(this.v);
+        this.v.setContentPane(vp);
     }//GEN-LAST:event_jBotonMenuMouseClicked
-
-    private void NotificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificacionesActionPerformed
-        this.v.getContentPane().setVisible(false);
-        Notificaciones vp = new Notificaciones(this.usu, this.plazas);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-
-    }//GEN-LAST:event_NotificacionesActionPerformed
-
-    private void AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AyudaActionPerformed
-        this.v.getContentPane().setVisible(false);
-        Ayuda vp = new Ayuda(this.usu, this.plazas);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-    }//GEN-LAST:event_AyudaActionPerformed
-
-    private void SalirSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirSesionActionPerformed
-        
-        //Serializamos los datos en un fichero
-        GuardaDatos object = null;
-        String filename = "listausuarios.txt";
-                    
-        // Deserialization 
-        try {   
-            // Reading the object from a file 
-            FileInputStream file = new FileInputStream(filename); 
-            ObjectInputStream in = new ObjectInputStream (file); 
-            // Method for deserialization of object 
-            object = (GuardaDatos)in.readObject(); 
-            in.close(); 
-            file.close(); 
-            System.out.println("Object has been deserialized\n"
-                                + "Data after Deserialization."); 
-        } 
-  
-        catch (IOException ex) { 
-            System.out.println("IOException is caught"); 
-        } 
-        
-        catch (ClassNotFoundException ex) { 
-            System.out.println("ClassNotFoundException" + 
-                                " is caught"); 
-        } 
-        
-        this.v.getContentPane().setVisible(false);
-        IniciarSesion vp = new  IniciarSesion(object.getUsuario(), this.plazas);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-
-    }//GEN-LAST:event_SalirSesionActionPerformed
-
-    private void VolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverPrincipalActionPerformed
-        this.v.getContentPane().setVisible(false);
-        VPrincipal vp = new VPrincipal(this.usu, this.plazas);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-        vp.setFondoMapaPrincipal();
-    }//GEN-LAST:event_VolverPrincipalActionPerformed
-
-    private void MultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultasActionPerformed
-        this.v.getContentPane().setVisible(false);
-        Multas vp = new Multas(this.usu, this.plazas);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-    }//GEN-LAST:event_MultasActionPerformed
-
-    private void ConfiguraciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguraciónActionPerformed
-        this.v.getContentPane().setVisible(false);
-        Configuracion vp = new Configuracion(this.usu, this.plazas);
-        vp.setVisible(true);
-        vp.setV(this.v);
-        this.v.setContentPane(vp);
-    }//GEN-LAST:event_ConfiguraciónActionPerformed
 
     private void BCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCancelarActionPerformed
         vehi.setTicket(null);
@@ -389,26 +231,18 @@ public class InfoVehiculo extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Ayuda;
     private javax.swing.JButton BAumentar;
     private javax.swing.JButton BCancelar;
-    private javax.swing.JMenuItem Configuración;
     private javax.swing.JLabel LabelAyuda;
-    private javax.swing.JMenuItem Multas;
-    private javax.swing.JMenuItem Notificaciones;
     private javax.swing.JPanel PDescripcion;
     private javax.swing.JPanel PMatricula;
     private javax.swing.JPanel PTicketHora;
     private javax.swing.JPanel PTicketTiempo;
-    private javax.swing.JMenuItem SalirSesion;
-    private javax.swing.JMenuItem VolverPrincipal;
     private javax.swing.JButton jBotonMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPopupMenu jPopMenuPrincipal;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 
     public void actualizar() {
